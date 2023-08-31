@@ -6,21 +6,33 @@ export default {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
-    size: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
-    },
+    label: { control: 'text' },
+    elevated: { control: 'boolean' },
+    onToggle: { action: 'toggle' }
   },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/svelte/writing-stories/args
 export const Primary = {
   args: {
-    label: 'Button',
+    label: 'Button'
   },
 };
 
 export const Disabled = {
-  args: {...Primary.args, ...{disabled: true}}
+  args: {...Primary.args, ...{
+    disabled: true
+  }}
+};
+
+export const Elevated = {
+  args: {...Primary.args, ...{
+    elevated: true
+  }}
+};
+
+export const Tag = {
+  args: {...Primary.args, ...{
+    tag: true,
+    style: `--doxy-button-accent: red`
+  }}
 };

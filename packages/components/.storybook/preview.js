@@ -11,4 +11,6 @@ const preview = {
   },
 };
 
+import '../src/styles/colors.css';
+
 export default preview;

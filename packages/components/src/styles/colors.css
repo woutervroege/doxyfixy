@@ -1,0 +1,11 @@
+:root {
+    --doxy-colors-pink: #BB68A7;
+    --doxy-colors-green: #39AC4D;
+    --doxy-colors-white: #FFFFFF;
+    --doxy-colors-darkgrey: #2C2926;
+    --doxy-colors-background: #DEDCCA;
+}
+
+html, body {
+    background: var(--doxy-colors-background);
+}
