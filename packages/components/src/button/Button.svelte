@@ -1,7 +1,7 @@
 <script>
   import './button.css';
-  import { createEventDispatcher } from 'svelte';
   import Icon from '../icon/Icon.svelte';
+  import { createEventDispatcher } from 'svelte';
   const dispatch = createEventDispatcher();
 
    /**

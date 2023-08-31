@@ -1,0 +1,36 @@
+.doxy-switch {
+    all: unset;
+    height: 48px;
+    width: 96px;
+    background: var(--doxy-colors-darkgrey);
+    border-radius: 999px;
+    display: flex;
+    padding: 2px;
+        box-sizing: border-box;
+}
+
+.doxy-switch button {
+    flex: 1;
+    border: 0;
+    font-family: 'Degular Display', sans-serif;
+    font-weight: 500;
+    color: var(--doxy-button-accent, var(--doxy-colors-white));
+    background-color: transparent;
+    border-radius: 50%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.doxy-switch.off button:first-child {
+    background-color: var(--doxy-button-fill, var(--doxy-colors-white));
+    color: var(--doxy-button-accent, var(--doxy-colors-darkgrey))
+}
+
+.doxy-switch.on button:last-child {
+    background-color: var(--doxy-button-fill, var(--doxy-colors-white));
+    color: var(--doxy-button-accent, var(--doxy-colors-darkgrey))
+}

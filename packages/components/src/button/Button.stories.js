@@ -14,33 +14,33 @@ export default {
   },
 };
 
-export const Primary = {
+export const Default = {
   args: {
     label: 'Button'
   },
 };
 
 export const Disabled = {
-  args: {...Primary.args, ...{
+  args: {...Default.args, ...{
     disabled: true
   }}
 };
 
 export const Elevated = {
-  args: {...Primary.args, ...{
+  args: {...Default.args, ...{
     elevated: true
   }}
 };
 
 export const Tag = {
-  args: {...Primary.args, ...{
+  args: {...Default.args, ...{
     tag: true,
     style: `--doxy-button-accent: red`
   }}
 };
 
 export const Icon = {
-  args: {...Primary.args, ...{
+  args: {...Default.args, ...{
     label: '',
     icon: 'search'
   }},
