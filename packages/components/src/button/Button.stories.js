@@ -32,10 +32,9 @@ export const Elevated = {
   }}
 };
 
-export const Tag = {
+export const Selectable = {
   args: {...Default.args, ...{
-    tag: true,
-    style: `--doxy-button-accent: red`
+    selectable: true,
   }}
 };
 
