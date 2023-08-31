@@ -1,5 +1,4 @@
 import Button from './Button.svelte';
-import Icon from '../icon/Icon.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 export default {
@@ -40,8 +39,9 @@ export const Tag = {
   }}
 };
 
-export const WithIcon = {
+export const Icon = {
   args: {...Primary.args, ...{
+    label: '',
     icon: 'search'
   }},
 };
