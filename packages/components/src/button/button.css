@@ -11,6 +11,7 @@
   line-height: 1;
   background-color: var(--doxy-button-fill, var(--doxy-colors-white));
   color: var(--doxy-button-accent, var(--doxy-colors-darkgrey));
+  border: 1px solid transparent;
   padding: 0 18px;
 }
 
@@ -19,7 +20,7 @@
 }
 
 .doxy-button.tag {
-  border: 1px solid var(--doxy-button-fill, var(--doxy-colors-darkgrey));
+  border-color: var(--doxy-button-fill, var(--doxy-colors-darkgrey));
 }
 
 .doxy-button.tag:hover,
