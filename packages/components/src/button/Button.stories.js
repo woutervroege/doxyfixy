@@ -1,4 +1,5 @@
 import Button from './Button.svelte';
+import Icon from '../icon/Icon.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 export default {
@@ -7,8 +8,10 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     label: { control: 'text' },
+    icon: { control: 'text' },
     elevated: { control: 'boolean' },
-    onToggle: { action: 'toggle' }
+    onToggle: { action: 'toggle' },
+    icon: { control: {type: 'select'}, options: ['search', 'close'], },
   },
 };
 
@@ -35,4 +38,10 @@ export const Tag = {
     tag: true,
     style: `--doxy-button-accent: red`
   }}
+};
+
+export const WithIcon = {
+  args: {...Primary.args, ...{
+    icon: 'search'
+  }},
 };

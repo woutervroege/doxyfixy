@@ -1,6 +1,7 @@
 .doxy-button {
   box-sizing: border-box;
   height: 48px;
+  min-width: 48px;
   font-family: 'Degular Display', sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -13,6 +14,17 @@
   color: var(--doxy-button-accent, var(--doxy-colors-darkgrey));
   border: 1px solid transparent;
   padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 48px;
+}
+
+.icon .doxy-icon {
+  min-width: 17px;
 }
 
 .doxy-button.elevated {

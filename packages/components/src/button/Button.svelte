@@ -1,6 +1,7 @@
 <script>
   import './button.css';
   import { createEventDispatcher } from 'svelte';
+  import Icon from '../icon/Icon.svelte';
   const dispatch = createEventDispatcher();
 
    /**
@@ -29,6 +30,11 @@
    export let selected = false;
 
     /**
+   * @type {string} Icon
+   */
+   export let icon = ''; 
+
+    /**
     * @private
     */
    function toggleSelected() {
@@ -37,7 +43,7 @@
    }
 
 
-  $: classNames = ['doxy-button', elevated ? 'elevated' : '', tag ? 'tag' : '', selected ? 'selected' : '']
+  $: classNames = ['doxy-button', elevated ? 'elevated' : '', tag ? 'tag' : '', selected ? 'selected' : '', (icon && !label) ? 'icon' : '']
 </script>
 
 <button
@@ -47,4 +53,5 @@
   on:click={toggleSelected}
 >
   {label}
+  {#if icon } <Icon icon={icon}/> {/if}
 </button>
