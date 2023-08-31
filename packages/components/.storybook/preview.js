@@ -11,6 +11,6 @@ const preview = {
   },
 };
 
-import '../src/styles/colors.css';
+import '../src/styles/doxy.css';
 
 export default preview;

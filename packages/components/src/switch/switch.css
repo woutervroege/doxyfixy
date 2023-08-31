@@ -3,7 +3,7 @@
     height: 48px;
     width: 96px;
     background: var(--doxy-colors-darkgrey);
-    border-radius: 999px;
+    border-radius: var(--doxy-radius-round);
     display: flex;
     padding: 2px;
         box-sizing: border-box;
@@ -12,11 +12,11 @@
 .doxy-switch button {
     flex: 1;
     border: 0;
-    font-family: 'Degular Display', sans-serif;
+    font-family: var(--doxy-font);
     font-weight: 500;
     color: var(--doxy-button-accent, var(--doxy-colors-white));
     background-color: transparent;
-    border-radius: 50%;
+    border-radius: var(--doxy-radius-round);
     width: 50%;
     display: flex;
     align-items: center;

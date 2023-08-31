@@ -2,11 +2,11 @@
   box-sizing: border-box;
   height: 48px;
   min-width: 48px;
-  font-family: 'Degular Display', sans-serif;
+  font-family: var(--doxy-font);
   font-weight: 300;
   font-size: 18px;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--doxy-radius-round);
   cursor: pointer;
   display: inline-block;
   line-height: 1;
