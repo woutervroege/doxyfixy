@@ -1,0 +1,18 @@
+.doxy-input {
+    display: flex;
+    height: 48px;
+    padding: var(--doxy-padding-md) var(--doxy-padding-lg);
+    align-items: center;
+    font-family: var(--doxy-font);
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--doxy-colors-background);
+    border: 1px solid currentColor;
+    border-radius: var(--doxy-input-radius, var(--doxy-radius-round));
+    background-color: transparent;
+}
+
+.doxy-input::placeholder {
+    color: currentColor;
+    opacity: 0.5;
+}

@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Primary = {
+export const Default = {
   args: {
     icon: 'close'
   },
