@@ -2,6 +2,7 @@
     background-color: var(--doxy-colors-darkgrey);
     height: 310px;
     aspect-ratio: 3/2;
+    max-width: 100%;
     position: relative;
     padding: var(--__card-padding);
     color: var(--doxy-colors-white);
@@ -15,7 +16,7 @@
 
 .doxy-card.small {
     height: 310px;
-    --__card-p-display: none;
+    --__card-subtitle-display: none;
     --__card-padding: var(--doxy-padding-xxl);
 }
 
@@ -28,21 +29,34 @@
     height: 560px;
     --__card-content-maxwidth: 428px;
     --__card-padding: var(--doxy-padding-xxl);
+    --__card-title-font-size: 60px;
 }
 
 .doxy-card.hero {
     height: 860px;
     --__card-content-maxwidth: 620px;
     --__card-padding: var(--doxy-padding-outer);
+    --__card-title-font-size: 82px;
+    --__card-subtitle-font-size: 22px;
 }
 
+.doxy-card.portrait {
+    height: 560px;
+    aspect-ratio: 2/3;
+    --__card-title-display: none;
+    --__card-padding: var(--doxy-padding-xl);
+    --__card-subtitle-font-size: 30px;
+}
+
+
 .doxy-card h3,
-.doxy-card p {
+.doxy-card h4 {
     margin: 0;
 }
 
 .doxy-card h3 {
-    font-size: 48px;
+    display: var(--__card-title-display);
+    font-size: var(--__card-title-font-size, 48px);
     font-style: normal;
     font-weight: 500;
     line-height: 0.8;
@@ -50,10 +64,10 @@
     max-width: var(--__card-content-maxwidth);
 }
 
-.doxy-card p {
-    display: var(--__card-p-display);
+.doxy-card h4 {
+    display: var(--__card-subtitle-display);
     font-family: var(--doxy-font-serif);
-    font-size: 18px;
+    font-size: var(--__card-subtitle-font-size, 18px);
     font-style: normal;
     font-weight: 400;
     line-height: 111%;

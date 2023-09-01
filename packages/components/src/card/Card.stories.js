@@ -7,16 +7,16 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     title: { control: {type: 'text'} },
-    description: { control: {type: 'text'} },
+    subtitle: { control: {type: 'text'} },
     tags: { control: {type: 'array'} },
-    size: { control: {type: 'select'}, options: ['small', 'medium', 'large', 'hero'], },
+    size: { control: {type: 'select'}, options: ['small', 'medium', 'large', 'hero', 'portrait'], },
   },
 };
 
 export const Small = {
   args: {
     title: 'Film titel',
-    description: 'Een zomerse feelgoodfilm met Laure Calamy, Olivia Côte en Kristin Scott Thomas. De onlangs gescheiden Blandine (Côte) zit middenin een midlifecrisis.',
+    subtitle: 'Een zomerse feelgoodfilm met Laure Calamy, Olivia Côte en Kristin Scott Thomas. De onlangs gescheiden Blandine (Côte) zit middenin een midlifecrisis.',
     tags: ['apples', 'pears', 'bananas'],
     size: 'small'
   },
@@ -32,4 +32,8 @@ export const Large = {
 
 export const Hero = {
     args: {...Small.args, ...{size: 'hero'}},
+};
+
+export const Portrait = {
+  args: {...Small.args, ...{size: 'portrait', subtitle: 'Christopher Nolan'}},
 };

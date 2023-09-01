@@ -8,12 +8,12 @@
    export let title = '';
 
   /**
-   * @type {string} description
+   * @type {string} subtitle
    */    
-   export let description = '';
+   export let subtitle = '';
 
   /**
-   * @type {string} size
+   * @type {('small' | 'medium' | 'large' | 'hero' | 'portrait')} size
    */    
    export let size = 'small';
 
@@ -27,7 +27,7 @@
 
 <section class="{classNames.join(' ')}">
     <h3>{title}</h3>
-    <p>{description}</p>
+    <h4>{subtitle}</h4>
     <div>
         {#each tags as tag}
             <Tag label={tag}/>
