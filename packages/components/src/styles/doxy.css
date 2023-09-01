@@ -9,6 +9,7 @@
 
     /* fonts */
     --doxy-font: 'Degular Display', sans-serif;
+    --doxy-font-serif: 'American Typewriter', courier;
 
     /* padding */
     --doxy-padding-none: 0px;
@@ -34,4 +35,6 @@
 
 * {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
