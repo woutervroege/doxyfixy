@@ -31,3 +31,7 @@
     /* theme */
     background: var(--doxy-colors-background);
 }
+
+* {
+    box-sizing: border-box;
+}

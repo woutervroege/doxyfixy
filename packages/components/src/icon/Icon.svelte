@@ -2,7 +2,7 @@
   import './icon.css';
 
   /**
-   * @type {icon} Icon
+   * @type {string} Icon
    */    
     export let icon = 'search';
 </script>
