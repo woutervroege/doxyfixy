@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "storybook dev",
     "build": "storybook build",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy": "chromatic --project-token=chpt_d2fa33d952f4cf2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.0",
