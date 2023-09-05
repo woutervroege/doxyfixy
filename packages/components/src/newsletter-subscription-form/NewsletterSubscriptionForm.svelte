@@ -4,6 +4,8 @@
     import '../input/Input.svelte';
 	import Input from '../input/Input.svelte';
 	import Button from '../button/Button.svelte';
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
 
    /**
    * @type {boolean} submitted
@@ -21,8 +23,9 @@
    async function submit() {
     submitted = true;
     buttonLabel = 'Subscribing...';
-    const foo = await fetch('/'); //TODO: add subscription URL
-    buttonLabel = 'Thanks!';    
+    dispatch('submit');
+    const foo = await fetch('/'); //TODO: POST data to URL
+    buttonLabel = 'Thanks!';
    }
 
 </script>
