@@ -17,6 +17,7 @@
     "@storybook/svelte-vite": "^7.4.0",
     "@storybook/testing-library": "^0.2.0",
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "chromatic": "^7.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.4.0",

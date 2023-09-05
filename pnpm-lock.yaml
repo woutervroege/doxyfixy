@@ -44,6 +44,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^2.4.2
         version: 2.4.5(svelte@4.2.0)(vite@4.4.9)
+      chromatic:
+        specifier: ^7.0.0
+        version: 7.0.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -4035,6 +4038,11 @@ packages:
   /chownr@2.0.0:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
+    dev: true
+
+  /chromatic@7.0.0:
+    resolution: {integrity: sha512-ZPHRO/6v0jAKk0G1oW+HAngQmbq+opAVkgjy3Yx5Cvxvpfv+Y7zyfBuQ8KHewoNuIqLTfvRTbKzekqbGYT+7UQ==}
+    hasBin: true
     dev: true
 
   /ci-info@3.8.0:
