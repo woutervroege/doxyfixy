@@ -1,6 +1,5 @@
 <script>
     import './switch.css';
-    import Button from '../button/Button.svelte';
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
 
