@@ -1,0 +1,13 @@
+.doxy-social-buttons {
+    height: var(--doxy-padding-xxxl);
+    display: flex;
+    gap: var(--doxy-padding-lg);
+}
+
+.doxy-social-buttons svg {
+    width: var(--doxy-padding-xxxl);
+}
+
+.doxy-social-buttons path {
+    fill: #DEDCCA;
+}
