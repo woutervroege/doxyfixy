@@ -33,4 +33,5 @@
             <Tag label={tag}/>
         {/each}
     </div>
+    <slot/>
 </section>
