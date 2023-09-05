@@ -1,6 +1,7 @@
 .doxy-social-buttons {
     height: var(--doxy-padding-xxxl);
     display: flex;
+    justify-content: center;
     gap: var(--doxy-padding-lg);
 }
 

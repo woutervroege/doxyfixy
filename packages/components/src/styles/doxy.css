@@ -31,6 +31,11 @@
     
     /* theme */
     background: var(--doxy-colors-background);
+
+    /* text-styles */
+    --doxy-text-footer-heading: 400 60px/52px var(--doxy-font);
+    --doxy-text-serif-h3: 400 30px/36px var(--doxy-font-serif);
+    
 }
 
 * {

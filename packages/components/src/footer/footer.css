@@ -1,0 +1,50 @@
+.doxy-footer {
+    width: 100%;
+    background: var(--doxy-colors-darkgrey);
+    padding: var(--doxy-padding-xxl);
+    color: var(--doxy-colors-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 138px;
+    padding: 138px;
+}
+
+.doxy-footer .head {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.doxy-footer .head svg {
+    width: 302px;
+}
+
+.doxy-footer .head h5 {
+    font: var(--doxy-text-footer-heading);
+    text-align: center;
+    margin: 0;
+}
+
+.doxy-footer .head h5 span {
+    font-weight: 100;
+    background: linear-gradient(270deg, #C392C2 23.23%, #67BA84 76.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+.doxy-footer .contents {
+    display: flex;
+    flex-direction: column;
+    gap: var(--doxy-padding-xxl);
+}
+
+.doxy-footer h6 {
+    font: var(--doxy-text-serif-h3);
+    letter-spacing: 0.3px;
+    margin: 0;
+}
