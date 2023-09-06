@@ -1,5 +1,5 @@
 {
-  "name": "components",
+  "name": "@doxyfixy/components",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,9 @@
     "build-storybook": "storybook build",
     "deploy": "chromatic --project-token=chpt_d2fa33d952f4cf2"
   },
+  "files": [
+    "src"
+  ],
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.0",
     "@storybook/addon-interactions": "^7.4.0",
