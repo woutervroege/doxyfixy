@@ -1,10 +1,10 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-// import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import Header from '@doxyfixy/components/src/header/Header.svelte';
+import Footer from '@doxyfixy/components/src/footer/Footer.svelte';
+import Card from '@doxyfixy/components/src/card/Card.svelte';
 ---
 
 <!DOCTYPE html>
@@ -13,7 +13,20 @@ import Header from '@doxyfixy/components/src/header/Header.svelte';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header client:only="svelte"/>
+		<Header client:load/>
+		<div class="card-wrapper">
+			<Card
+				title="Oppenheimer"
+				subtitle="Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+				size="hero"
+			>
+			<img
+				src="https://m.media-amazon.com/images/M/MV5BNmNkNWU5NzUtNmVkNS00ZDE2LTg0NjgtNTIxNWYxOWIyM2FlXkEyXkFqcGdeQWFkcmllY2xh._V1_.jpg"
+				decoding="async"
+				loading="lazy"
+			>
+			</Card>
+		</div>
 		<main>
 			<h1>🧑‍🚀 Hello, Astronaut!</h1>
 			<p>
@@ -48,5 +61,12 @@ import Header from '@doxyfixy/components/src/header/Header.svelte';
 			</p>
 		</main>
 		<Footer />
+
+		<style>
+			.doxy-card {
+				border: 1px solid red;
+			}
+		</style>
+		
 	</body>
 </html>
