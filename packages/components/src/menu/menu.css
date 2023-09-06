@@ -18,8 +18,24 @@
 .doxy-menu > div a {
     pointer-events: var(--__doxy-menubutton-pointerevents, none);
     opacity: var(--__doxy-menubutton-opacity, 0);
-    translate: var(--__doxy-menubutton-translate, 100px);
+    translate: calc( var(--__doxy-menubutton-translate, 100px) * var(--__doxy-menubutton-index) );
     transition: 200ms ease-in-out all;
     --doxy-button-fill: transparent;
     --doxy-button-accent: var(--doxy-colors-white);
+}
+
+.doxy-menu > div a:nth-child(1) {
+    --__doxy-menubutton-index: 1;
+}
+
+.doxy-menu > div a:nth-child(2) {
+    --__doxy-menubutton-index: 2;
+}
+
+.doxy-menu > div a:nth-child(3) {
+    --__doxy-menubutton-index: 3;
+}
+
+.doxy-menu > div a:nth-child(4) {
+    --__doxy-menubutton-index: 4;
 }
