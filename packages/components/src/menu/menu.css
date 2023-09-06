@@ -1,0 +1,25 @@
+.doxy-menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--doxy-padding-xxl);
+}
+
+.doxy-menu.open {
+    --__doxy-menubutton-pointerevents: all;
+    --__doxy-menubutton-opacity: 1;
+    --__doxy-menubutton-translate: 0;
+}
+
+.doxy-menu > div {
+    display: flex;
+    gap: var(--doxy-padding-lg);
+}
+
+.doxy-menu > div a {
+    pointer-events: var(--__doxy-menubutton-pointerevents, none);
+    opacity: var(--__doxy-menubutton-opacity, 0);
+    translate: var(--__doxy-menubutton-translate, 100px);
+    transition: 200ms ease-in-out all;
+    --doxy-button-fill: transparent;
+    --doxy-button-accent: var(--doxy-colors-white);
+}

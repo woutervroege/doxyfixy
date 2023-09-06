@@ -22,6 +22,9 @@
    */    
    export let tags = [];
 
+   /**
+    * 
+    */
    $: classNames = ['doxy-card', size]
 </script>
 

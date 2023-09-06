@@ -12,11 +12,12 @@
   line-height: 1;
   background-color: var(--doxy-button-fill, var(--doxy-colors-white));
   color: var(--doxy-button-accent, var(--doxy-colors-darkgrey));
-  border: 1px solid transparent;
+  border: 1px solid var(--doxy-button-accent);
   padding: 0 18px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .icon {
