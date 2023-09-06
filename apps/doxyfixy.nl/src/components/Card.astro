@@ -5,37 +5,44 @@ const classNames = 'doxy-card ' + size;
 ---
 
 <section class={classNames}>
-    <h3>{title}</h3>
-    <h4>{subtitle}</h4>
-    <div>
-        {tags.map(tag =>
-            <Tag label={tag}/>
-        )}
+    <div class="container">
+        <h3>{title}</h3>
+        <h4>{subtitle}</h4>
+        <div>
+            {tags.map(tag =>
+                <Tag label={tag}/>
+            )}
+        </div>
+        <slot/>
     </div>
-    <slot/>
 </section>
 
 <style>
     .doxy-card {
-        background-color: var(--doxy-colors-darkgrey);
         /* height: 310px; */
         width: 100%;
         max-height: 90vh;;
         aspect-ratio: 3/2;
         position: relative;
-        padding: var(--__card-padding);
         color: var(--doxy-colors-white);
         font-family: var(--doxy-font);
+        container-type: inline-size;
+    }
+
+    .container {
+        position: absolute;
+        inset: 0;
+        background-color: var(--doxy-colors-darkgrey);
         display: flex;
         flex-direction: column;
         gap: var(--doxy-padding-lg);
         justify-content: flex-end;
+        padding: var(--__card-padding);
         border-radius: var(--doxy-radius-md);
         overflow: hidden;
-        container-type: inline-size;
     }
 
-    .doxy-card:after {
+    .doxy-card .container:after {
         position: absolute;
         inset: 0;
         background: linear-gradient(180deg, rgba(44, 41, 38, 0.00) 0%, rgba(44, 41, 38, 0.50) 100%);
@@ -43,21 +50,26 @@ const classNames = 'doxy-card ' + size;
         z-index: 1;
     }
 
-    /* @container (max-width: 460px) { */
-        .doxy-card.small {
+    @container (max-width: 460px) {
+        .doxy-card:not(.portrait) .container {
             --__card-subtitle-display: none;
-            --__card-padding: var(--doxy-padding-xxl);
         }
-    /* } */
+    }
+
+    @container (min-width: 460px) {
+        .container {
+            --__card-padding: var(--doxy-padding-lg);
+        }
+    }
 
     @container (min-width: 680px) {
-        .doxy-card {
+        .container {
             --__card-padding: var(--doxy-padding-xxl);
         }
     }
 
     @container (min-width: 944px) {
-        .doxy-card {
+        .container {
             --__card-content-maxwidth: 428px;
             --__card-padding: var(--doxy-padding-xxl);
             --__card-title-font-size: 60px;
@@ -65,7 +77,7 @@ const classNames = 'doxy-card ' + size;
     }
 
     @container (min-width: 945px) {
-        .doxy-card {
+        .container {
             --__card-content-maxwidth: 620px;
             --__card-padding: var(--doxy-padding-outer);
             --__card-title-font-size: 82px;
@@ -74,12 +86,18 @@ const classNames = 'doxy-card ' + size;
         }
     }
 
-    .doxy-card.portrait {
+    /* @container (min-width: 945px) { */
+        .doxy-card.portrait {
         height: 560px;
         aspect-ratio: 2/3;
         --__card-title-display: none;
         --__card-padding: var(--doxy-padding-xl);
+        --__card-subtitle-display: block;
         --__card-subtitle-font-size: 30px;
+    }
+
+    .doxy-card.hero .container {
+        margin: 0 var(--doxy-padding-lg);
     }
 
     .doxy-card img {
@@ -119,7 +137,7 @@ const classNames = 'doxy-card ' + size;
         z-index: 2;
     }
 
-    .doxy-card div {
+    .doxy-card .container div {
         display: flex;
         gap: var(--doxy-padding-sm);
         max-width: var(--__card-content-maxwidth);
