@@ -1,0 +1,51 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+
+import Button from "@doxyfixy/components/src/button/Button.svelte";
+import Logo from "@doxyfixy/components/src/logo/Logo.svelte";
+import Switch from "@doxyfixy/components/src/switch/Switch.svelte";
+import Menu from './Menu.astro';
+
+---
+
+<script>
+</script>
+
+<header class="doxy-header">
+	<div class="container">
+		<Logo/>
+		<nav>
+			<Menu/>
+			<Button icon="search" elevated/>
+			<Switch/>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.doxy-header {
+		height: 148px;
+		padding: 0 88px;
+		width: 100%;
+		background: linear-gradient(180deg, rgba(44, 41, 38, 0.50) 0%, rgba(222, 220, 202, 0.00) 45.31%);
+		background-blend-mode: multiply;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.container {
+		width: 100%;
+		max-width: 1728px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	nav {
+		display: flex;
+		justify-content: center;
+		gap: var(--doxy-padding-xxl);
+	}
+</style>

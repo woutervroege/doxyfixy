@@ -1,0 +1,128 @@
+---
+import Tag from './Tag.astro';
+const { title='', subtitle='', tags=[], size='small' } = Astro.props;
+const classNames = 'doxy-card ' + size;
+---
+
+<section class={classNames}>
+    <h3>{title}</h3>
+    <h4>{subtitle}</h4>
+    <div>
+        {tags.map(tag =>
+            <Tag label={tag}/>
+        )}
+    </div>
+    <slot/>
+</section>
+
+<style>
+    .doxy-card {
+        background-color: var(--doxy-colors-darkgrey);
+        /* height: 310px; */
+        width: 100%;
+        max-height: 90vh;;
+        aspect-ratio: 3/2;
+        position: relative;
+        padding: var(--__card-padding);
+        color: var(--doxy-colors-white);
+        font-family: var(--doxy-font);
+        display: flex;
+        flex-direction: column;
+        gap: var(--doxy-padding-lg);
+        justify-content: flex-end;
+        border-radius: var(--doxy-radius-md);
+        overflow: hidden;
+        container-type: inline-size;
+    }
+
+    .doxy-card:after {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(44, 41, 38, 0.00) 0%, rgba(44, 41, 38, 0.50) 100%);
+        content: '';
+        z-index: 1;
+    }
+
+    /* @container (max-width: 460px) { */
+        .doxy-card.small {
+            --__card-subtitle-display: none;
+            --__card-padding: var(--doxy-padding-xxl);
+        }
+    /* } */
+
+    @container (min-width: 680px) {
+        .doxy-card {
+            --__card-padding: var(--doxy-padding-xxl);
+        }
+    }
+
+    @container (min-width: 944px) {
+        .doxy-card {
+            --__card-content-maxwidth: 428px;
+            --__card-padding: var(--doxy-padding-xxl);
+            --__card-title-font-size: 60px;
+        }
+    }
+
+    @container (min-width: 945px) {
+        .doxy-card {
+            --__card-content-maxwidth: 620px;
+            --__card-padding: var(--doxy-padding-outer);
+            --__card-title-font-size: 82px;
+            --__card-subtitle-font-size: 22px;
+            max-height: 90vh;
+        }
+    }
+
+    .doxy-card.portrait {
+        height: 560px;
+        aspect-ratio: 2/3;
+        --__card-title-display: none;
+        --__card-padding: var(--doxy-padding-xl);
+        --__card-subtitle-font-size: 30px;
+    }
+
+    .doxy-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .doxy-card h3,
+    .doxy-card h4 {
+        margin: 0;
+    }
+
+    .doxy-card h3 {
+        display: var(--__card-title-display);
+        font-size: var(--__card-title-font-size, 48px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 0.8;
+        letter-spacing: -0.48px;
+        max-width: var(--__card-content-maxwidth);
+        z-index: 2;
+    }
+
+    .doxy-card h4 {
+        display: var(--__card-subtitle-display);
+        font-family: var(--doxy-font-serif);
+        font-size: var(--__card-subtitle-font-size, 18px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 111%;
+        letter-spacing: 0.18px;
+        max-width: var(--__card-content-maxwidth);
+        z-index: 2;
+    }
+
+    .doxy-card div {
+        display: flex;
+        gap: var(--doxy-padding-sm);
+        max-width: var(--__card-content-maxwidth);
+        z-index: 2;
+    }
+</style>

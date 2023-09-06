@@ -30,10 +30,6 @@
 
 .doxy-footer .head h5 span {
     font-weight: 100;
-    background: linear-gradient(270deg, #C392C2 23.23%, #67BA84 76.99%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     display: block;
 }
 
