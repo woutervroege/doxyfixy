@@ -9,6 +9,16 @@
     width: var(--doxy-padding-xxxl);
 }
 
+.doxy-social-buttons a {
+    transition: 100ms scale ease;
+    transform-origin: center;
+}
+
+.doxy-social-buttons a:hover,
+.doxy-social-buttons a:focus-visible {
+    scale: 1.1;
+}
+
 .doxy-social-buttons path {
     fill: #DEDCCA;
 }

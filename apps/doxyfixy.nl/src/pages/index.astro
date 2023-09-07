@@ -5,7 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import NavBar from '../components/NavBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '@doxyfixy/components/src/footer/Footer.svelte';
-import Card from '../components/Card.astro';
+import Card from '@doxyfixy/components/src/card/Card.svelte';
 ---
 
 <!DOCTYPE html>
@@ -112,6 +112,7 @@ import Card from '../components/Card.astro';
 				display: flex;
 				flex-direction: column;
 				gap: calc( max(5vmin, 24px) );
+				margin-top: -192px;
 			}
 
 			.doxy-header {
@@ -122,11 +123,7 @@ import Card from '../components/Card.astro';
 			.doxy-card {
 				padding: 0 var(--doxy-padding--xl);
 			}
-
-			.doxy-card.hero {
-
-			}
-
+			
 			.doxy-card img {
 				position: absolute;
 				inset: 0;

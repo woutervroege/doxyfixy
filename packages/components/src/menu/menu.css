@@ -18,10 +18,14 @@
 .doxy-menu > div a {
     pointer-events: var(--__doxy-menubutton-pointerevents, none);
     opacity: var(--__doxy-menubutton-opacity, 0);
-    translate: calc( var(--__doxy-menubutton-translate, 100px) * var(--__doxy-menubutton-index) );
+    translate: calc( var(--__doxy-menubutton-translate, 20px) * var(--__doxy-menubutton-index) );
     transition: 200ms ease-in-out all;
     --doxy-button-fill: transparent;
     --doxy-button-accent: var(--doxy-colors-white);
+}
+
+.doxy-menu > div a:hover {
+    --doxy-button-fill: var(--doxy-colors-darkgrey);
 }
 
 .doxy-menu > div a:nth-child(1) {
@@ -38,4 +42,32 @@
 
 .doxy-menu > div a:nth-child(4) {
     --__doxy-menubutton-index: 4;
+}
+
+.doxy-menu .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+}
+
+@media screen and (max-width: 960px) {
+    .doxy-menu {
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        translate: -50%;
+        align-items: center;
+        flex-direction: column;
+    }
+    .doxy-menu > div a {
+        translate: 0 calc( var(--__doxy-menubutton-translate, 20px) );
+        transition-delay: calc(40ms  * var(--__doxy-menubutton-index));
+        --doxy-button-fill: unset;
+        --doxy-button-accent: unset;
+    }
+    .doxy-menu > div a:hover {
+        --doxy-button-fill: unset;
+    }
+    
 }

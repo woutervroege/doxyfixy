@@ -44,5 +44,7 @@
         <a data-index="2" class="doxy-button" href="/people">People</a>
         <a data-index="1" class="doxy-button" href="/about">About</a>
     </div>
-    <Button icon="{buttonIcon}" label="{buttonLabel}" on:toggle={toggle}/>
+    <div class="button-container">
+        <Button icon="{buttonIcon}" label="{buttonLabel}" on:toggle={toggle}/>
+    </div>
 </div>

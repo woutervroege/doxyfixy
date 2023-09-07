@@ -6,18 +6,11 @@ export default {
   component: Logo,
   tags: ['autodocs'],
   argTypes: {
-    showMonogram: { control: {type: 'boolean'}}
   },
 };
 
 export const Default = {
   args: {
     showMonogram: false
-  },
-};
-
-export const WithMonogram = {
-  args: {
-    showMonogram: true
   },
 };

@@ -26,7 +26,6 @@ import Menu from '@doxyfixy/components/src/menu/Menu.svelte';
 <style>
 	.doxy-header {
 		height: 148px;
-		padding: 0 88px;
 		width: 100%;
 		background: linear-gradient(180deg, rgba(44, 41, 38, 0.50) 0%, rgba(222, 220, 202, 0.00) 45.31%);
 		background-blend-mode: multiply;
@@ -39,9 +38,11 @@ import Menu from '@doxyfixy/components/src/menu/Menu.svelte';
 
 	.container {
 		width: 100%;
-		max-width: 1728px;
+		max-width: 1280px;
+		padding: 0 32px;
 		display: flex;
 		justify-content: center;
+		margin: auto;
 		align-items: center;
 	}
 
@@ -50,10 +51,4 @@ import Menu from '@doxyfixy/components/src/menu/Menu.svelte';
 		justify-content: center;
 		gap: var(--doxy-padding-xxl);
 	}
-
-	@media screen and (max-width: 768px) {
-        nav {
-            display: none;
-        }
-    }
 </style>

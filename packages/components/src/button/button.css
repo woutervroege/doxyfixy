@@ -18,6 +18,8 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  transition: border-radius 200ms ease;
+  user-select: none;
 }
 
 .icon {
@@ -36,7 +38,7 @@
   border-color: var(--doxy-button-fill, var(--doxy-colors-darkgrey));
 }
 
-.doxy-button.selectable:hover,
+.doxy-button:hover,
 .doxy-button.selectable.selected {
   background-color: var(--doxy-button-accent, var(--doxy-colors-darkgrey));
   color: var(--doxy-button-fill, var(--doxy-colors-white));

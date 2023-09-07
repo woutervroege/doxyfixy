@@ -50,3 +50,7 @@ html, body {
     background: var(--doxy-colors-background);
     margin: 0;
 }
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
