@@ -5,7 +5,7 @@ import { SITE_TITLE } from '../consts';
 import Button from "@doxyfixy/components/src/button/Button.svelte";
 import Logo from "@doxyfixy/components/src/logo/Logo.svelte";
 import Switch from "@doxyfixy/components/src/switch/Switch.svelte";
-import Menu from './Menu.astro';
+import Menu from '@doxyfixy/components/src/menu/Menu.svelte';
 
 ---
 
@@ -14,11 +14,11 @@ import Menu from './Menu.astro';
 
 <header class="doxy-header">
 	<div class="container">
-		<Logo/>
+		<Logo showMonogram/>
 		<nav>
-			<Menu/>
-			<Button icon="search" elevated/>
-			<Switch/>
+			<Menu client:visible/>
+			<!-- <Button icon="search" elevated/> -->
+			<Switch client:visible/>
 		</nav>
 	</div>
 </header>
@@ -33,6 +33,8 @@ import Menu from './Menu.astro';
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+        position: sticky;
+        top: 0;
 	}
 
 	.container {
@@ -48,4 +50,10 @@ import Menu from './Menu.astro';
 		justify-content: center;
 		gap: var(--doxy-padding-xxl);
 	}
+
+	@media screen and (max-width: 768px) {
+        nav {
+            display: none;
+        }
+    }
 </style>

@@ -37,9 +37,10 @@ const classNames = 'doxy-card ' + size;
         flex-direction: column;
         gap: var(--doxy-padding-lg);
         justify-content: flex-end;
-        padding: var(--__card-padding);
+        padding: var(--__card-padding, var(--doxy-padding-md) var(--doxy-padding-lg));
         border-radius: var(--doxy-radius-md);
         overflow: hidden;
+        box-shadow: 0px 6px 0px 0px #FFF;
     }
 
     .doxy-card .container:after {
@@ -48,6 +49,13 @@ const classNames = 'doxy-card ' + size;
         background: linear-gradient(180deg, rgba(44, 41, 38, 0.00) 0%, rgba(44, 41, 38, 0.50) 100%);
         content: '';
         z-index: 1;
+    }
+
+    @container (max-width: 200px) {
+        .doxy-card .container {
+            --__card-tags-display: none;
+        }
+
     }
 
     @container (max-width: 460px) {
@@ -87,13 +95,16 @@ const classNames = 'doxy-card ' + size;
     }
 
     /* @container (min-width: 945px) { */
-        .doxy-card.portrait {
-        height: 560px;
+    .doxy-card.portrait {
         aspect-ratio: 2/3;
         --__card-title-display: none;
         --__card-padding: var(--doxy-padding-xl);
         --__card-subtitle-display: block;
         --__card-subtitle-font-size: 30px;
+    }
+
+    .doxy-card.hero {
+        height: 80vh;
     }
 
     .doxy-card.hero .container {
@@ -138,7 +149,7 @@ const classNames = 'doxy-card ' + size;
     }
 
     .doxy-card .container div {
-        display: flex;
+        display: var(--__card-tags-display, flex);
         gap: var(--doxy-padding-sm);
         max-width: var(--__card-content-maxwidth);
         z-index: 2;

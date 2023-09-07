@@ -111,7 +111,7 @@ import Card from '../components/Card.astro';
 			#container {
 				display: flex;
 				flex-direction: column;
-				gap: var(--doxy-padding-section);
+				gap: calc( max(5vmin, 24px) );
 			}
 
 			.doxy-header {
@@ -138,11 +138,12 @@ import Card from '../components/Card.astro';
 
 			main {
 				display: grid;
-				width: 1440px;
-				max-width: 100%;
-				grid-template-columns: 1fr 1fr 1fr;
+				width: 100%;
+				max-width: 1280px;
+				grid-template-columns: repeat(auto-fit, minmax(calc(max(160px, 20%)), 1fr));
 				gap: var(--doxy-padding-xl);
-				margin: auto;
+				padding: 0 var(--doxy-padding-xl);
+				margin: 0 auto;
 			}
 		</style>
 

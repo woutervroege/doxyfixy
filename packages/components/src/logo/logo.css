@@ -1,6 +1,6 @@
 .doxy-logo {
     display: flex;
-    height: 48px;
+    height: calc(min(4vmax, 48px));
     gap: var(--doxy-padding-xxl);
     align-items: center;
 }
@@ -14,5 +14,5 @@
 }
 
 .doxy-logo .doxy-monogram {
-    height: 92px;
+    height: 200%;
 }

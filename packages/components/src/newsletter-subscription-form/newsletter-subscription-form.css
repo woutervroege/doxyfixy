@@ -1,20 +1,40 @@
 .doxy-newsletter-subscription-form {
     display: flex;
-    width: 710px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 710px;
+}
+
+@media screen and (max-width: 720px) {
+    .doxy-newsletter-subscription-form {
+        flex-direction: column;
+        gap: var(--doxy-padding-lg);    
+    }
 }
 
 .doxy-newsletter-subscription-form input {
     flex: 1;
+    width: 100%;
 }
 
 .doxy-newsletter-subscription-form input:first-of-type {
     --doxy-input-radius: var(--doxy-radius-round) 0 0 var(--doxy-radius-round);
 }
 
+@media screen and (max-width: 720px) {
+    .doxy-newsletter-subscription-form input:first-of-type {
+        --doxy-input-radius: var(--doxy-radius-round);
+    }
+}
+
 .doxy-newsletter-subscription-form input:last-of-type {
     --doxy-input-radius: 0 var(--doxy-radius-round) var(--doxy-radius-round) 0;
     margin: 0 var(--doxy-padding-md) 0 -1px;
+}
+
+@media screen and (max-width: 720px) {
+    .doxy-newsletter-subscription-form input:last-of-type {
+        --doxy-input-radius: var(--doxy-radius-round);
+    }
 }
 
 .doxy-newsletter-subscription-form button {

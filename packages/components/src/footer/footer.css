@@ -7,8 +7,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 138px;
-    padding: 138px;
+    gap: 10vmin;
+    padding: 10vmin;
 }
 
 .doxy-footer .head {
@@ -18,8 +18,15 @@
     justify-content: center;
 }
 
+@media screen and (max-width: 720px) {
+    .doxy-footer .head {
+        flex-direction: column;
+        gap: var(--doxy-padding-xxxl);
+    }
+}
+
 .doxy-footer .head svg {
-    width: 302px;
+    width: 40vmin;
 }
 
 .doxy-footer .head h5 {
@@ -38,6 +45,7 @@
     flex-direction: column;
     gap: var(--doxy-padding-xxl);
 }
+
 
 .doxy-footer h6 {
     font: var(--doxy-text-serif-h3);
