@@ -17,7 +17,6 @@ import Menu from '@doxyfixy/components/src/menu/Menu.svelte';
 		<Logo showMonogram/>
 		<nav>
 			<Menu client:visible/>
-			<!-- <Button icon="search" elevated/> -->
 			<Switch client:visible/>
 		</nav>
 	</div>
@@ -34,6 +33,7 @@ import Menu from '@doxyfixy/components/src/menu/Menu.svelte';
 		align-items: center;
         position: sticky;
         top: 0;
+		z-index: 1;
 	}
 
 	.container {

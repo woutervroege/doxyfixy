@@ -3,148 +3,96 @@ import BaseHead from '../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import NavBar from '../components/NavBar.astro';
-import Header from '../components/Header.astro';
+import PageHeader from '../components/PageHeader.astro';
 import Footer from '@doxyfixy/components/src/footer/Footer.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
+
+import Layout from '../components/Layout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<link rel="stylesheet" href="https://use.typekit.net/uuj0klm.css">
-	</head>
-	<body>
+<Layout>
+	<Card
+		slot="header"
+		title="Oppenheimer"
+		subtitle="Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		size="hero"
+	>
+	<img
+		src="https://m.media-amazon.com/images/M/MV5BNmNkNWU5NzUtNmVkNS00ZDE2LTg0NjgtNTIxNWYxOWIyM2FlXkEyXkFqcGdeQWFkcmllY2xh._V1_.jpg"
+		decoding="async"
+		loading="lazy"
+	>
+	</Card>
 
-		<div id="container">
+	<PageHeader
+		slot="header"
+		title="Onze mensen"
+		intro="Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen."
+		tags={['Apples', 'Pears', 'Bananas']}
+	/>
 
-		<NavBar client:load/>
-		<Card
-			title="Oppenheimer"
-			subtitle="Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-			size="hero"
-		>
+	<Card size="portrait" subtitle="Erwin Krol" tags={['apples', 'pears']}>
 		<img
-			src="https://m.media-amazon.com/images/M/MV5BNmNkNWU5NzUtNmVkNS00ZDE2LTg0NjgtNTIxNWYxOWIyM2FlXkEyXkFqcGdeQWFkcmllY2xh._V1_.jpg"
-			decoding="async"
 			loading="lazy"
+			decoding="async"
+			src="https://images0.persgroep.net/rcs/b1gHucRdVousyKPRwIg8W1o_7eo/diocontent/63668798/_crop/1/0/899/509/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8"
 		>
-		</Card>
+	</Card>
+	<Card size="portrait" subtitle="Bas van Toor" tags={['apples', 'pears']}>
+		<img
+			loading="lazy"
+			decoding="async"
+			src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLXZCStXAEJ2HygwKNrOrXI2PjgFnVW-FLIiP-97yapRIRFBao"
+		>
+	</Card>
+	<Card size="portrait" subtitle="Gerard Joling" tags={['apples', 'pears']}>
+		<img
+			loading="lazy"
+			decoding="async"
+			src="https://www.mediacourant.nl/wp-content/uploads/2023/03/0318-Gerard-Joling.jpg"
+		>
+	</Card>
+	<Card size="portrait" subtitle="Erwin Krol" tags={['apples', 'pears']}>
+		<img
+			loading="lazy"
+			decoding="async"
+			src="https://images0.persgroep.net/rcs/b1gHucRdVousyKPRwIg8W1o_7eo/diocontent/63668798/_crop/1/0/899/509/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8"
+		>
+	</Card>
+	<Card size="portrait" subtitle="Bas van Toor" tags={['apples', 'pears']}>
+		<img
+			loading="lazy"
+			decoding="async"
+			src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLXZCStXAEJ2HygwKNrOrXI2PjgFnVW-FLIiP-97yapRIRFBao"
+		>
+	</Card>
+	<Card size="portrait" subtitle="Gerard Joling" tags={['apples', 'pears']}>
+		<img
+			loading="lazy"
+			decoding="async"
+			src="https://www.mediacourant.nl/wp-content/uploads/2023/03/0318-Gerard-Joling.jpg"
+		>
+	</Card>
+	<Card size="portrait" subtitle="Erwin Krol" tags={['apples', 'pears']}>
+		<img
+			loading="lazy"
+			decoding="async"
+			src="https://images0.persgroep.net/rcs/b1gHucRdVousyKPRwIg8W1o_7eo/diocontent/63668798/_crop/1/0/899/509/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8"
+		>
+	</Card>
+	<Card size="portrait" subtitle="Bas van Toor" tags={['apples', 'pears']}>
+		<img
+			loading="lazy"
+			decoding="async"
+			src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLXZCStXAEJ2HygwKNrOrXI2PjgFnVW-FLIiP-97yapRIRFBao"
+		>
+	</Card>
+	<Card size="portrait" subtitle="Gerard Joling" tags={['apples', 'pears']}>
+		<img
+			loading="lazy"
+			decoding="async"
+			src="https://www.mediacourant.nl/wp-content/uploads/2023/03/0318-Gerard-Joling.jpg"
+		>
+	</Card>
 
-		<Header
-			title="Onze mensen"
-			intro="Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen."
-			tags={['Apples', 'Pears', 'Bananas']}
-		/>
-
-		<main>
-			<Card size="portrait" subtitle="Erwin Krol" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://images0.persgroep.net/rcs/b1gHucRdVousyKPRwIg8W1o_7eo/diocontent/63668798/_crop/1/0/899/509/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8"
-				>
-			</Card>
-			<Card size="portrait" subtitle="Bas van Toor" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLXZCStXAEJ2HygwKNrOrXI2PjgFnVW-FLIiP-97yapRIRFBao"
-				>
-			</Card>
-			<Card size="portrait" subtitle="Gerard Joling" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://www.mediacourant.nl/wp-content/uploads/2023/03/0318-Gerard-Joling.jpg"
-				>
-			</Card>
-			<Card size="portrait" subtitle="Erwin Krol" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://images0.persgroep.net/rcs/b1gHucRdVousyKPRwIg8W1o_7eo/diocontent/63668798/_crop/1/0/899/509/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8"
-				>
-			</Card>
-			<Card size="portrait" subtitle="Bas van Toor" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLXZCStXAEJ2HygwKNrOrXI2PjgFnVW-FLIiP-97yapRIRFBao"
-				>
-			</Card>
-			<Card size="portrait" subtitle="Gerard Joling" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://www.mediacourant.nl/wp-content/uploads/2023/03/0318-Gerard-Joling.jpg"
-				>
-			</Card>
-			<Card size="portrait" subtitle="Erwin Krol" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://images0.persgroep.net/rcs/b1gHucRdVousyKPRwIg8W1o_7eo/diocontent/63668798/_crop/1/0/899/509/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8"
-				>
-			</Card>
-			<Card size="portrait" subtitle="Bas van Toor" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLXZCStXAEJ2HygwKNrOrXI2PjgFnVW-FLIiP-97yapRIRFBao"
-				>
-			</Card>
-			<Card size="portrait" subtitle="Gerard Joling" tags={['apples', 'pears']}>
-				<img
-					loading="lazy"
-					decoding="async"
-					src="https://www.mediacourant.nl/wp-content/uploads/2023/03/0318-Gerard-Joling.jpg"
-				>
-			</Card>
-		</main>
-
-
-		<Footer />
-
-		<style is:global>
-
-			#container {
-				display: flex;
-				flex-direction: column;
-				gap: calc( max(5vmin, 24px) );
-				margin-top: -192px;
-			}
-
-			.doxy-header {
-				position: absolute;
-				z-index: 1;
-			}
-			
-			.doxy-card {
-				padding: 0 var(--doxy-padding--xl);
-			}
-			
-			.doxy-card img {
-				position: absolute;
-				inset: 0;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				z-index: 0;
-			}
-
-			main {
-				display: grid;
-				width: 100%;
-				max-width: 1280px;
-				grid-template-columns: repeat(auto-fit, minmax(calc(max(160px, 20%)), 1fr));
-				gap: var(--doxy-padding-xl);
-				padding: 0 var(--doxy-padding-xl);
-				margin: 0 auto;
-			}
-		</style>
-
-		</div>
-		
-	</body>
-</html>
+</Layout>
