@@ -33,15 +33,14 @@ import Footer from '@doxyfixy/components/src/footer/Footer.svelte';
 				display: flex;
 				flex-direction: column;
 				gap: calc( max(5vmin, 24px) );
-				margin-top: -192px;
 			}
 
 			main {
-				display: grid;
+				display: flex;
+				flex-direction: column;
 				width: 100%;
 				max-width: 1280px;
-				grid-template-columns: repeat(auto-fit, minmax(calc(max(160px, 20%)), 1fr));
-				gap: var(--doxy-padding-xl);
+				gap: var(--doxy-padding-xxxl);
 				padding: 0 var(--doxy-padding-xl);
 				margin: 0 auto;
 			}

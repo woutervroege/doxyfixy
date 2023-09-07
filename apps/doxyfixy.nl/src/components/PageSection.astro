@@ -5,9 +5,9 @@ import Button from '@doxyfixy/components/src/button/Button.svelte';
 
 <section>
     <div>
-        <h1>{title}</h1>
-        <p>{intro}</p>
-        <nav>
+        {title && <h1>{title}</h1>}
+        {intro && <p>{intro}</p>}
+        {tags.length > 0 && <nav>
             {tags.map(tag =>
                 <Button
                     client:visible
@@ -16,7 +16,7 @@ import Button from '@doxyfixy/components/src/button/Button.svelte';
                     selectable
                 />
             )}
-        </nav>
+        </nav>}
     </div>
 </section>
 

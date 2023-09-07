@@ -96,6 +96,10 @@
     height: 80vh;
 }
 
+.doxy-card.hero:first-of-type {
+    margin-top: -192px;
+}
+
 .doxy-card.hero .container {
     margin: 0 var(--doxy-padding-lg);
 }
