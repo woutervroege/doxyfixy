@@ -1,7 +1,7 @@
 <script>
     import NewsletterSubscriptionForm from '../newsletter-subscription-form/NewsletterSubscriptionForm.svelte';
 	import SocialButtons from '../social-buttons/SocialButtons.svelte';
-import './footer.css';
+    import './footer.css';
 </script>
 
 <footer class="doxy-footer">

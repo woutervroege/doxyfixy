@@ -17,5 +17,9 @@
     "@doxyfixy/components": "*",
     "astro": "^3.0.8",
     "svelte": "^4.2.0"
+  },
+  "devDependencies": {
+    "firebase": "^10.3.1",
+    "firebase-tools": "^12.5.2"
   }
 }

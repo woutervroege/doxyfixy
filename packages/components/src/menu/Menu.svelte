@@ -6,7 +6,7 @@
    /**
    * @type {string} Button contents
    */
-   export let label = '';
+   export const label = '';
 
    /**
     * 
@@ -39,9 +39,9 @@
 
 <div class="{classNames.join(' ')}" role="menu">
     <div inert={!open}>
-        <a data-index="4" class="doxy-button" href="/films">Films</a>
+        <a data-index="4" class="doxy-button" href="/">Films</a>
         <a data-index="2" class="doxy-button" href="/people">People</a>
-        <a data-index="1" class="doxy-button" href="/about">About</a>
+        <a data-index="1" class="doxy-button" href="/">About</a>
     </div>
     <div class="button-container">
         <Button icon="{buttonIcon}" label="{buttonLabel}" on:toggle={toggle}/>

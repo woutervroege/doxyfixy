@@ -7,7 +7,7 @@
    /**
    * @type {string} Button contents
    */
-  export let label = '';
+  export const label = '';
 
     /**
    * @type {boolean} Disabled
