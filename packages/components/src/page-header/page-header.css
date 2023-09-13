@@ -10,20 +10,24 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: var(--doxy-padding-outer);
+    gap: var(--doxy-padding-xxxl);
     text-wrap: balance;
 }
 
 .doxy-page-header h1 {
-    font: var(--doxy-text-h1);
-    letter-spacing: 1.4px;
+    font: var(--doxy-text-h2);
     margin: 0 auto;
     max-width: 600px;
 }
 
+@media screen and (min-width: 960px) {
+    .doxy-page-header h1 {
+        font: var(--doxy-text-h1);
+    }
+}
+
 .doxy-page-header p {
-    font: var(--doxy-text-serif-h3);
-    letter-spacing: 0.3px;
+    font: var(--doxy-text-h2-serif);
     margin: 0;
 }
 

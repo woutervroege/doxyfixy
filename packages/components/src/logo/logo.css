@@ -34,7 +34,7 @@
 }
 
 .doxy-logo .doxy-monogram {
-    height: 200%;
+    height: 150%;
     animation-timeline: scroll();
     animation-name: fadeIn;
     animation-timing-function: ease;
@@ -48,11 +48,11 @@
     }
   
     10% {
-        translate: 0 -240%;
+        translate: 0 -200%;
     }
 
     100% {
-        translate: 0 -240%;
+        translate: 0 -200%;
     }
 }
 

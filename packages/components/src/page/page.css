@@ -17,7 +17,7 @@ article {
     flex-direction: column;
     align-items: center;
     text-wrap: balance;
-    font: var(--doxy-text-body);
+    font: var(--doxy-text-article);
 }
 
 img {
@@ -45,7 +45,13 @@ p {
 }
 
 p:first-of-type {
-    font: var(--doxy-text-serif-h3);
+    font: var(--doxy-text-h4-serif);
+}
+
+@media screen and (min-width: 680px) {
+    p:first-of-type {
+        font: var(--doxy-text-h3-serif);
+    }        
 }
 
 strong, b {

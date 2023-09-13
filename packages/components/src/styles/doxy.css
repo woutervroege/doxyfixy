@@ -13,12 +13,35 @@
     --doxy-font-serif: 'American Typewriter', courier;
 
     /* text-styles */
+    /* --doxy-text-h1: 500 calc( max(10vmax, 32px) )/78% var(--doxy-font-alt);
     --doxy-text-footer-heading: 100 calc( max(5vmax, 28px) )/86% var(--doxy-font-alt);
     --doxy-text-quote: 700 calc( max(6vmax, 32px) )/88% var(--doxy-font);
-    --doxy-text-h1: 500 calc( max(10vmax, 32px) )/78% var(--doxy-font-alt);
     --doxy-text-serif-h3: 400 calc( max(2vmax, 24px) )/120% var(--doxy-font-serif);
-    --doxy-text-body: 400 calc( max(2vmax, 28px) )/117% var(--doxy-font);
-    
+    --doxy-text-body: 400 calc( max(2vmax, 28px) )/117% var(--doxy-font); */
+
+    --doxy-text-h1: 500 140px/100px var(--doxy-font-alt);
+    --doxy-text-h2: 500 82px/60px var(--doxy-font-alt);
+    --doxy-text-h3: 500 60px/52px var(--doxy-font-alt);
+    --doxy-text-h4: 500 48px/38px var(--doxy-font-alt);
+
+    --doxy-text-biobody: 400 30px/32px var(--doxy-font);
+    --doxy-text-article: 400 24px/28px var(--doxy-font);
+    --doxy-text-meta-large: 400 14px/1 var(--doxy-font);
+    --doxy-text-meta-small: 400 12px/1 var(--doxy-font);
+    --doxy-text-quote: 900 82px/72px var(--doxy-font);
+
+    --doxy-text-h1-serif: 400 82px/72px var(--doxy-font-serif);
+    --doxy-text-h2-serif: 400 48px/54px var(--doxy-font-serif);
+    --doxy-text-h3-serif: 400 30px/34px var(--doxy-font-serif);
+    --doxy-text-h4-serif: 400 22px/26px var(--doxy-font-serif);
+
+    --doxy-text-body-serif: 400 18px/20px var(--doxy-font-serif);
+
+    /* --doxy-text-serif-h3: 400 calc( max(2vmax, 24px) )/120% var(--doxy-font-serif);
+    --doxy-text-footer-heading: 100 calc( max(5vmax, 28px) )/86% var(--doxy-font-alt);
+    --doxy-text-quote: 700 calc( max(6vmax, 32px) )/88% var(--doxy-font);
+    --doxy-text-body: 400 calc( max(2vmax, 28px) )/117% var(--doxy-font); */
+
     /* padding */
     --doxy-padding-none: 0px;
     --doxy-padding-sm: 4px;
@@ -27,8 +50,8 @@
     --doxy-padding-xl: 24px;
     --doxy-padding-xxl: 32px;
     --doxy-padding-xxxl: 48px;
-    --doxy-padding-section: 96px;
     --doxy-padding-outer: 72px;
+    --doxy-padding-section: 96px;
 
     /* padding */
     --doxy-radius-xs: 4px;

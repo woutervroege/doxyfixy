@@ -15,8 +15,7 @@
     export let intro = '';
 
     /**
-    * @type {array} tags
-    */
+    * @type {array} tags    */
     export let tags = [];
 
     /**
@@ -100,21 +99,23 @@
         {#each cardsGroups as cardsGroup}
             <div class="grid-section grid-section-{cardsGroup.length}">
                 {#each cardsGroup as card}
-                    <Card
-                        title={card.dataset.title}
-                        subtitle={card.dataset.subtitle}
-                        size={card.dataset.size}
-                        summary={card.dataset.summary}
-                        tags={card.dataset.tags.split(',')}
-                        href={card.dataset.href}
-                        division={card.dataset.division}
-                    >
-                    <img
-                        src={card.querySelector('img').src}
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </Card>
+                    <a href={card.closest('a').href}>
+                        <Card
+                            title={card.dataset.title}
+                            subtitle={card.dataset.subtitle}
+                            size={card.dataset.size}
+                            summary={card.dataset.summary}
+                            tags={card.dataset.tags.split(',')}
+                            href={card.dataset.href}
+                            division={card.dataset.division}
+                        >
+                        <img
+                            src={card.querySelector('img').src}
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </Card>
+                    </a>
                 {/each}
             </div>
         {/each}

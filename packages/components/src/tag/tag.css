@@ -4,11 +4,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--doxy-font);
     text-transform: uppercase;
-    font-size: 12px;
     line-height: 1;
     color: var(--doxy-tag-accent, var(--doxy-colors-white));
     border: 1px solid currentColor;
     border-radius: var(--doxy-radius-xs);
+    font: var(--doxy-text-meta-small);
 }

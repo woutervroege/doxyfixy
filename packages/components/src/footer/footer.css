@@ -8,7 +8,7 @@
     align-items: center;
     text-align: center;
     gap: 10vmin;
-    padding: 10vmin;
+    padding-bottom: 15vmin;
 }
 
 .doxy-footer .head {
@@ -18,10 +18,10 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1280px) {
 
     .doxy-footer {
-        padding-bottom: 15vmin;
+        padding-bottom: 25vmin;
     }
 
     .doxy-footer .head {
@@ -35,15 +35,21 @@
 }
 
 .doxy-footer .head h5 {
-    font: var(--doxy-text-footer-heading);
+    font: var(--doxy-text-h4);
+    text-wrap: balance;
     text-align: center;
     margin: 0;
+    width: 320px;
+    max-width: 100%;
+    text-align: center;
 }
 
-.doxy-footer .head h5 span {
-    font-weight: 100;
-    display: block;
+@media screen and (min-width: 680px) {
+    .doxy-footer .head h5 {
+        font: var(--doxy-text-h3);
+    }
 }
+
 
 .doxy-footer .contents {
     display: flex;
@@ -53,10 +59,11 @@
 
 
 .doxy-footer h6, .doxy-footer address {
-    font: var(--doxy-text-serif-h3);
+    font: var(--doxy-text-body-serif);
     letter-spacing: 0.3px;
     margin: 0;
     text-wrap: balance;
+    line-height: 2;
 }
 
 .doxy-footer address span:not(:last-of-type):after {
