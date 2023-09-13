@@ -46,7 +46,6 @@ display: none;
     align-items: flex-start;
     justify-content: center;
     gap: var(--doxy-padding-lg);
-    z-index: 1;
     width: auto;
     margin: auto;
 }

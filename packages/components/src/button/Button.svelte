@@ -15,11 +15,6 @@
    export let disabled = false;
 
     /**
-   * @type {boolean} Elevated
-   */
-   export let elevated = false;
-
-    /**
    * @type {boolean} Selectable
    */
    export let selectable = false;
@@ -43,7 +38,7 @@
    }
 
 
-  $: classNames = ['doxy-button', elevated ? 'elevated' : '', selectable ? 'selectable' : '', selected ? 'selected' : '', (icon && !label) ? 'icon' : '']
+  $: classNames = ['doxy-button', selectable ? 'selectable' : '', selected ? 'selected' : '', (icon && !label) ? 'icon' : '']
 </script>
 
 <button

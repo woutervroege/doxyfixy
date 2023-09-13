@@ -12,7 +12,7 @@
     <Logo/>
     <nav>
         <Menu/>
-        <Button icon="search" elevated/>
+        <Button icon="search"/>
         <Switch/>
     </nav>
 </header>

@@ -34,7 +34,6 @@
         <nav>
             {#each tags as tag}
                 <Button
-                    elevated
                     label={tag}
                     selectable
                 />

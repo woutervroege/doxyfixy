@@ -8,7 +8,6 @@ export default {
   argTypes: {
     label: { control: 'text' },
     icon: { control: 'text' },
-    elevated: { control: 'boolean' },
     onToggle: { action: 'toggle' },
     icon: { control: {type: 'select'}, options: ['search', 'close'], },
   },
@@ -23,12 +22,6 @@ export const Default = {
 export const Disabled = {
   args: {...Default.args, ...{
     disabled: true
-  }}
-};
-
-export const Elevated = {
-  args: {...Default.args, ...{
-    elevated: true
   }}
 };
 
