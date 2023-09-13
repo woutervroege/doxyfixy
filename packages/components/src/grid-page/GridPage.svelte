@@ -49,7 +49,7 @@
 
 </script>
 
-<div class="doxy-grid-page" bind:this={root}>
+<div class="doxy-page doxy-grid-page" bind:this={root}>
 
     <PageHeader
         title={title}

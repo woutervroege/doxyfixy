@@ -14,8 +14,10 @@
 
     /* text-styles */
     --doxy-text-footer-heading: 100 calc( max(5vmax, 28px) )/86% var(--doxy-font-alt);
+    --doxy-text-quote: 700 calc( max(6vmax, 32px) )/88% var(--doxy-font);
     --doxy-text-h1: 500 calc( max(10vmax, 32px) )/78% var(--doxy-font-alt);
     --doxy-text-serif-h3: 400 calc( max(2vmax, 24px) )/120% var(--doxy-font-serif);
+    --doxy-text-body: 400 calc( max(2vmax, 28px) )/117% var(--doxy-font);
     
     /* padding */
     --doxy-padding-none: 0px;
