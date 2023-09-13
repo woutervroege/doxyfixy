@@ -47,8 +47,13 @@ button:active {
 
 .doxy-button:hover,
 .doxy-button.selectable.selected {
-  background-color: var(--doxy-button-accent, var(--doxy-colors-darkgrey));
+  background: linear-gradient(269.94deg, #C392C2 23.23%, #67BA84 76.99%);
   color: var(--doxy-button-fill, var(--doxy-colors-white));
+}
+
+.doxy-button.selectable.selected {
+  background: var(--doxy-colors-darkgrey);
+  /* color: var(--doxy-button-fill, var(--doxy-colors-white)); */
 }
 
 .doxy-button:hover {

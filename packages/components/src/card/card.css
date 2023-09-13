@@ -7,6 +7,15 @@
     color: var(--doxy-colors-white);
     font-family: var(--doxy-font);
     container-type: inline-size;
+    transition: 100ms scale ease-in-out;
+}
+
+.doxy-card:hover {
+    scale: 1.02;
+}
+
+.doxy-card:active {
+    scale: 1.03;
 }
 
 .doxy-card .container {
