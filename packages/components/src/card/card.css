@@ -75,7 +75,6 @@
     .container {
         --__card-padding: var(--doxy-padding-xxl);
         --__card-title-font: var(--doxy-text-h3);
-        --__card-subtitle-font: var(--doxy-text-h4-serif);
     }
 }
 
@@ -83,12 +82,12 @@
     .container {
         max-height: 90vh;
 
-        --__card-content-maxwidth: 428px;
         --__card-padding: var(--doxy-padding-xxl);
-        --__card-content-maxwidth: 620px;
+        --__card-content-maxwidth: 50%;
         --__card-padding: var(--doxy-padding-outer);
 
         --__card-title-font: var(--doxy-text-h2);
+        --__card-subtitle-font: var(--doxy-text-h4-serif);
     }
     .doxy-card.portrait {
         --__card-padding: var(--doxy-padding-xl);
@@ -98,6 +97,17 @@
 
 .doxy-card.hero {
     height: 80vh;
+    animation-timeline: scroll();
+    animation-name: appear;
+  }
+
+@keyframes appear {
+    0% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -500px;
+    }
 }
 
 .doxy-card.hero:first-of-type {
@@ -129,14 +139,18 @@
     z-index: 2;
 }
 
+.doxy-card.portrait h3 {
+    --__card-title-font: var(--doxy-text-h3-serif);
+}
+
 .doxy-card.fixy {
     --__card-accent-color: var(--doxy-colors-pink);
 }
 
-.doxy-card h4 {
+.doxy-card .container h4 {
     display: var(--__card-subtitle-display);
     font: var(--__card-subtitle-font, var(--doxy-text-body-serif));
-    max-width: var(--__card-content-maxwidth);
+    max-width: 50%;
     z-index: 2;
 }
 

@@ -9,7 +9,7 @@
   border-radius: var(--doxy-radius-round);
   cursor: pointer;
   display: inline-block;
-  line-height: 1;
+  line-height: 0.9;
   background-color: var(--doxy-button-fill, var(--doxy-colors-white));
   color: var(--doxy-button-accent, var(--doxy-colors-darkgrey));
   border: 1px solid var(--doxy-button-accent);

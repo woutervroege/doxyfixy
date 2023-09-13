@@ -1,14 +1,25 @@
+@keyframes reveal {
+    from {
+        translate: 0px 50vmin;
+    }
+    to {
+        translate: 0px 0px;
+    }
+}
+
 .doxy-footer {
     width: 100%;
     background: var(--doxy-colors-darkgrey);
-    padding: var(--doxy-padding-xxl);
+    padding: var(--doxy-padding-section);
     color: var(--doxy-colors-background);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 10vmin;
-    padding-bottom: 15vmin;
+    view-timeline: --subjectReveal block;
+    animation-timeline: --subjectReveal;
+    animation-name: reveal;
 }
 
 .doxy-footer .head {
@@ -21,6 +32,7 @@
 @media screen and (max-width: 1280px) {
 
     .doxy-footer {
+        padding: var(--doxy-padding-xxl);
         padding-bottom: 25vmin;
     }
 
@@ -31,7 +43,8 @@
 }
 
 .doxy-footer .head svg {
-    width: 40vmin;
+    height: 40vmin;
+    margin: 0 var(--doxy-padding-xxl);
 }
 
 .doxy-footer .head h5 {

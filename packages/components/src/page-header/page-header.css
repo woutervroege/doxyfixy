@@ -1,3 +1,12 @@
+@keyframes unblur {
+    0% {
+        filter: blur(10px);
+    }
+    50% {
+        filter: blur(0);
+    }
+}
+
 .doxy-page-header {
     width: 100%;
 }
@@ -29,6 +38,9 @@
 .doxy-page-header p {
     font: var(--doxy-text-h2-serif);
     margin: 0;
+    view-timeline: --page-header-p-unblur block;
+    animation-timeline: --page-header-p-unblur;
+    animation-name: unblur;
 }
 
 .doxy-page-header .nav-container {
