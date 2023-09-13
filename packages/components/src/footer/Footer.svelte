@@ -39,10 +39,16 @@
     </div>
 
     <div class="contents">
-        <!-- <h6>Stay up-to-date</h6>
-        <NewsletterSubscriptionForm/> -->
         <h6>Follow us here</h6>
         <SocialButtons/>
     </div>
+
+    <address>
+        <span>Doxy Fixy</span>
+        <span>Oudezijds Achterburgwal 63</span>
+        <span>1012 DB Amsterdam</span>
+        <span><a href="callto:+31(0)20 422 2607">+31(0)20 422 2607</a></span>
+        <span><a href="mailto:info@doxy.nl">info@doxy.nl</a></span>
+    </address>
 
 </footer>

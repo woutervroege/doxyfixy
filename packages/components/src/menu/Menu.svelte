@@ -1,5 +1,6 @@
 <script>
 	import Button from '../button/Button.svelte';
+	import Switch from '../switch/Switch.svelte';
     import './menu.css';
 	import '../button/Button.css';
 
@@ -38,12 +39,16 @@
 </script>
 
 <div class="{classNames.join(' ')}" role="menu">
-    <div inert={!open}>
+
+    <div inert={!open} class="menuitems">
         <a data-index="4" class="doxy-button" href="/">Films</a>
         <a data-index="2" class="doxy-button" href="/people">People</a>
         <a data-index="1" class="doxy-button" href="/">About</a>
+        <Switch client:visible/>
     </div>
+
     <div class="button-container">
         <Button icon="{buttonIcon}" label="{buttonLabel}" on:toggle={toggle}/>
     </div>
+
 </div>

@@ -32,7 +32,7 @@
     <div class="container">
         <div class="text-container">
             <h3>{title}</h3>
-            <h4>{subtitle}</h4>
+            {#if subtitle}<h4>{subtitle}</h4>{/if}
             <div>
                 {#each tags as tag}
                     <Tag label={tag}/>

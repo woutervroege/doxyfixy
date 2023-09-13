@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     height: calc(min(4vmax, 48px));
-    margin-top: -32px;
+    margin-top: 0;
     gap: var(--doxy-padding-xxl);
     align-items: center;
     animation-timeline: scroll();
@@ -21,10 +21,10 @@
 .doxy-logo .typeface {
     height: 100%;
     animation-timeline: scroll();
-    animation-name: fadeIn;
+    animation-name: fadeOut;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    opacity: 0;
+    opacity: 1;
 }
 
 .doxy-logo .typeface path {
@@ -34,10 +34,11 @@
 .doxy-logo .doxy-monogram {
     height: 200%;
     animation-timeline: scroll();
-    animation-name: fadeOut;
+    animation-name: fadeIn;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    opacity: 1;
+    opacity: 0;
+    pointer-events: none;
 }
 
 @keyframes scrollUp {
