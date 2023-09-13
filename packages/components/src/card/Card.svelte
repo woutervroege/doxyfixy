@@ -45,7 +45,15 @@
    $: classNames = ['doxy-card', size, division];
 </script>
 
-<section class="{classNames.join(' ')}" data-tags={tags}>
+<section class="{classNames.join(' ')}"
+    data-title={title}
+    data-subtitle={subtitle}
+    data-summary={summary}
+    data-size={size}
+    data-href={href}
+    data-division={division}
+    data-tags={tags}
+>
     <div class="container">
         <div class="text-container">
             <h3>{title}</h3>

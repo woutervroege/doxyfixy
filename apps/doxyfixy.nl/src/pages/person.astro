@@ -2,7 +2,6 @@
 import Layout from '../components/Layout.astro';
 import Page from '@doxyfixy/components/src/page/Page.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
-
 ---
 
 <Layout>
@@ -48,6 +47,7 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
 
 
             <div class="grid">
+                <a href="/film">
                 <Card title="Forrest Gump" tags={['fixy']}>
                     <img
                         loading="lazy"
@@ -55,6 +55,8 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
                         src="https://m.media-amazon.com/images/M/MV5BODkzODhjMDAtNmZlNC00YWJiLThlOTItY2UyMDZiOTMyYTk3XkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_.jpg"
                     >
                 </Card>
+                </a>
+                <a href="/film">
                 <Card title="The Post" tags={['short', 'doxy']}>
                     <img
                         loading="lazy"
@@ -62,6 +64,7 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
                         src="https://m.media-amazon.com/images/M/MV5BNTA1NDMwODkxOV5BMl5BanBnXkFtZTgwOTY5NzA1NDM@._V1_.jpg"
                     >
                 </Card>
+                </a>
                     
             </div>
 
