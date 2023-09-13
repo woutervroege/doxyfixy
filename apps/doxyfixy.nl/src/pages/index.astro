@@ -1,9 +1,9 @@
 ---
-import PageHeader from '@doxyfixy/components/src/page-header/PageHeader.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
 
 import Layout from '../components/Layout.astro';
-import Grid from '../components/Grid.astro';
+import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
+
 ---
 
 <Layout>
@@ -20,9 +20,8 @@ import Grid from '../components/Grid.astro';
 	>
 	</Card>
 
-	<PageHeader intro="Always at the crossroads"/>
+	<GridPage intro="Always at the crossroads">
 
-	<Grid>
 		<Card title="Erwin Krol" tags={['apples', 'pears']}>
 			<img
 				loading="lazy"
@@ -37,11 +36,11 @@ import Grid from '../components/Grid.astro';
 				src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLXZCStXAEJ2HygwKNrOrXI2PjgFnVW-FLIiP-97yapRIRFBao"
 			>
 		</Card>
-	</Grid>
 
-	<PageHeader intro="the fringes, the rough edges,"/>
+	</GridPage>
 
-	<Grid>
+	<GridPage intro="Always at the crossroads">
+
 		<Card title="My Maysoon" tags={['apples', 'pears']}>
 			<img
 				loading="lazy"
@@ -49,12 +48,11 @@ import Grid from '../components/Grid.astro';
 				src="https://filmformatie.imgix.net/filmstills/still-posterbeeld-1024x576-76a0.jpeg?w=600"
 			>
 		</Card>
-	</Grid>
 
-	<PageHeader intro="in the space between,"/>
+	</GridPage>
 
+	<GridPage intro="in the space between,">
 
-	<Grid>
 		<Card title="Erwin Krol" tags={['apples', 'pears']}>
 			<img
 				loading="lazy"
@@ -69,12 +67,10 @@ import Grid from '../components/Grid.astro';
 				src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLXZCStXAEJ2HygwKNrOrXI2PjgFnVW-FLIiP-97yapRIRFBao"
 			>
 		</Card>
-	</Grid>
 
-	<PageHeader intro="where stories are born..."/>
+	</GridPage>
 
-
-	<Grid>
+	<GridPage intro="where stories are born...">
 
 		<Card title="My Maysoon" tags={['apples', 'pears']}>
 			<img
@@ -84,7 +80,7 @@ import Grid from '../components/Grid.astro';
 			>
 		</Card>
 
-	</Grid>
+	</GridPage>
 
 
 </Layout>

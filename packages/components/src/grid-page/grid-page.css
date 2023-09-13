@@ -1,0 +1,15 @@
+.doxy-grid-page {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    gap: calc( max(5vmin, 24px) );
+
+}
+
+.doxy-grid-page .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(max(160px, 20%)), 1fr));
+    gap: var(--doxy-padding-xl);
+}
