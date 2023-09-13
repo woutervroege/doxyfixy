@@ -129,6 +129,10 @@
     z-index: 2;
 }
 
+.doxy-card.fixy {
+    --__card-accent-color: var(--doxy-colors-pink);
+}
+
 .doxy-card h4 {
     display: var(--__card-subtitle-display);
     font-family: var(--doxy-font-serif);
@@ -165,7 +169,7 @@
 }
 
 .doxy-card.portrait:hover .container {
-    background-color: var(--doxy-colors-pink);
+    background-color: var(--__card-accent-color, var(--doxy-colors-green));
 }
 
 .doxy-card.portrait:hover .container:after {

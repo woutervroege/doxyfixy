@@ -33,10 +33,16 @@
    */    
    export let tags = [];
 
+  /**
+   * @type {('doxy' | 'fixy')} division
+   */    
+   export let division = 'doxy';
+
+
    /**
     * 
     */
-   $: classNames = ['doxy-card', size]
+   $: classNames = ['doxy-card', size, division];
 </script>
 
 <section class="{classNames.join(' ')}" data-tags={tags}>
