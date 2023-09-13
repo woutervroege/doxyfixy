@@ -18,6 +18,17 @@
    export let size = 'small';
 
   /**
+   * @type {string} summary
+   */    
+   export let summary = '';
+
+
+  /**
+   * @type {string} href
+   */    
+   export let href;   
+
+  /**
    * @type {array} tags
    */    
    export let tags = [];
@@ -38,6 +49,10 @@
                     <Tag label={tag}/>
                 {/each}
             </div>
+            <p>
+                {summary}
+                {#if href} <a href={href}>Lees interview</a>{/if}
+            </p>
         </div>
         <slot/>
     </div>

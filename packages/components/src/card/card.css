@@ -147,3 +147,35 @@
     max-width: var(--__card-content-maxwidth);
     z-index: 2;
 }
+
+.doxy-card .container p {
+    font: var(--doxy-text-body);
+    margin: var(--doxy-padding-sm) 0;
+    display: var(--__card-p-display, none);
+}
+
+.doxy-card .container p a {
+    display: block;
+    margin-top: var(--doxy-padding-md);
+}
+
+.doxy-card.portrait:hover {
+    --__card-p-display: block;
+    --__card-tags-display: none;
+}
+
+.doxy-card.portrait:hover .container {
+    background-color: var(--doxy-colors-pink);
+}
+
+.doxy-card.portrait:hover .container:after {
+    display: none;
+}
+
+.doxy-card.portrait:hover img {
+    display: none;    
+}
+
+.doxy-card.portrait:hover .container .text-container {
+    justify-content: flex-start;
+}
