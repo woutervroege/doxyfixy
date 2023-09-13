@@ -49,7 +49,6 @@ p:first-of-type {
 }
 
 strong, b {
-   §=
     display: block;
     padding: 0 var(--doxy-padding-lg);
 }
