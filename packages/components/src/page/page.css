@@ -59,3 +59,45 @@ strong, b {
     gap: var(--doxy-padding-xl);
     width: 100%;
 }
+
+.doxy-page p {
+    padding: var(--doxy-padding-md) 0;
+}
+
+.doxy-page iframe {
+    border: 0;
+    height: auto;
+    width: 900px;
+    max-width: 100%;
+    /* aspect-ratio: 4/3; */
+}
+
+.doxy-page .video-container {
+    padding:41.89% 0 0 0;
+    position:relative;
+    width:100%;
+}
+
+.doxy-page ul, .doxy-page ol {
+    text-align: center;
+    list-style: none;
+    padding: var(--doxy-padding-md) 0;
+}
+
+.doxy-page li {
+    text-align: center;
+}
+
+.doxy-page li em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.doxy-page li em:before {
+    content: ' • ';
+}
+
+.doxy-page h4 {
+    font: var(--doxy-text-footer-heading);
+    margin: 0;
+}

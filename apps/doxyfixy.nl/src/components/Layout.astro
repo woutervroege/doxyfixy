@@ -4,12 +4,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import NavBar from './NavBar.astro';
 import Footer from '@doxyfixy/components/src/footer/Footer.svelte';
+
+const { title = '' } = Astro.props;
+
+const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE; 
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={pageTitle} description={SITE_DESCRIPTION} />
 		<link rel="preload" href="https://use.typekit.net/uuj0klm.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	</head>
 	<body>

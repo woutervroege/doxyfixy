@@ -5,7 +5,7 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
 
 ---
 
-<Layout>
+<Layout title="Forrest Gump">
 
     <Card
         slot="header"
@@ -21,34 +21,56 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
     >
     </Card>
 
-	<Page
-	>
+	<Page>
 
         <article>
 
-            <blockquote>My mama always said life was like a box of chocolates.</blockquote>
-
             <p>
-                Curabitur blandit tempus porttitor. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                Slow-witted Forrest Gump (Tom Hanks) has never thought of himself as disadvantaged, and thanks to his supportive mother (Sally Field), he leads anything but a restricted life. Whether dominating on the gridiron as a college football star, fighting in Vietnam or captaining a shrimp boat, Forrest inspires people with his childlike optimism. But one person Forrest cares about most may be the most difficult to save -- his childhood love, the sweet but troubled Jenny (Robin Wright).
             </p>
 
-            <p>
-                <strong>Aenean lacinia bibendum nulla sed consectetur.</strong>
-                Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-            </p>
+            <p class="video-container"><iframe src="https://player.vimeo.com/video/768552372?h=a7ad9099dc&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></p>
 
-            <p>
-                <strong>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</strong>
-                Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            </p>
+            <h4>Cast</h4>
+            <ul>
+                <li>Bassie <em>Bas van Toor</em></li>
+                <li>Adriaan <em>Aad van Toor</em></li>
+            </ul>
 
-            <p>
-                <strong>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</strong>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit.
-            </p>
+            <h4>Credits</h4>
+            <ul>
+                <li>scenario <em>Bobbie Koek</em></li>
+                <li>met bijdragen van <em>Ashgan-el-Hamu</em></li>
+                <li>regie <em>Bobbie Koe</em></li>
+                <li>regie ass <em>Engel Sta</em></li>
+                <li>1st AD <em>Anna van Schijnde</em></li>
+                <li>DOP <em>Jeroen Kier</em></li>
+                <li>Production design <em>Tim Bal</em></li>
+                <li>Art director <em>Cecile Hanrat</em></li>
+                <li>Make up <em>Lindelotte van der Mee</em></li>
+                <li>Kostuumontwerp <em>Minke Lunte</em></li>
+                <li>Componist <em>Bo Koe</em></li>
+                <li>Montage <em>Mieneke Krame</em></li>
+                <li>Sounddesign <em>Gijs den Hartog</em></li>
+                <li>Uitvoerend prod <em>Chris Jorn</em></li>
+                <li>Productieleider <em>Olya van Poppe</em></li>
+            </ul>
 
+            <h4>Laureaten</h4>
+            <ul>
+                <li>scenario <em>Bobbie Koek</em></li>
+                <li>met bijdragen van <em>Ashgan-el-Hamu</em></li>
+            </ul>
+
+            <h4>Festivals</h4>
+            <ul>
+                <li>Berlijn 2022</li>
+                <li>Venetië 2023</li>
+                <li>Cannes 2023</li>
+            </ul>
 
             <div class="grid">
+                
                 <Card size="portrait" subtitle="Bas van Toor" tags={['fixy']}>
                     <img
                         loading="lazy"
