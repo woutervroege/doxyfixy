@@ -20,6 +20,7 @@
   text-decoration: none;
   transition: border-radius 200ms ease;
   user-select: none;
+  flex: none;
 }
 
 .icon {

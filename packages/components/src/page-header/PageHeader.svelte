@@ -30,6 +30,7 @@
         {#if intro}<p>{intro}</p>{/if}
 
         {#if hasTags}
+        <div class="nav-container">
         <nav>
             {#each tags as tag}
                 <Button
@@ -39,6 +40,7 @@
                 />
             {/each}
         </nav>
+        </div>
         {/if}
     </div>
 </section>
