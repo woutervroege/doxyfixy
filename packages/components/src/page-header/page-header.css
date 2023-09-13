@@ -48,4 +48,5 @@ display: none;
     gap: var(--doxy-padding-lg);
     width: auto;
     margin: auto;
+    z-index: 1;
 }

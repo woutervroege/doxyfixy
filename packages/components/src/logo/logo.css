@@ -10,12 +10,14 @@
     animation-name: scrollUp;
     animation-timing-function: ease;
     animation-duration: 1ms;
+    pointer-events: all;
 }
 
 .doxy-logo svg {
     display: block;
     flex: none;
     align-self: flex-start;
+    pointer-events: all;
 }
 
 .doxy-logo .typeface {
@@ -38,7 +40,6 @@
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     opacity: 0;
-    pointer-events: none;
 }
 
 @keyframes scrollUp {
