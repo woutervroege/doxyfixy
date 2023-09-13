@@ -7,22 +7,24 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
 
 <Layout>
 
+    <Card
+        slot="header"
+        title="Tom Hanks"
+        subtitle="actor"
+        size="hero"
+    >
+    <img
+        src="https://cdn.theatlantic.com/thumbor/aqI1zxgF581jigsBMbcQQNvlg-A=/0x0:4000x2250/1600x900/media/img/2023/05/TomHanks_Atlantic_horizontal/original.jpg"
+        decoding="async"
+        loading="lazy"
+    >
+    </Card>
+
 	<Page
-		title="Over Ons"
-		intro="Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen."
-		tags={['Apples', 'Pears', 'Bananas', 'Oranges', 'Grapes']}
-		client:visible
 	>
 
         <article>
 
-            <img
-                src="https://static01.nyt.com/images/2018/09/26/lens/26jazz1/25jazz1-superJumbo.jpg?quality=75&auto=webp"
-                alt="A Great Day in Harlem"
-                decoding="async"
-                loading="lazy"
-            >
-        
             <blockquote>My mama always said life was like a box of chocolates.</blockquote>
 
             <p>
@@ -43,6 +45,25 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
                 <strong>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</strong>
                 Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit.
             </p>
+
+
+            <div class="grid">
+                <Card title="Forrest Gump" tags={['fixy']}>
+                    <img
+                        loading="lazy"
+                        decoding="async"
+                        src="https://m.media-amazon.com/images/M/MV5BODkzODhjMDAtNmZlNC00YWJiLThlOTItY2UyMDZiOTMyYTk3XkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_.jpg"
+                    >
+                </Card>
+                <Card title="The Post" tags={['short', 'doxy']}>
+                    <img
+                        loading="lazy"
+                        decoding="async"
+                        src="https://m.media-amazon.com/images/M/MV5BNTA1NDMwODkxOV5BMl5BanBnXkFtZTgwOTY5NzA1NDM@._V1_.jpg"
+                    >
+                </Card>
+                    
+            </div>
 
     </article>
 

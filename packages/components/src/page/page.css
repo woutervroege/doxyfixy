@@ -52,3 +52,10 @@ strong, b {
     display: block;
     padding: 0 var(--doxy-padding-lg);
 }
+
+.doxy-page .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(max(160px, 30%)), 1fr));
+    gap: var(--doxy-padding-xl);
+    width: 100%;
+}

@@ -1,8 +1,1 @@
 @import '../page/page.css';
-
-
-.doxy-page .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(calc(max(160px, 30%)), 1fr));
-    gap: var(--doxy-padding-xl);
-}

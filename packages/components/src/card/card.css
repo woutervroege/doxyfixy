@@ -86,7 +86,7 @@
 /* @container (min-width: 945px) { */
 .doxy-card.portrait {
     aspect-ratio: 2/3;
-    --__card-title-display: none;
+    /* --__card-title-display: none; */
     --__card-padding: var(--doxy-padding-xl);
     --__card-subtitle-display: block;
     --__card-subtitle-font-size: 30px;
