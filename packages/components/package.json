@@ -7,7 +7,7 @@
     "dev": "storybook dev",
     "build": "storybook build",
     "build-storybook": "storybook build",
-    "deploy": "chromatic --project-token=chpt_d2fa33d952f4cf2"
+    "deploy:manual": "chromatic --project-token=chpt_d2fa33d952f4cf2"
   },
   "files": [
     "src"
