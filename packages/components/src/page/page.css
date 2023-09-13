@@ -90,6 +90,11 @@ strong, b {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.doxy-page .grid > a {
+    display: contents;
+    text-decoration: none;
+}
+
 .doxy-page p {
     padding: var(--doxy-padding-md) 0;
 }
