@@ -1,0 +1,35 @@
+.doxy-page-header {
+    width: 100%;
+}
+
+.doxy-page-header div {
+    width: 944px;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--doxy-padding-outer);
+    padding: 0 var(--doxy-padding-outer);
+    text-wrap: balance;
+}
+
+.doxy-page-header h1 {
+    font: var(--doxy-text-h1);
+    letter-spacing: 1.4px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.doxy-page-header p {
+    font: var(--doxy-text-serif-h3);
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+.doxy-page-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--doxy-padding-lg);
+}
