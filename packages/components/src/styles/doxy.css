@@ -52,6 +52,22 @@ html, body {
     color: var(--doxy-colors-darkgrey);
 }
 
-:focus:not(:focus-visible) {
+
+:focus-visible {
+    position: relative;
+}
+
+:focus-visible:before {
+    border: 3px solid var(--doxy-colors-pink);
+    border-radius: inherit;
+    position: absolute;
+    inset: -6px;
+    content: '';
+    transition: inherit;
+    transform-origin: center;
+
+}
+
+:focus, :focus-visible {
     outline: none;
 }

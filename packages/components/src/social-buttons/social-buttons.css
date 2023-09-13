@@ -12,6 +12,7 @@
 .doxy-social-buttons a {
     transition: 100ms scale ease;
     transform-origin: center;
+    border-radius: 50%;
 }
 
 .doxy-social-buttons a:hover,
