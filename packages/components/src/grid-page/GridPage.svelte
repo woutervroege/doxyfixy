@@ -72,7 +72,7 @@
         console.info(cards)
         cards.forEach(card => {
             const cardTags = card.dataset.tags.split(/,/g);
-            let hideCard = selectedTags.length === 0 ? false : cardTags.length === 0;
+            let hideCard = selectedTags.length === 0 ? false : true;
             for(var i in selectedTags) {
                 if(cardTags.includes(selectedTags[i])) hideCard = false;
             }
