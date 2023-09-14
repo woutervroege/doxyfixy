@@ -148,6 +148,11 @@
     --__card-accent-color: var(--doxy-colors-pink);
 }
 
+.doxy-card[data-tags~="uitgelicht"] {
+    --__card-accent-color: var(--doxy-gradient);
+}
+
+
 .doxy-card .container h4 {
     display: var(--__card-subtitle-display);
     font: var(--__card-subtitle-font, var(--doxy-text-body-serif));
@@ -179,7 +184,7 @@
 }
 
 .doxy-card.portrait:hover .container {
-    background-color: var(--__card-accent-color, var(--doxy-colors-green));
+    background: var(--__card-accent-color, var(--doxy-colors-green));
 }
 
 .doxy-card.portrait:hover .container:after {

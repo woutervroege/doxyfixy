@@ -9,4 +9,4 @@
     const classNames = ['doxy-tag']
 </script>
 
-<div class="{classNames.join(' ')}">{label}</div>
+<div data-label={label} class="{classNames.join(' ')}">{label}</div>

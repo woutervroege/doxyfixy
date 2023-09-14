@@ -11,3 +11,7 @@
     border-radius: var(--doxy-radius-xs);
     font: var(--doxy-text-meta-small);
 }
+
+.doxy-tag[data-label="uitgelicht"] {
+    background: var(--doxy-gradient);
+}
