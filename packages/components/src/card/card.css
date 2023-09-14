@@ -105,8 +105,8 @@
     0% {
         translate: 0 0;
     }
-    30% {
-        translate: 0 -100vmax;
+    50% {
+        translate: 0 -66vmin;
     }
 }
 

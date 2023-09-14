@@ -169,6 +169,11 @@ strong, b {
     margin: 0;
 }
 
+a.cta {
+    font: var(--doxy-text-body);
+    /* font-size: 30px; */
+}
+
 [hidden] {
     display: none!important;
 }
