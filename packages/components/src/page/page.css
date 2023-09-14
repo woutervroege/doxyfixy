@@ -24,6 +24,8 @@ article {
 
 img {
     width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
 }
 
 blockquote {
@@ -42,6 +44,30 @@ blockquote:before {
 
 blockquote:after {
     content: '’'
+}
+
+q {
+    font: var(--doxy-text-biobody);
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 700px;
+    text-wrap: balance;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--doxy-padding-lg);
+    margin: var(--doxy-padding-xxl) 0;
+}
+
+q:before, q:after {
+    display: none;
+}
+
+q small {
+    font: var(--doxy-text-article);
+    display: block;
 }
 
 p {
@@ -165,7 +191,7 @@ strong, b {
 }
 
 .doxy-page h4 {
-    font: var(--doxy-text-footer-heading);
+    font: var(--doxy-text-h4);
     margin: 0;
 }
 
