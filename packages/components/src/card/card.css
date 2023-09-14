@@ -2,7 +2,7 @@
     /* height: 310px; */
     width: 100%;
     max-height: 90vh;;
-    aspect-ratio: 3/2;
+    aspect-ratio: 16/9;
     position: relative;
     color: var(--doxy-colors-white);
     font-family: var(--doxy-font);
@@ -96,22 +96,23 @@
 }
 
 .doxy-card.hero {
-    height: 80vh;
     animation-timeline: scroll();
     animation-name: appear;
+    z-index: 2;
   }
 
 @keyframes appear {
     0% {
         translate: 0 0;
     }
-    50% {
-        translate: 0 -500px;
+    30% {
+        translate: 0 -100vmax;
     }
 }
 
 .doxy-card.hero:first-of-type {
-    margin-top: -192px;
+    height: 80vh;
+    position: absolute;
 }
 
 .doxy-card.hero .container {

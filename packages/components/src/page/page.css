@@ -18,6 +18,8 @@ article {
     align-items: center;
     text-wrap: balance;
     font: var(--doxy-text-article);
+    margin-bottom: var(--doxy-padding-lg);
+    hyphens: auto;
 }
 
 img {
@@ -29,6 +31,9 @@ blockquote {
     max-width: 100%;
     font: var(--doxy-text-quote);
     text-align: center;
+    position: relative;
+    margin: 22vh 0 var(--doxy-padding-outer) 0;
+    margin-top: 22vh;
 }
 
 blockquote:before {
@@ -69,7 +74,7 @@ strong, b {
 .doxy-page .funky-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--doxy-padding-section);
+    gap: var(--doxy-padding-xxxl);
 }
 
 .grid-section {
@@ -96,13 +101,35 @@ strong, b {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+@media screen and (max-width: 768px) {
+    .grid-section-2, .grid-section-5 {
+        display: block;
+    }
+
+    .grid-section > *:not(:last-child) {
+        display: block;
+        margin-bottom: var(--doxy-padding-lg);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .grid-section-2 >*:nth-child(2) {
+        flex: 1;
+    }
+    .grid-section-5 {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
 .doxy-page .grid > a {
     display: contents;
     text-decoration: none;
 }
 
 .doxy-page p {
-    padding: var(--doxy-padding-md) 0;
+    margin: var(--doxy-padding-xl) 0;
+    padding: 0;
 }
 
 .doxy-page iframe {

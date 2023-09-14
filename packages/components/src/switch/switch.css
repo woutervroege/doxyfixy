@@ -2,7 +2,7 @@
     all: unset;
     height: 48px;
     width: 96px;
-    background: var(--doxy-colors-darkgrey);
+    background: var(--doxy-colors-lightgrey);
     border-radius: var(--doxy-radius-round);
     display: flex;
     padding: 2px;
