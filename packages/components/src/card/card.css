@@ -112,7 +112,7 @@
 
 .doxy-card.hero:first-of-type {
     height: 80vh;
-    position: absolute;
+    margin-top: calc(-20vh - 8px);
 }
 
 .doxy-card.hero .container {
