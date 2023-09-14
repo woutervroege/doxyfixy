@@ -42,8 +42,8 @@
 
     <div inert={!open} class="menuitems">
         <a data-index="4" class="doxy-button" href="/films">Films</a>
-        <a data-index="2" class="doxy-button" href="/people">People</a>
-        <a data-index="1" class="doxy-button" href="/about">About</a>
+        <a data-index="2" class="doxy-button" href="/people">Mensen</a>
+        <a data-index="1" class="doxy-button" href="/about">Over ons</a>
         <Switch client:visible/>
     </div>
 
