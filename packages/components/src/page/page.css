@@ -46,8 +46,24 @@ blockquote {
     }
 }
 
+
 blockquote:not(img + blockquote) {
-    margin: -40vh 0 var(--doxy-padding-outer) 0;
+    view-timeline: --page-blockquote-fadein block;
+    animation-timeline: --page-blockquote-fadein;
+    animation-name: fadeIn;
+  }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+blockquote:not(img + blockquote) {
+    /* margin: -40vh 0 var(--doxy-padding-outer) 0; */
 }
 
 blockquote:before {

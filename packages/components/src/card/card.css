@@ -8,6 +8,25 @@
     font-family: var(--doxy-font);
     container-type: inline-size;
     transition: 100ms scale ease-in-out;
+    view-timeline: --fade-fadein block;
+    animation-timeline: --fade-fadein;
+    animation-name: cardFadeIn;
+}
+
+
+@keyframes cardFadeIn {
+    0% {
+        opacity: 0;
+        scale: 0.96;
+    }
+    50% {
+        opacity: 1;
+        scale: 1;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
 }
 
 .doxy-card.portrait {
@@ -99,6 +118,8 @@
     animation-timeline: scroll();
     animation-name: appear;
     z-index: 2;
+    position: sticky;
+    top: 0;
   }
 
 @keyframes appear {
@@ -106,7 +127,10 @@
         translate: 0 0;
     }
     50% {
-        translate: 0 -66vmin;
+        translate: 0 -90vh;
+    }
+    100% {
+        translate: 0 -90vh;
     }
 }
 
