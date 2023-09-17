@@ -47,18 +47,20 @@ blockquote {
 }
 
 
-blockquote:not(img + blockquote) {
+blockquote {
     view-timeline: --page-blockquote-fadein block;
     animation-timeline: --page-blockquote-fadein;
-    animation-name: fadeIn;
+    animation-name: blockQuoteFadeIn;
   }
 
-@keyframes fadeIn {
+@keyframes blockQuoteFadeIn {
     0% {
         opacity: 0;
+        translate: 0 -40vh;
     }
-    100% {
+    75% {
         opacity: 1;
+        translate: 0 -0vh;
     }
 }
 
