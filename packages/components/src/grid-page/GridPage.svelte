@@ -41,7 +41,7 @@
     $: cards = root && [...root.querySelectorAll('.doxy-card')] || [];
     $: filteredCards = filterCards(cards, selectedTags) || [];
     $: cardsGroups = getCardsGroups(filteredCards);
-    $: hasCards = filteredCards.length;
+    $: hasCards = filteredCards.length > 0;
     
     function getCardsGroups(cards = []) {
 
@@ -102,7 +102,7 @@
         on:selected-tags-changed={updateSelection}
     />
 
-    {#if !hasCards}<h5>Nothing here...</h5>{/if}
+    {#if cards.length > 0 && !hasCards}<h5>Nothing here...</h5>{/if}
 
     <div class="grid" hidden={funky} inert={funky}>
         <slot/>

@@ -112,7 +112,14 @@
 
 .doxy-card.hero:first-of-type {
     height: 80vh;
-    margin-top: calc(-20vh - 8px);
+    margin-top: calc(-148px - calc(max(5vmin,24px)) + var(--doxy-padding-lg));
+}
+
+
+@media screen and (max-width: 960px) {
+    .doxy-card.hero:first-of-type {
+        margin-top: calc(-92px - calc(max(5vmin,24px)) + var(--doxy-padding-lg));
+    }
 }
 
 .doxy-card.hero .container {
