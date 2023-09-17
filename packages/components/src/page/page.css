@@ -28,6 +28,7 @@ img {
     border-radius: var(--doxy-radius-md);
     position: relative;
     z-index: 1;
+    box-shadow: var(--doxy-image-shadow)
 }
 
 blockquote {
@@ -217,4 +218,40 @@ a.cta {
 .doxy-page h5 {
     font: var(--doxy-text-h4-serif);
     text-align: center; 
+}
+
+.doxy-page .nav-container {
+    /* border: 1px solid red; */
+    overflow: auto;
+    justify-items: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 12px 24px;
+    margin: 0 -24px;
+    min-width: calc(100% + 48px);
+    /* position: sticky; */
+    top: 0px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.doxy-page .nav-container::-webkit-scrollbar{
+display: none;
+}
+
+
+.doxy-page .nav-container {
+}
+
+.doxy-page nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--doxy-padding-lg);
+    width: auto;
+    margin: auto;
+}
+
+.doxy-page nav > * {
+    pointer-events: all;
 }

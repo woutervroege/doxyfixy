@@ -42,28 +42,3 @@
     animation-timeline: --page-header-p-unblur;
     animation-name: unblur;
 }
-
-.doxy-page-header .nav-container {
-    /* border: 1px solid red; */
-    overflow: auto;
-    justify-items: flex-start;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    padding: 12px 24px;
-    margin: 0 -24px;
-    min-width: calc(100% + 48px);
-}
-
-.doxy-page-header .nav-container::-webkit-scrollbar{
-display: none;
-}
-
-.doxy-page-header nav {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: var(--doxy-padding-lg);
-    width: auto;
-    margin: auto;
-    z-index: 1;
-}

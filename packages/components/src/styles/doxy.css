@@ -52,6 +52,9 @@
     --doxy-radius-md: 16px;
     --doxy-radius-lg: 24px;
     --doxy-radius-round: 999px;
+
+    /* shadow */
+    --doxy-image-shadow: 0px 6px 0px 0px #FFF;
     
     /* theme */
     

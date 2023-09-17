@@ -28,7 +28,7 @@
     background-color: var(--doxy-colors-darkgrey);
     border-radius: var(--doxy-radius-md);
     overflow: hidden;
-    box-shadow: 0px 6px 0px 0px #FFF;
+    box-shadow: var(--doxy-image-shadow);
 }
 
 .doxy-card .container:after {

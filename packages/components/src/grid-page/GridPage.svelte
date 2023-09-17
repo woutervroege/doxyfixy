@@ -1,6 +1,8 @@
 <script>
+	import { tick } from "svelte";
     import PageHeader from '../page-header/PageHeader.svelte';
     import Card from '../card/Card.svelte';
+    import Button from '../button/Button.svelte';
     import './grid-page.css';
 
 
@@ -32,6 +34,19 @@
     * @type {boolean} funky
     */
     export let funky = false;
+
+    /**
+     * Has Tags
+    */
+    $: hasTags = tags.length > 0;
+
+    /**
+     * 
+     */
+    async function setSelectedTags() {
+        await tick();
+        selectedTags = [...root.querySelectorAll('button.selected')].map(item => item.innerText.toLowerCase());
+    }
 
     /**
      * DOM selector
@@ -87,10 +102,6 @@
 
     }
 
-    function updateSelection(e) {
-        selectedTags = e.detail.selectedTags;
-    }
-
 </script>
 
 <div class="doxy-page doxy-grid-page" bind:this={root}>
@@ -98,10 +109,24 @@
     <PageHeader
         title={title}
         intro={intro}
-        tags={tags}
-        on:selected-tags-changed={updateSelection}
     />
 
+    {#if hasTags && !!funky}
+    <div class="nav-container">
+        <nav>
+            {#each tags as tag}
+                <Button
+                    label={tag}
+                    selectable
+                    on:toggle={setSelectedTags}
+                />
+            {/each}
+        </nav>
+    </div>
+    {/if}
+
+
+    
     {#if cards.length > 0 && !hasCards}<h5>Nothing here...</h5>{/if}
 
     <div class="grid" hidden={funky} inert={funky}>
