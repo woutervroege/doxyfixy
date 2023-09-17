@@ -120,14 +120,13 @@ strong, b {
     align-items: flex-start;
 }
 
-.grid-section-2 {
-}
-
+.grid-section-1 >*:nth-child(1),
 .grid-section-2 >*:nth-child(1) {
     flex: 1;
     aspect-ratio: 16/9;
 }
 
+.grid-section-1 >*:nth-child(2),
 .grid-section-2 >*:nth-child(2) {
     flex: 2;
     aspect-ratio: 16/9;
@@ -213,4 +212,9 @@ a.cta {
 
 [hidden] {
     display: none!important;
+}
+
+.doxy-page h5 {
+    font: var(--doxy-text-h4-serif);
+    text-align: center; 
 }

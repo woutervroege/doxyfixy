@@ -38,9 +38,10 @@
     */
     let root;
 
-    $: cards = root && [...root.querySelectorAll('.doxy-card')];
-
-    $: cardsGroups = getCardsGroups(cards);
+    $: cards = root && [...root.querySelectorAll('.doxy-card')] || [];
+    $: filteredCards = filterCards(cards, selectedTags) || [];
+    $: cardsGroups = getCardsGroups(filteredCards);
+    $: hasCards = filteredCards.length;
     
     function getCardsGroups(cards = []) {
 
@@ -67,17 +68,27 @@
         return res;
     }
 
-    function filterCards(e) {
-        selectedTags = e.detail.selectedTags;
-        console.info(cards)
-        cards.forEach(card => {
-            const cardTags = card.dataset.tags.split(/,/g);
-            let hideCard = selectedTags.length === 0 ? false : true;
+    function filterCards(cards, selectedTags) {
+
+        if(selectedTags.length === 0) return cards;
+
+        const filtered = cards.filter((card, i) => {
+            const cardTags = card.dataset.tags.toLowerCase().split(/,/g);
+
             for(var i in selectedTags) {
-                if(cardTags.includes(selectedTags[i])) hideCard = false;
+                if(cardTags.includes(selectedTags[i])) return true;
             }
-            card.hidden = hideCard;
-        });
+            
+            return false;
+
+        })
+
+        return filtered;
+
+    }
+
+    function updateSelection(e) {
+        selectedTags = e.detail.selectedTags;
     }
 
 </script>
@@ -88,8 +99,10 @@
         title={title}
         intro={intro}
         tags={tags}
-        on:selected-tags-changed={filterCards}
+        on:selected-tags-changed={updateSelection}
     />
+
+    {#if !hasCards}<h5>Nothing here...</h5>{/if}
 
     <div class="grid" hidden={funky} inert={funky}>
         <slot/>
@@ -113,6 +126,7 @@
                             src={card.querySelector('img').src}
                             loading="lazy"
                             decoding="async"
+                            alt=""
                         >
                     </Card>
                     </a>
