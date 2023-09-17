@@ -7,7 +7,8 @@ import Footer from '@doxyfixy/components/src/footer/Footer.svelte';
 
 import { ViewTransitions } from 'astro:transitions';
 
-const { title = '' } = Astro.props;
+const { title = '', logoColor = 'black' } = Astro.props;
+const logoFillCSS = `--doxy-logo-fill: ${logoColor}`;
 
 const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 ---
@@ -21,43 +22,44 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 	</head>
 	<body>
 
-		<div id="container">
+		<div id="container" style={logoFillCSS}>
 
-		<NavBar/>
-		
-		<slot name="header"/>
+			<NavBar/>
+			
+			<slot name="header"/>
 
-		<main>
-			<slot/>
-		</main>
+			<main>
+				<slot/>
+			</main>
 
 
-		<Footer />
+			<Footer />
 
-		<style>
+			<style>
 
-			#container {
-				display: flex;
-				flex-direction: column;
-				gap: calc( max(5vmin, 24px) );
-			}
+				#container {
+					display: flex;
+					flex-direction: column;
+					gap: calc( max(5vmin, 24px) );
+					--doxy-logo-fill: {logoColor}
+				}
 
-			main {
-				display: flex;
-				flex-direction: column;
-				width: 100%;
-				max-width: 1280px;
-				gap: var(--doxy-padding-xxxl);
-				padding: 0 var(--doxy-padding-xl);
-				margin: 0 auto;
-			}
+				main {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					max-width: 1280px;
+					gap: var(--doxy-padding-xxxl);
+					padding: 0 var(--doxy-padding-xl);
+					margin: 0 auto;
+				}
 
-			.doxy-header {
-				position: absolute;
-				/* z-index: 1; */
-			}
+				.doxy-header {
+					position: absolute;
+					/* z-index: 1; */
+				}
 
-		</style>
+			</style>
 
 		</div>
 		
