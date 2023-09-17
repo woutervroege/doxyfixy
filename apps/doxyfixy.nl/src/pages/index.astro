@@ -5,19 +5,21 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
 ---
 
 <Layout logoColor="white">
-	<Card
-		slot="header"
-		title="Oppenheimer"
-		subtitle="Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-		size="hero"
-		tags={['Apples', 'Pears']}
-	>
-	<img
-		src="/images/L-amour_La-Mort_st_1_jpg_sd-low-2-1680x704.jpg"
-		decoding="async"
-		loading="lazy"
-	>
-	</Card>
+
+	<a href="/film" slot="header">
+		<Card
+			title="Oppenheimer"
+			subtitle="Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+			size="hero"
+			tags={['Apples', 'Pears']}
+		>
+		<img
+			src="/images/L-amour_La-Mort_st_1_jpg_sd-low-2-1680x704.jpg"
+			decoding="async"
+			loading="lazy"
+		>
+		</Card>
+	</a>
 
 	<GridPage intro="Always at the crossroads,">
 
