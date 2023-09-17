@@ -10,7 +10,8 @@
     transition: 100ms scale ease-in-out;
 }
 
-.doxy-card:not(.hero) {
+.doxy-card:not(.hero),
+.doxy-card:not(.portrait-hero) {
     view-timeline: --fade-fadein block;
     animation-timeline: --fade-fadein;
     animation-name: cardFadeIn;
@@ -74,11 +75,31 @@
     max-width: 1344px;
 }
 
+.doxy-card.portrait-hero {
+    .container {
+        --__card-title-font: var(--doxy-text-h3-serif);
+        --__card-subtitle-font: var(--doxy-text-h3-serif);
+    }
+
+    .text-container {
+        gap: 0;
+    }
+}
+
+@container (min-width: 680px) {
+    .doxy-card.portrait-hero {
+        .container {
+            --__card-title-font: var(--doxy-text-h2-serif);
+            --__card-subtitle-font: var(--doxy-text-h2-serif);
+        }
+    }    
+}
+
+
 @container (max-width: 200px) {
     .doxy-card .container {
         --__card-tags-display: none;
     }
-
 }
 
 @container (max-width: 460px) {
@@ -117,7 +138,8 @@
     }    
 }
 
-.doxy-card.hero {
+.doxy-card.hero,
+.doxy-card.portrait-hero {
     animation-timeline: scroll();
     animation-name: appear;
     z-index: 2;
@@ -134,19 +156,22 @@
     }
 }
 
-.doxy-card.hero:first-of-type {
+.doxy-card.hero:first-of-type,
+.doxy-card.portrait-hero:first-of-type {
     height: 80vh;
     margin-top: calc(-148px - calc(max(5vmin,24px)) + var(--doxy-padding-lg));
 }
 
 
 @media screen and (max-width: 960px) {
-    .doxy-card.hero:first-of-type {
+    .doxy-card.hero:first-of-type,
+    .doxy-card.portrait-hero:first-of-type {
         margin-top: calc(-92px - calc(max(5vmin,24px)) + var(--doxy-padding-lg));
     }
 }
 
-.doxy-card.hero .container {
+.doxy-card.hero .container,
+.doxy-card.portrait-hero .container {
     margin: 0 var(--doxy-padding-lg);
 }
 
