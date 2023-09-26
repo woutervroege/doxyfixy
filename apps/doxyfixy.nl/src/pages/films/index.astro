@@ -1,8 +1,7 @@
 ---
-import Layout from '../components/Layout.astro';
+import Layout from '../../components/Layout.astro';
 import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
-import Film from './film.astro';
 
 const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/film');
 const films = await filmsRes.json();
