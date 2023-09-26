@@ -2,6 +2,22 @@
 import Layout from '../components/Layout.astro';
 import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
+import Film from './film.astro';
+
+const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/film');
+const films = await filmsRes.json();
+
+const images = Object.fromEntries(await Promise.all(films.map(film => fetch(`https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/media/${film.featured_image.ID}`))).then(responses =>
+    Promise.all(responses.map(async res => {
+		const json = await res.json();
+		return [json.id, json.media_details.sizes.medium_large || {}];
+	})))
+);
+
+const genresRes = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/genre');
+const genres = await genresRes.json();
+const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name])));
+
 ---
 
 <Layout title="Films">
@@ -9,102 +25,28 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
 	<GridPage
 		title="Onze films"
 		intro="Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen."
-		tags={['Documentaire', 'Fictie', 'Sport', 'Serie', 'Short', 'Foo']}
+		tags={Object.values(genreNames)}
 		funky
 		client:visible
 	>
 
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="Fool’s Last Dance" tags={['Documentaire', 'fictie']}>
+	{films.map((film, i) =>
+		<a href={`/films/${film.slug}`}>
+
+		<Card
+			title={film.title.rendered}
+			subtitle={film.synopsis.split(/\./g)[0]}
+			tags={(film.genre || []).map(id => genreNames[id])}
+		>
 			<img
 				loading="lazy"
 				decoding="async"
-				src="/images/Here-We-Move-Here-We-Groove.jpg"
-			>
-		</Card>
-		</a>
-		
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="Rijtjesguy" tags={['fictie']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/BEELD_2.jpg"
+				src={(images[film.featured_image.ID] || {}).source_url}
 			>
 		</Card>
 		</a>
 
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="Here We Move, Here we Groove" tags={['sport', 'Serie', 'Short', 'Documentaire']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="https://idfa-core.prod.oberon.dev/image-transforms/688de318-76b5-480a-84a1-550d78c1afe7/1920.webp"
-			>
-		</Card>
-		</a>
-
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="Basmannen" tags={['Documentaire']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/Basmannen_still_00082817.webp"
-			>
-		</Card>
-		</a>
-		
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="L'amour La mort" tags={['oranges', 'grapes']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/Still-1-LAmour-La-Mort.jpg"
-			>
-		</Card>
-		</a>
-
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="My Maysoon" tags={['Documentaire', 'fictie']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="https://filmformatie.imgix.net/filmstills/still-posterbeeld-1024x576-76a0.jpeg?w=600"
-			>
-		</Card>
-
-		</a>
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="Fool’s Last Dance" tags={['Documentaire', 'fictie']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/Here-We-Move-Here-We-Groove.jpg"
-			>
-		</Card>
-
-		</a>
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="Stop Filming Us!" tags={['Documentaire', 'fictie']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/3f9569258c7ba43179cdc445f450ff07.jpg"
-			>
-		</Card>
-
-		</a>
-		<a href="/film">
-		<Card subtitle="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." title="Bonne" tags={['Documentaire', 'fictie']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/BONNE_CLOSE.png"
-			>
-		</Card>
-		</a>
-</a>
-
+	)}
 
 	</GridPage>
 
