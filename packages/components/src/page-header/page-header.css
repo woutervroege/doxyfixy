@@ -21,24 +21,30 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: var(--doxy-padding-xxxl);
+    gap: var(--doxy-padding-l);
     text-wrap: balance;
 }
 
 .doxy-page-header h1 {
-    font: var(--doxy-text-h2);
+    font: var(--doxy-text-sans-headline-xxxl);
     margin: 0 auto;
     max-width: 600px;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (max-width: 1023px) {
     .doxy-page-header h1 {
-        font: var(--doxy-text-h1);
+        font: var(--doxy-text-sans-headline-xxl);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .doxy-page-header h1 {
+        font: var(--doxy-text-sans-headline-xl);
     }
 }
 
 .doxy-page-header p {
-    font: var(--doxy-text-h2-serif);
+    font: var(--doxy-text-sans-headline-xxl-serif);
     margin: 0;
     view-timeline: --page-header-p-unblur block;
     animation-timeline: --page-header-p-unblur;

@@ -1,6 +1,6 @@
 .doxy-tag {
     height: 24px;
-    padding: 0 var(--doxy-padding-md);
+    padding: 0 var(--doxy-padding-md) 2px var(--doxy-padding-md);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -9,9 +9,11 @@
     color: var(--doxy-tag-accent, var(--doxy-colors-white));
     border: 1px solid currentColor;
     border-radius: var(--doxy-radius-xs);
-    font: var(--doxy-text-meta-small);
+    font: var(--doxy-text-meta-m);
 }
 
-.doxy-tag[data-label="uitgelicht"] {
+.doxy-tag[data-label="Uitgelicht"] {
     background: var(--doxy-gradient);
+    --doxy-tag-accent: var(--doxy-colors-darkgrey);
+    font-weight: 600;
 }

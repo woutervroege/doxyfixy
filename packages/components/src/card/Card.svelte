@@ -56,14 +56,14 @@
 >
     <div class="container">
         <div class="text-container">
-            <h3>{@html title}</h3>
-            {#if subtitle}<h4>{subtitle}</h4>{/if}
+            <h3 class="title">{@html title}</h3>
+            {#if subtitle}<h4 class="subtitle">{subtitle}</h4>{/if}
             <div>
                 {#each tags as tag}
                     <Tag label={tag}/>
                 {/each}
             </div>
-            <p>
+            <p class="summary">
                 {@html summary}
                 {#if href} <a href={href}>Lees interview</a>{/if}
             </p>

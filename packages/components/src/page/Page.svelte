@@ -33,6 +33,8 @@
     */
     let root;
 
+    export let grid = true;
+
 
 </script>
 
@@ -43,7 +45,7 @@
         intro={intro}
     />
 
-    <div class="grid">
+    <div class={grid ? 'grid' : ''}>
         <slot/>
     </div>
 

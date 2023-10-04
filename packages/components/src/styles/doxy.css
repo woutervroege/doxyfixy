@@ -17,23 +17,52 @@
     --doxy-font-serif: 'American Typewriter', courier;
 
     /* text-styles */
-    --doxy-text-h1: 500 140px/100px var(--doxy-font-alt);
-    --doxy-text-h2: 500 82px/60px var(--doxy-font-alt);
+    --doxy-text-sans-headline-xxxl: 500 110px/94px var(--doxy-font-alt);
+    --doxy-text-sans-headline-xxl: 500 82px/66px var(--doxy-font-alt);
+    --doxy-text-sans-headline-xl: 500 68px/52px var(--doxy-font-alt);
+    --doxy-text-sans-headline-l: 500 60px/52px var(--doxy-font-alt);
+    --doxy-text-sans-headline-m: 500 56px/40px var(--doxy-font-alt);
+    --doxy-text-sans-headline-s: 500 48px/42px var(--doxy-font-alt);
+    --doxy-text-sans-headline-xs: 500 38px/30px var(--doxy-font-alt);
+    --doxy-text-sans-headline-xxs: 500 24px/22px var(--doxy-font-alt);
+    --doxy-text-sans-headline-xxxs: 500 20px/18px var(--doxy-font-alt);
+
+    --doxy-text-serif-headline-xxxl: 400 44px/52px var(--doxy-font-serif);
+    --doxy-text-serif-headline-xxl: 400 32px/38px var(--doxy-font-serif);
+    --doxy-text-serif-headline-xl: 400 26px/32px var(--doxy-font-serif);
+    --doxy-text-serif-headline-l: 400 24px/28px var(--doxy-font-serif);
+    --doxy-text-serif-headline-m: 400 20px/24px var(--doxy-font-serif);
+    --doxy-text-serif-headline-s: 400 16px/18px var(--doxy-font-serif);
+    --doxy-text-serif-headline-xs: 400 14px/20px var(--doxy-font-serif);
+    --doxy-text-serif-headline-xxs: 400 11px/14px var(--doxy-font-serif);
+
+    --doxy-text-quote-xl: 900 60px/52px var(--doxy-font);
+    --doxy-text-quote-l: 900 34px/32px var(--doxy-font);
+    --doxy-text-quote-s: 900 24px/22px var(--doxy-font);
+    --doxy-text-quote-xs: 900 20px/18px var(--doxy-font);
+
+    --doxy-text-body-l: 400 24px/28px var(--doxy-font);
+    --doxy-text-body-m: 400 18px/22px var(--doxy-font);
+    --doxy-text-body-s: 400 16px/18px var(--doxy-font);
+
+    --doxy-text-meta-m: 400 12px/12px var(--doxy-font);
+
+    /* --doxy-text-sans-headline-xxxl: 500 110px/94px var(--doxy-font-alt);
+    --doxy-text-sans-headline-xxl: 500 82px/72px var(--doxy-font-alt);
     --doxy-text-h3: 500 60px/52px var(--doxy-font-alt);
-    --doxy-text-h4: 500 48px/38px var(--doxy-font-alt);
+    --doxy-text-h4: 500 48px/42px var(--doxy-font-alt);
 
-    --doxy-text-biobody: 400 30px/32px var(--doxy-font);
-    --doxy-text-article: 400 24px/28px var(--doxy-font);
-    --doxy-text-meta-large: 400 14px/1 var(--doxy-font);
-    --doxy-text-meta-small: 400 12px/1 var(--doxy-font);
-    --doxy-text-quote: 900 82px/72px var(--doxy-font);
+    --doxy-text-body: 400 24px/28px var(--doxy-font);
+    --doxy-text-quote: 900 60px/52px var(--doxy-font);
+    --doxy-text-review: 900 36px/36px var(--doxy-font);
 
-    --doxy-text-h1-serif: 400 82px/72px var(--doxy-font-serif);
-    --doxy-text-h2-serif: 400 48px/54px var(--doxy-font-serif);
-    --doxy-text-h3-serif: 400 30px/34px var(--doxy-font-serif);
-    --doxy-text-h4-serif: 400 22px/26px var(--doxy-font-serif);
 
-    --doxy-text-body-serif: 400 18px/20px var(--doxy-font-serif);
+    --doxy-text-sans-headline-xxl-serif: 400 48px/54px var(--doxy-font-serif);
+    --doxy-text-h3-serif: 400 26px/32px var(--doxy-font-serif);
+    --doxy-text-h4-serif: 400 20px/24px var(--doxy-font-serif);
+
+    --doxy-text-body-serif: 400 14px/20px var(--doxy-font-serif); */
+
 
     /* padding */
     --doxy-padding-none: 0px;

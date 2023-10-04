@@ -49,7 +49,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
     >   
     </Card>
 
-	<Page>
+	<Page grid={false}>
 
         <article>
 
@@ -81,14 +81,14 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
             </p>
 
             {film.festivals ?
-                <h4>Festivals</h4>
+            <h4>Festivals</h4>
             <ul>
                 <div set:html={film.festivals}></div>
             </ul>
             : ''}
 
             {film.reviews ?
-            <h4>Recensies</h4>
+            <h4>Reviews</h4>
             <div set:html={film.reviews}></div>
             : ''}
 
