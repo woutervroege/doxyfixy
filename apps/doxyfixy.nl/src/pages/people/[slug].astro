@@ -18,8 +18,6 @@ const { slug } = Astro.params;
 const persons = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/person?per_page=100&slug=' + slug).then(persons => persons.json());
 const person = persons[0];
 
-console.info(person.associated_films);
-
 ---
 
 <Layout title={person.title.rendered} logoColor="white">

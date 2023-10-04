@@ -1,0 +1,48 @@
+---
+import Layout from '../components/Layout.astro';
+import Page from '@doxyfixy/components/src/page/Page.svelte';
+
+export async function getStaticPaths() {
+
+const pages = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/pages?per_page=100&_fields[]=slug').then(person => person.json());
+
+return pages.map(person => {
+    return {
+        params: {slug: person.slug}
+    }
+});
+}
+
+const { slug } = Astro.params;
+const pages = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/pages?per_page=100&slug=' + slug).then(pages => pages.json());
+const page = pages[0];
+
+---
+
+<Layout title={page.title.rendered}>
+
+	<Page
+		title={page.title.rendered}
+        intro={page.intro_text}
+		client:visible
+	>
+
+        <article>
+
+            <img
+                src={page.featured_image.guid}
+                alt={page.featured_image.post_title}
+                decoding="async"
+                loading="lazy"
+            >
+        
+            <blockquote>{page.quote}</blockquote>
+
+            <p>
+                <p set:html={page.contents}></p>
+            </p>
+    </article>
+
+	</Page>
+
+</Layout>

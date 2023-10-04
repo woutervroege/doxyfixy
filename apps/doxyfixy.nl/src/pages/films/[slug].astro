@@ -39,9 +39,10 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
         src={film.featured_image.guid}
         decoding="async"
         loading="lazy"
-    >   
+    > 
     <img
         src={film.laurel_image?.guid}
+        hidden={!film.laurel_image}
         decoding="async"
         loading="lazy"
         slot="laurel"
