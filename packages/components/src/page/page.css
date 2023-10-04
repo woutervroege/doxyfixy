@@ -28,7 +28,7 @@ img {
     border-radius: var(--doxy-radius-md);
     position: relative;
     z-index: 1;
-    box-shadow: var(--doxy-image-shadow)
+    /* box-shadow: var(--doxy-image-shadow) */
 }
 
 blockquote {

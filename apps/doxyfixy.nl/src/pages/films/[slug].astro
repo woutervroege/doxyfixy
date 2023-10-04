@@ -31,7 +31,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
     <Card
         slot="header"
         title={film.title.rendered}
-        subtitle={film.synopsis.split(/\./g)[0]}
+        subtitle={film.logline}
         tags={(film.genre || []).map(id => genreNames[id])}
         size="hero"
     >
@@ -39,6 +39,12 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
         src={film.featured_image.guid}
         decoding="async"
         loading="lazy"
+    >   
+    <img
+        src={film.laurel_image?.guid}
+        decoding="async"
+        loading="lazy"
+        slot="laurel"
     >   
     </Card>
 

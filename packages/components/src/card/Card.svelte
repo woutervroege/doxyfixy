@@ -67,6 +67,11 @@
                 {@html summary}
                 {#if href} <a href={href}>Lees interview</a>{/if}
             </p>
+
+            <figure class="laurel">
+                <slot name="laurel"/>
+            </figure>
+    
         </div>
         <slot/>
     </div>

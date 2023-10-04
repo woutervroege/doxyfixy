@@ -32,7 +32,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
 		<Card
 			title={film.title.rendered}
-			subtitle={film.synopsis.split(/\./g)[0]}
+			subtitle={film.logline}
 			tags={(film.genre || []).map(id => genreNames[id])}
 		>
 			<img
