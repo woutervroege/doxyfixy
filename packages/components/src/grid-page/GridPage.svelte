@@ -111,7 +111,7 @@
         intro={intro}
     />
 
-    {#if hasTags && !!funky}
+    {#if hasTags}
     <div class="nav-container">
         <nav>
             {#each tags as tag}
@@ -129,8 +129,30 @@
     
     {#if cards.length > 0 && !hasCards}<h5>Nothing here...</h5>{/if}
 
+    <slot hidden={true}/>
+
+
     <div class="grid" hidden={funky} inert={funky}>
-        <slot/>
+        {#each filteredCards as card}
+            <a href={card.closest('a').href}>
+                <Card
+                    title={card.dataset.title}
+                    subtitle={card.dataset.subtitle}
+                    size={card.dataset.size}
+                    summary={card.dataset.summary}
+                    tags={card.dataset.tags.split(',')}
+                    href={card.dataset.href}
+                    division={card.dataset.division}
+                >
+                <img
+                    src={card.querySelector('img').src}
+                    loading="lazy"
+                    decoding="async"
+                    alt=""
+                >
+            </Card>
+            </a>
+        {/each}
     </div>
 
     <div class="funky-grid" hidden={!funky} inert={!funky}>

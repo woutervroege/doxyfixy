@@ -3,8 +3,7 @@ import Layout from '../../components/Layout.astro';
 import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
 
-const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/film');
-const films = await filmsRes.json();
+const films = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/film').then(res => res.json());
 
 const images = Object.fromEntries(await Promise.all(films.map(film => fetch(`https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/media/${film.featured_image.ID}`))).then(responses =>
     Promise.all(responses.map(async res => {
@@ -13,8 +12,7 @@ const images = Object.fromEntries(await Promise.all(films.map(film => fetch(`htt
 	})))
 );
 
-const genresRes = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/genre');
-const genres = await genresRes.json();
+const genres = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/genre').then(res => res.json());
 const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name])));
 
 ---

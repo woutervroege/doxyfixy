@@ -1,1 +1,5 @@
 @import '../page/page.css';
+
+astro-slot .doxy-card {
+    display: none!important;
+}
