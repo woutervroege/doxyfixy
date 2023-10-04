@@ -1,0 +1,80 @@
+---
+import Layout from '../../components/Layout.astro';
+import Page from '@doxyfixy/components/src/page/Page.svelte';
+import Card from '@doxyfixy/components/src/card/Card.svelte';
+
+export async function getStaticPaths() {
+
+    const persons = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/person?per_page=100&_fields[]=slug').then(person => person.json());
+
+    return persons.map(person => {
+        return {
+            params: {slug: person.slug}
+        }
+    });
+}
+
+const { slug } = Astro.params;
+const persons = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/person?per_page=100&slug=' + slug).then(persons => persons.json());
+const person = persons[0];
+
+console.info(person.associated_films);
+
+---
+
+<Layout title={person.title.rendered} logoColor="white">
+
+    <Card
+        slot="header"
+        title={person.title.rendered}
+        subtitle={person.role}
+        size="portrait-hero"
+    >
+    <img
+        src={person.featured_image.guid}
+        decoding="async"
+        loading="lazy"
+    >   
+    </Card>
+
+	<Page
+	>
+
+        <article>
+
+            <blockquote>{person.quote}</blockquote>
+
+            <p>
+                {person.intro_text}
+            </p>
+
+            <div set:html={person.interview}></div>
+
+            <p inert={!person.website_imdb_link}>
+                <a class="cta" href={person.website_imdb_link} inert={!person.website_imdb_link}>Link naar IMDB</a>
+            </p>
+
+
+            <div class="grid" style="margin-top: 64px">
+                {person.associated_films.map(film => 
+                    <a href={`/films/${film.post_name}`}>
+                    <Card
+                        title={film.post_title}
+                        subtitle={film.logline}
+                    >
+                        <img
+                            loading="lazy"
+                            decoding="async"
+                            src={film.featured_image}
+                        >
+                    </Card>
+                    </a>
+                )}
+                    
+            </div>
+
+    </article>
+
+	</Page>
+
+</Layout>

@@ -1,5 +1,5 @@
 ---
-import Layout from '../components/Layout.astro';
+import Layout from '../../components/Layout.astro';
 import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
 
@@ -11,9 +11,6 @@ const images = Object.fromEntries(await Promise.all(persons.map(person => fetch(
 		return [json.id, json.media_details.sizes.medium_large || {}];
 	})))
 );
-
-const professions = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/profession').then(res => res.json());
-const professionNames = Object.fromEntries(professions.map(profession => ([profession.id, profession.name])));
 
 const personCategories = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/person_category').then(res => res.json());
 const personCategoryNames = Object.fromEntries(personCategories.map(person_category => ([person_category.id, person_category.name])));
@@ -32,13 +29,13 @@ const personCategoryNames = Object.fromEntries(personCategories.map(person_categ
 
 
 	{persons.map((person) =>
-		<a href={`/people/${person.slug}`}>
+		<a href='javascript:onclick=null'>
 
 		<Card
 			size="portrait"
 			title={person.title.rendered}
 			subtitle={person.role}
-			summary={person.card_text}
+			summary={person.card_text + (person.interview ? `<br><a href="/people/${person.slug}">Lees Meer</a>` : '')}
 			tags={(person.person_category || []).map(id => personCategoryNames[id])}
 		>
 			<img

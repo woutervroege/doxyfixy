@@ -3,10 +3,9 @@ import Layout from '../../components/Layout.astro';
 import Page from '@doxyfixy/components/src/page/Page.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
 
-
 export async function getStaticPaths() {
 
-    const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?_fields[]=slug');
+    const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?per_page=100&_fields[]=slug');
     const films = await filmsRes.json();
 
     return films.map(film => {
@@ -17,20 +16,14 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-console.info('slug', slug);
-const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?slug=' + slug);
+const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?per_page=100&slug=' + slug);
 const films = await filmsRes.json();
 const film = films[0];
-console.info('film', film);
-
-// const imageRes = await fetch(`https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/media/${film.featured_image.ID}`);
-// const image = imageRes.json();
 
 const genresRes = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/genre');
 const genres = await genresRes.json();
 const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name])));
 
-console.info(film.credits.split(/\n\n/g))
 ---
 
 <Layout title={film.title.rendered} logoColor="white">

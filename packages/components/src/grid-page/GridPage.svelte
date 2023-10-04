@@ -134,7 +134,7 @@
 
     <div class="grid" hidden={funky} inert={funky}>
         {#each filteredCards as card}
-            <a href={card.closest('a').href}>
+            <a href={card.closest('a')?.href}>
                 <Card
                     title={card.dataset.title}
                     subtitle={card.dataset.subtitle}
