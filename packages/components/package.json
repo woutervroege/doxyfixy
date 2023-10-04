@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev",
-    "build": "storybook build",
+    "build:manual": "storybook build",
     "build-storybook": "storybook build",
     "deploy:manual": "chromatic --project-token=chpt_d2fa33d952f4cf2"
   },

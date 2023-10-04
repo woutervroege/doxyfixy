@@ -56,7 +56,7 @@ console.info(person.associated_films);
 
 
             <div class="grid" style="margin-top: 64px">
-                {person.associated_films.map(film => 
+                {(person.associated_films || []).map(film => 
                     <a href={`/films/${film.post_name}`}>
                     <Card
                         title={film.post_title}
