@@ -48,7 +48,7 @@
 }
 
 .doxy-footer .head h5 {
-    font: var(--doxy-text-h4);
+    font: var(--doxy-text-sans-headline-m);
     text-wrap: balance;
     text-align: center;
     margin: 0;
@@ -57,9 +57,15 @@
     text-align: center;
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (max-width: 1023px) {
     .doxy-footer .head h5 {
-        font: var(--doxy-text-h3);
+        font: var(--doxy-text-sans-headline-s);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .doxy-footer .head h5 {
+        font: var(--doxy-text-sans-headline-xs);
     }
 }
 
@@ -72,11 +78,17 @@
 
 
 .doxy-footer h6, .doxy-footer address {
-    font: var(--doxy-text-body-serif);
+    font: var(--doxy-text-serif-headline-m);
     letter-spacing: 0.3px;
     margin: 0;
     text-wrap: balance;
     line-height: 2;
+}
+
+@media screen and (max-width: 767px) {
+    .doxy-footer h6, .doxy-footer address {
+        font: var(--doxy-text-serif-headline-s);
+    }
 }
 
 .doxy-footer address span:not(:last-of-type):after {
@@ -87,7 +99,7 @@
     color: inherit;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1023px) {
     .doxy-footer address span {
         display: block;
     }
