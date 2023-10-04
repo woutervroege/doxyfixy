@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: FirebaseExtended/action-hosting-deploy@v0
-        working-directory: ./apps/doxyfixy.nl
+      - working-directory: ./apps/doxyfixy.nl
       with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DOXYFIXY_C5C7E }}'
