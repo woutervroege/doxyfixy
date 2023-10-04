@@ -35,13 +35,20 @@
 
 .doxy-logo .doxy-monogram {
     height: 150%;
-    width: 100%;
     animation-timeline: scroll();
     animation-name: fadeIn;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     opacity: 0;
 }
+
+@media screen and (max-width: 1023px) {
+    .doxy-logo .doxy-monogram {
+        width: 100%;
+    }
+}
+
+
 
 @keyframes scrollUp {
     from {

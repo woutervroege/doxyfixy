@@ -3,12 +3,14 @@
     justify-content: flex-end;
     gap: var(--doxy-padding-xxl);
     position: relative;
+    pointer-events: none;
 }
 
 .doxy-menu.open {
     --__doxy-menubutton-pointerevents: all;
     --__doxy-menubutton-opacity: 1;
     --__doxy-menubutton-translate: 0;
+    pointer-events: all;
 }
 
 .doxy-menu .menuitems {
@@ -55,6 +57,7 @@
     justify-content: center;
     align-items: center;
     width: 80px;
+    pointer-events: all;
 }
 
 /* .doxy-menu .doxy-button {

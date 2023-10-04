@@ -113,22 +113,22 @@
     />
 
     {#if hasTags}
-    <div class="nav-container">
-        <nav>
-            {#each tags as tag}
-                <Button
-                    label={tag}
-                    selectable
-                    on:toggle={setSelectedTags}
-                />
-            {/each}
-        </nav>
-    </div>
+    <!-- <div class="nav-container"> -->
+    <nav>
+        {#each tags as tag}
+            <Button
+                label={tag}
+                selectable
+                on:toggle={setSelectedTags}
+            />
+        {/each}
+    </nav>
+    <!-- </div> -->
     {/if}
 
 
     
-    {#if cards.length > 0 && !hasCards}<h5>Nothing here...</h5>{/if}
+    {#if cards.length > 0 && !hasCards}<h5>Coming soon...</h5>{/if}
 
     <slot hidden={true}/>
 
