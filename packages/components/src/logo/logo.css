@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     height: calc(min(4vmax, 48px));
-    margin-top: 0;
+    margin-top: -116px;
     gap: var(--doxy-padding-xxl);
     align-items: center;
     animation-timeline: scroll();
@@ -11,6 +11,18 @@
     animation-timing-function: ease;
     animation-duration: 1ms;
     pointer-events: all;
+}
+
+@supports (animation-timeline: scroll()) {
+    .doxy-logo {
+        margin-top: 0!important;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .doxy-logo {
+        margin-top: -72px;
+    }
 }
 
 .doxy-logo svg {

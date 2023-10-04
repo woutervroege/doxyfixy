@@ -2,97 +2,148 @@
 import Layout from '../components/Layout.astro';
 import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
+
+const settings = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/settings/pages').then(res => res.json());
+const fields = settings.data.row;
+const introText = fields.intro_text;
+
+const allFilms = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/film?per_page=100').then(res => res.json());
+const films = fields.highlighted_films.map(highlightedFilm => allFilms.find(film => film.id == highlightedFilm.ID));
+
+const images = Object.fromEntries(await Promise.all(films.map(film => fetch(`https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/media/${film.featured_image.ID}`))).then(responses =>
+    Promise.all(responses.map(async res => {
+		const json = await res.json();
+		return [json.id, json.media_details.sizes.medium_large || {}];
+	})))
+);
+
+const genres = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/genre').then(res => res.json());
+const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name])));
+
 ---
 
 <Layout logoColor="white">
 
-	<a href="/film" slot="header">
+	<a href={`/films/${films[0].slug}`} slot="header">
+
 		<Card
-			title="Oppenheimer"
-			subtitle="Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+			title={films[0].title.rendered}
+			subtitle={films[0].logline}
+			tags={(films[0].genre || []).map(id => genreNames[id])}
 			size="hero"
-			tags={['Apples', 'Pears']}
 		>
-		<img
-			src="/images/L-amour_La-Mort_st_1_jpg_sd-low-2-1680x704.jpg"
-			decoding="async"
-			loading="lazy"
-		>
+			<img
+				loading="lazy"
+				decoding="async"
+				src={(images[films[0].featured_image.ID] || {}).source_url}
+			>
 		</Card>
 	</a>
 
-	<GridPage intro="Always at the crossroads,">
+	<GridPage intro={introText[0]} funky client:visible>
 
-		<a href="/film">
-		<Card title="Fool’s Last Dance" tags={['apples', 'pears']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/Here-We-Move-Here-We-Groove.jpg"
+		<a href={`/films/${films[1].slug}`}>
+
+			<Card
+				title={films[1].title.rendered}
+				subtitle={films[1].logline}
+				tags={(films[1].genre || []).map(id => genreNames[id])}
 			>
-		</Card>
+				<img
+					loading="lazy"
+					decoding="async"
+					src={(images[films[1].featured_image.ID] || {}).source_url}
+				>
+			</Card>
 		</a>
-		<a href="/film">
-			<Card title="Rijtjesguy" tags={['apples', 'pears']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/BEELD_2.jpg"
+
+		<a href={`/films/${films[2].slug}`}>
+
+			<Card
+				title={films[2].title.rendered}
+				subtitle={films[2].logline}
+				tags={(films[2].genre || []).map(id => genreNames[id])}
 			>
-		</Card>
+				<img
+					loading="lazy"
+					decoding="async"
+					src={(images[films[2].featured_image.ID] || {}).source_url}
+				>
+			</Card>
 		</a>
+		
 	</a>
 
 	</GridPage>
 
-	<GridPage intro="the fringes, the rough edges,">
+	<GridPage intro={introText[1]}>
 
-		<a href="/film">
-		<Card title="My Maysoon" tags={['apples', 'pears']} subtitle="Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.">
-			<img
-				loading="lazy"
-				decoding="async"
-				src="https://filmformatie.imgix.net/filmstills/still-posterbeeld-1024x576-76a0.jpeg?w=600"
+		<a href={`/films/${films[3].slug}`}>
+
+			<Card
+				title={films[3].title.rendered}
+				subtitle={films[3].logline}
+				tags={(films[3].genre || []).map(id => genreNames[id])}
 			>
-		</Card>
+				<img
+					loading="lazy"
+					decoding="async"
+					src={(images[films[3].featured_image.ID] || {}).source_url}
+				>
+			</Card>
 		</a>
 
 	</GridPage>
 
-	<GridPage intro="in the space between,">
+	<GridPage intro={introText[2]} funky client:visible>
 
-		<a href="/film">
-		<Card title="Fool’s Last Dance" tags={['apples', 'pears']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/Here-We-Move-Here-We-Groove.jpg"
+		<a href={`/films/${films[4].slug}`}>
+
+			<Card
+				title={films[4].title.rendered}
+				subtitle={films[4].logline}
+				tags={(films[4].genre || []).map(id => genreNames[id])}
 			>
-		</Card>
+				<img
+					loading="lazy"
+					decoding="async"
+					src={(images[films[4].featured_image.ID] || {}).source_url}
+				>
+			</Card>
 		</a>
 
-		<a href="/film">
-		<Card title="Rijtjesguy" tags={['apples', 'pears']}>
-			<img
-				loading="lazy"
-				decoding="async"
-				src="/images/BEELD_2.jpg"
+		<a href={`/films/${films[5].slug}`}>
+
+			<Card
+				title={films[5].title.rendered}
+				subtitle={films[5].logline}
+				tags={(films[5].genre || []).map(id => genreNames[id])}
 			>
-		</Card>
+				<img
+					loading="lazy"
+					decoding="async"
+					src={(images[films[5].featured_image.ID] || {}).source_url}
+				>
+			</Card>
 		</a>
 
 	</GridPage>
 
-	<GridPage intro="where stories are born...">
+	<GridPage intro={introText[3]}>
 
-		<a href="/film">
-		<Card title="My Maysoon" tags={['apples', 'pears']} subtitle="Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.">
-			<img
-				loading="lazy"
-				decoding="async"
-				src="https://filmformatie.imgix.net/filmstills/still-posterbeeld-1024x576-76a0.jpeg?w=600"
+		<a href={`/films/${films[6].slug}`}>
+
+			<Card
+				title={films[6].title.rendered}
+				subtitle={films[6].logline}
+				tags={(films[6].genre || []).map(id => genreNames[id])}
 			>
-		</Card>
+				<img
+					loading="lazy"
+					decoding="async"
+					src={(images[films[6].featured_image.ID] || {}).source_url}
+				>
+			</Card>
 		</a>
 
 	</GridPage>

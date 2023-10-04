@@ -158,7 +158,7 @@
 
     <div class="funky-grid" hidden={!funky} inert={!funky}>
         {#each cardsGroups as cardsGroup}
-            <div class="grid-section grid-section-{cardsGroup.length}">
+            <div class="grid-section grid-section-{cardsGroup.length > 2 ? 5 : cardsGroup.length}">
                 {#each cardsGroup as card}
                     <a href={card.closest('a').href}>
                         <Card
