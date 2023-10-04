@@ -76,6 +76,7 @@
 
     function _sliceIntoChunks(arr, chunkSize) {
         const res = [];
+        if(!funky) return res;
         for (let i = 0; i < arr.length; i += chunkSize) {
             const chunk = arr.slice(i, i + chunkSize);
             res.push(chunk);
