@@ -4,11 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "deploy": "firebase deploy",    
-    "astro": "astro"
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.0",
