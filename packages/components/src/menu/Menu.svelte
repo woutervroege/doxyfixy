@@ -2,7 +2,7 @@
 	import Button from '../button/Button.svelte';
 	import Switch from '../switch/Switch.svelte';
     import './menu.css';
-	import '../button/Button.css';
+	import '../button/button.css';
 
    /**
    * @type {string} Button contents
