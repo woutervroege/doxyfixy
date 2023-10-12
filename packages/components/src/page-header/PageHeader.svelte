@@ -11,11 +11,16 @@
    */
    export let intro = '';
 
+   /**
+   * @type {boolean} bigintro
+   */
+   export let bigintro = false;
+
 </script>
 
 <section class="doxy-page-header">
     <div>
         {#if title}<h1>{title}</h1>{/if}
-        {#if intro}<p>{intro}</p>{/if}
+        {#if intro}<p class={bigintro ? 'p-large' : ''}>{intro}</p>{/if}
     </div>
 </section>

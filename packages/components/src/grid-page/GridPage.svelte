@@ -36,6 +36,11 @@
     export let funky = false;
 
     /**
+    * @type {boolean} funky
+    */
+    export let bigintro = false;
+
+    /**
      * Has Tags
     */
     $: hasTags = tags.length > 0;
@@ -110,6 +115,7 @@
     <PageHeader
         title={title}
         intro={intro}
+        bigintro={bigintro}
     />
 
     {#if hasTags}

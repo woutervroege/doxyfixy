@@ -20,6 +20,7 @@ article {
     font: var(--doxy-text-body-l);
     margin-bottom: var(--doxy-padding-lg);
     hyphens: auto;
+    text-align: center;
 }
 
 @media screen and (max-width: 1023px) {
@@ -119,6 +120,16 @@ p:first-of-type {
 
 @media screen and (max-width: 1023px) {
     p:first-of-type {
+        font: var(--doxy-text-serif-headline-l);
+    }        
+}
+
+p.p-large:first-of-type {
+    font: var(--doxy-text-serif-headline-xxl);
+}
+
+@media screen and (max-width: 1023px) {
+    p.p-large:first-of-type {
         font: var(--doxy-text-serif-headline-l);
     }        
 }

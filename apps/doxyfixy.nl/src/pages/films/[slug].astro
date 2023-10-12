@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?per_page=100&slug=' + slug);
+const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?per_page=1&slug=' + slug);
 const films = await filmsRes.json();
 const film = films[0];
 
@@ -39,6 +39,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
         src={film.featured_image.guid}
         decoding="async"
         loading="lazy"
+        style={`object-position: ${film.featured_image_focus_point_x_axis || 50}% ${film.featured_image_focus_point_y_axis || 50}%`}
     > 
     <img
         src={film.laurel_image?.guid}
@@ -61,7 +62,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
             <h4>Cast</h4>
             <ul>
-                <div set:html={film.cast}></div>
+                <div set:html={film.cast.replace(/\n/g, '<br>')}></div>
             </ul>
 
             {film.credits ?
