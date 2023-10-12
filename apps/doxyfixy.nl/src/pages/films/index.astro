@@ -3,6 +3,9 @@ import Layout from '../../components/Layout.astro';
 import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
 
+const settings = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/settings/pages').then(res => res.json());
+const fields = settings.data.row;
+
 const films = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/film?per_page=100').then(res => res.json());
 
 const images = Object.fromEntries(await Promise.all(films.map(film => fetch(`https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/media/${film.featured_image.ID}`))).then(responses =>
@@ -20,8 +23,8 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 <Layout title="Films">
 
 	<GridPage
-		title="Onze films"
-		intro="Deze wordt later vervangen door de uiteindelijke tekst, die nu nog niet bekend is. De faketekst is dus een tekst die eigenlijk nergens over gaat. Het grappige is, dat mensen deze toch vaak lezen."
+		title={fields.title_films}
+		intro={fields.intro_text_films}
 		tags={Object.values(genreNames)}
 		funky
 		client:visible
