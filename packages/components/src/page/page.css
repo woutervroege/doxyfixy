@@ -239,6 +239,12 @@ strong, b {
     margin: 0;
 }
 
+@media screen and (max-width: 1023px) {
+    .doxy-page h4 {
+        font: var(--doxy-text-sans-headline-xs);
+    }
+}
+
 .doxy-page astro-slot a {
     display: none;
 }
@@ -277,6 +283,9 @@ a.cta {
     gap: var(--doxy-padding-lg);
     padding: 12px var(--doxy-padding-xl);
     margin: 0 -24px;
+    position: sticky;
+    top: 40px;
+    z-index: 1;
 }
 
 .doxy-page nav::-webkit-scrollbar{

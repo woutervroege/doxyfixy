@@ -13,6 +13,20 @@
     pointer-events: all;
 }
 
+.doxy-menu-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--doxy-colors-darkgrey);
+    opacity: 0;
+    pointer-events: none;
+    transition: 200ms opacity ease;
+}
+
+.doxy-menu.open + .doxy-menu-bg {
+    opacity: 0.8;
+}
+
 .doxy-menu .menuitems {
     display: flex;
     gap: var(--doxy-padding-lg);
@@ -60,11 +74,10 @@
     pointer-events: all;
 }
 
-/* .doxy-menu .doxy-button {
-    border: 1px solid red;
-    z-index: 4;
+.doxy-menu .doxy-button {
     position: relative;
-} */
+    z-index: 1;
+}
 
 @media screen and (max-width: 960px) {
     .doxy-menu {
