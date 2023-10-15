@@ -66,6 +66,11 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
             <p set:html={film.credits.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
             : ''}
 
+            {film.artwork ?
+            <h4>Artwork</h4>
+            <p set:html={film.artwork.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            : ''}                
+
             <p style="margin-top: 0">
                 <img
                     src={film.poster.guid}
@@ -84,8 +89,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
             {film.prices ?
             <h4>Prijzen</h4>
             <p set:html={film.prices.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
-            : ''}
-                
+            : ''}                
 
             {film.reviews ?
             <h4>Reviews</h4>
