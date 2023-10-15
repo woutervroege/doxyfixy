@@ -71,6 +71,7 @@
      * 
      */
     async function setSelectedTags(e) {
+        document.documentElement.scrollTop = 0;
         const selectedTag = selectedTags[0];
         if(selectedTag === e.detail.tag) selectedTags = [];
         else selectedTags = [e.detail.tag];
@@ -84,13 +85,14 @@
     function enableSearch() {
         showSearch = true;
         root.querySelector('input').select();
+        document.documentElement.scrollTop = 0;
     }
 
     function disableSearch() {
         showSearch = false;
         root.querySelector('input').blur();
         root.querySelector('input').value = null;
-        root.querySelector('input').dispatchEvent(new Event('input'))
+        root.querySelector('input').dispatchEvent(new Event('input'));
     }
 
     function handleSearchInput(e) {
