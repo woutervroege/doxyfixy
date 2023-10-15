@@ -146,6 +146,17 @@ strong, b {
     width: 100%;
 }
 
+.doxy-page.doxy-grid-page-twocols .grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 1024px) {
+    .doxy-page.doxy-grid-page-twocols .grid {
+        grid-template-columns: 1fr;
+    }    
+}
+
+
 @media screen and (max-width: 1024px) {
     .doxy-page .grid {
         grid-template-columns: 1fr 1fr;
@@ -318,4 +329,10 @@ a.cta {
 
 .doxy-page nav > * {
     pointer-events: all;
+}
+
+.arrow-icon {
+    width: 18px;
+    margin: 18px auto 0 auto;
+    display: flex;
 }

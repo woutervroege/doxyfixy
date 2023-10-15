@@ -41,9 +41,10 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
 			>
 		</Card>
+		<img src="/arrow_down.svg" class="arrow-icon">
 	</a>
 
-	<GridPage bigintro intro={introText[0]} funky client:visible>
+	<GridPage bigintro intro={introText[0]} twocols client:visible>
 
 		<a href={`/films/${films[1].slug}`}>
 
@@ -104,7 +105,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
 	</GridPage>
 
-	<GridPage bigintro intro={introText[2]} funky client:visible>
+	<GridPage bigintro intro={introText[2]} twocols client:visible>
 
 		<a href={`/films/${films[4].slug}`}>
 

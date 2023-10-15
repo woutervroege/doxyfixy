@@ -38,6 +38,11 @@
     /**
     * @type {boolean} funky
     */
+    export let twocols = false;
+
+    /**
+    * @type {boolean} funky
+    */
     export let bigintro = false;
 
     /**
@@ -112,7 +117,7 @@
 
 </script>
 
-<div class="doxy-page doxy-grid-page" bind:this={root}>
+<div class="doxy-page doxy-grid-page {twocols ? 'doxy-grid-page-twocols' :  ''}" bind:this={root}>
 
     <PageHeader
         title={title}
