@@ -66,7 +66,7 @@
 
     onMount(async () => {
         const filter = new URLSearchParams(window.location.search).get('filter');
-        selectedTags = [filter]
+        if(filter) selectedTags = [filter]
 	});
 
     /**
