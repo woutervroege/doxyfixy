@@ -18,6 +18,11 @@
     animation-name: cardFadeIn;
 }
 
+@media screen and (min-width: 1024px) {
+    .doxy-card.doxy-card-editorial {
+        height: 100vh!important;
+    }
+}
 
 @keyframes cardFadeIn {
     0% {
@@ -178,6 +183,10 @@
     letter-spacing: 1px;
     text-wrap: balance;
     text-wrap: -webkit-balance;
+}
+
+.doxy-card.doxy-card-editorial .title {
+    font-weight: 900!important;
 }
 
 .doxy-card[data-tags~="Fixy"] {

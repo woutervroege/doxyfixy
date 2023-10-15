@@ -8,6 +8,11 @@
    export let title = '';
 
   /**
+   * @type {boolean} title
+   */    
+   export let editorial = false;
+
+  /**
    * @type {string} subtitle
    */    
    export let subtitle = '';
@@ -42,7 +47,7 @@
    /**
     * 
     */
-   $: classNames = ['doxy-card', size, division];
+   $: classNames = ['doxy-card', size, division, editorial ? 'doxy-card-editorial' : ''];
 </script>
 
 <section class="{classNames.join(' ')}"

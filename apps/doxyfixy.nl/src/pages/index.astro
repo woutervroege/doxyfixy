@@ -27,16 +27,17 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 	<a href={`/films/${films[0].slug}`} slot="header">
 
 		<Card
-			title={films[0].title.rendered}
+			title={films[0].editorial_headline}
 			subtitle={films[0].logline}
 			tags={(films[0].genre || []).map(id => genreNames[id])}
 			size="hero"
+			editorial
 		>
 			<img
 				loading="lazy"
 				decoding="async"
-				src={(images[films[0].featured_image.ID] || {}).source_url}
-				style={`object-position: ${films[0].featured_image_focus_point_x_axis || 50}% ${films[0].featured_image_focus_point_y_axis || 50}%`}
+				src={films[0].editorial_image.guid}
+				style={`object-position: ${films[0].editorial_image_focus_point_x_axis || 50}% ${films[0].editorial_image_focus_point_y_axis || 50}%`}
 
 			>
 		</Card>
