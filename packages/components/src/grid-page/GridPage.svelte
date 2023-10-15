@@ -28,6 +28,11 @@
     export let withSearch = false;
 
     /**
+    * @type {string} searchValue
+    */
+    export let searchValue = '';
+
+    /**
     * @type {boolean} showSearch
     */
     export let showSearch = false;
@@ -84,11 +89,26 @@
     function disableSearch() {
         showSearch = false;
         root.querySelector('input').blur();
+        root.querySelector('input').value = null;
+        root.querySelector('input').dispatchEvent(new Event('input'))
+    }
+
+    function handleSearchInput(e) {
+        const url = new URL(window.location.href);
+        url.search = e.detail.value ? `search=${e.detail.value}` : '';
+        window.history.pushState('','', url.href);
+        searchValue=e.detail.value;
     }
 
     onMount(async () => {
         const filter = new URLSearchParams(window.location.search).get('filter');
-        if(filter) selectedTags = [filter]
+        if(filter) return selectedTags = [filter]
+       
+        const search = new URLSearchParams(window.location.search).get('search');
+        if(search) {
+            searchValue = decodeURIComponent(search);
+            showSearch = true;
+        }
 	});
 
     /**
@@ -162,7 +182,11 @@
 
         <span class="doxy-search">
             <Button icon="close" on:toggle={disableSearch}/>
-            <Input placeholder="Search..."/>
+            <Input
+                placeholder="Search..."
+                value={searchValue}
+                on:input={handleSearchInput}
+            />
         </span>
         
         <span class="filter-buttons">
