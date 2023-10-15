@@ -164,11 +164,21 @@ strong, b {
     gap: var(--doxy-padding-xxxl);
 }
 
+@media screen and (max-width: 768px) {
+    .doxy-page .funky-grid {
+        gap: 30px!important;
+    }
+}
+
 .grid-section {
     display: grid;
-    grid-template-columns: 985fr 2015fr;
+    grid-template-columns: 977fr 2023fr;
     gap: var(--doxy-padding-xl);
     align-items: flex-start;
+}
+
+.grid-section > a {
+    margin: 0!important;
 }
 
 .grid-section-5 {
@@ -178,7 +188,8 @@ strong, b {
 
 @media screen and (max-width: 768px) {
     .grid-section-2, .grid-section-5 {
-        display: block;
+        grid-template-columns: 1fr!important;
+        gap: 30px!important;
     }
 
     .grid-section > *:not(:last-child) {
