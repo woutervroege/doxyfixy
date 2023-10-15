@@ -96,6 +96,7 @@
     }
 
     function handleSearchInput(e) {
+        document.documentElement.scrollTop = 0;
         const url = new URL(window.location.href);
         url.search = e.detail.value ? `search=${e.detail.value}` : '';
         window.history.pushState('','', url.href);
