@@ -204,7 +204,7 @@
 }
 
 .doxy-card .container p {
-    font: var(--doxy-text-body-m);
+    font: var(--doxy-text-body-m)!important;
     margin: var(--doxy-padding-sm) 0;
     display: var(--__card-p-display, none);
 }
