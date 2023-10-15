@@ -58,12 +58,6 @@ blockquote {
     }
 }
 
-@media screen and (max-width: 767px) {
-    blockquote {
-        font: var(--doxy-text-quote-s);
-    }
-}
-
 
 blockquote {
     view-timeline: --page-blockquote-fadein block;
@@ -114,22 +108,22 @@ blockquote:after {
     
 }
 
-p:first-of-type {
+p:first-of-type:not(.p1) {
     font: var(--doxy-text-serif-headline-xl);
 }
 
 @media screen and (max-width: 1023px) {
-    p:first-of-type {
+    p:first-of-type:not(.p1) {
         font: var(--doxy-text-serif-headline-l);
     }        
 }
 
-p.p-large:first-of-type {
+p.p-large:first-of-type:not(.p1) {
     font: var(--doxy-text-serif-headline-xxl);
 }
 
 @media screen and (max-width: 1023px) {
-    p.p-large:first-of-type {
+    p.p-large:first-of-type:not(.p1) {
         font: var(--doxy-text-serif-headline-l);
     }        
 }
@@ -147,7 +141,7 @@ strong, b {
 
 .doxy-page .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--doxy-padding-xl);
     width: 100%;
 }
