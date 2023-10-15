@@ -27,6 +27,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 		title={fields.title_films}
 		intro={fields.intro_text_films}
 		tags={Object.values(genreNames)}
+		withSearch
 		funky
 		client:visible
 	>

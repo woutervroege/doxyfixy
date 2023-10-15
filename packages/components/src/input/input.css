@@ -6,10 +6,11 @@
     font-family: var(--doxy-font);
     font-weight: 300;
     font-size: 18px;
-    color: var(--doxy-colors-background);
-    border: 1px solid currentColor;
+    background-color: var(--doxy-input-fill, var(--doxy-colors-white));
+    border: 0;
+    color: var(--doxy-input-accent, var(--doxy-colors-darkgrey));
     border-radius: var(--doxy-input-radius, var(--doxy-radius-round));
-    background-color: transparent;
+    box-shadow: var(--__doxy-button-box-shadow, 0px 0px 14px 0px rgba(0, 0, 0, 0.25));
 }
 
 .doxy-input::placeholder {

@@ -38,8 +38,6 @@
     * @private
     */
    async function handleClick() {
-    // // selected = !selected;
-    console.info('button', root.innerText.toLowerCase(), !selected);
     dispatch('toggle', {selected: !selected, tag: root.innerText.toLowerCase(), target: root})
    }
 

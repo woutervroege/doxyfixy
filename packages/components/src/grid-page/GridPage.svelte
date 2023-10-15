@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
     import PageHeader from '../page-header/PageHeader.svelte';
     import Card from '../card/Card.svelte';
+    import Input from '../input/Input.svelte';
     import Button from '../button/Button.svelte';
     import './grid-page.css';
 
@@ -17,8 +18,19 @@
     export let intro = '';
 
     /**
-    * @type {array} tags    */
+    * @type {array} tags
+    */
     export let tags = [];
+
+    /**
+    * @type {boolean} withSearch
+    */
+    export let withSearch = false;
+
+    /**
+    * @type {boolean} showSearch
+    */
+    export let showSearch = false;
 
     /**
     * @type {array} cards
@@ -62,6 +74,16 @@
         url.search = selectedTags[0] ? `filter=${selectedTags[0]}` : '';
         window.history.pushState('','', url.href);
 
+    }
+
+    function enableSearch() {
+        showSearch = true;
+        root.querySelector('input').select();
+    }
+
+    function disableSearch() {
+        showSearch = false;
+        root.querySelector('input').blur();
     }
 
     onMount(async () => {
@@ -126,7 +148,7 @@
 
 </script>
 
-<div class="doxy-page doxy-grid-page {twocols ? 'doxy-grid-page-twocols' :  ''}" bind:this={root}>
+<div class="doxy-page doxy-grid-page {twocols ? 'doxy-grid-page-twocols' :  ''} {showSearch ? 'doxy-page-showsearch' :  ''}" bind:this={root}>
 
     <PageHeader
         title={title}
@@ -137,6 +159,17 @@
     {#if hasTags}
     <!-- <div class="nav-container"> -->
     <nav>
+
+        <span class="doxy-search">
+            <Button icon="close" on:toggle={disableSearch}/>
+            <Input placeholder="Search..."/>
+        </span>
+        
+        <span class="filter-buttons">
+            <Button
+                icon="search"
+                on:toggle={enableSearch}
+            />
         {#each tags as tag}
             <Button
                 label={tag}
@@ -145,6 +178,7 @@
                 on:toggle={setSelectedTags}
             />
         {/each}
+        </span>
     </nav>
     <!-- </div> -->
     {/if}
