@@ -24,6 +24,7 @@
 }
 
 .doxy-menu.open + .doxy-menu-bg {
+    pointer-events: all;
     opacity: 0.8;
 }
 

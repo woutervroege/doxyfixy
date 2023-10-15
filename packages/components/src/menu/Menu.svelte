@@ -32,8 +32,16 @@
    /**
     * 
    */
-    function toggle() {
+   function toggle() {
         open = !open;
+    }
+
+
+   /**
+    * 
+   */
+   function close() {
+        open = false;
     }
 
 </script>
@@ -53,4 +61,4 @@
 
 </div>
 
-<div class="doxy-menu-bg"></div>
+<div class="doxy-menu-bg" on:click={close}></div>

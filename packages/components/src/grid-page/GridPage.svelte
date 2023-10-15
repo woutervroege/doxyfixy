@@ -1,5 +1,5 @@
 <script>
-	import { tick } from "svelte";
+	import { onMount } from 'svelte';
     import PageHeader from '../page-header/PageHeader.svelte';
     import Card from '../card/Card.svelte';
     import Button from '../button/Button.svelte';
@@ -54,11 +54,20 @@
      * 
      */
     async function setSelectedTags(e) {
-        // const newTags = [];
         const selectedTag = selectedTags[0];
         if(selectedTag === e.detail.tag) selectedTags = [];
         else selectedTags = [e.detail.tag];
+
+        const url = new URL(window.location.href);
+        url.search = `filter=${selectedTags[0]}`;
+        window.history.pushState('','', url.href);
+
     }
+
+    onMount(async () => {
+        const filter = new URLSearchParams(window.location.search).get('filter');
+        selectedTags = [filter]
+	});
 
     /**
      * DOM selector
