@@ -11,6 +11,7 @@
     animation-timing-function: ease;
     animation-duration: 1ms;
     pointer-events: all;
+    margin-top: 0!important;
 }
 
 @supports (animation-timeline: scroll(block root)) {
@@ -35,10 +36,19 @@
 .doxy-logo .typeface {
     height: 100%;
     animation-timeline: scroll(block root);
-    animation-name: fadeOut;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     opacity: 1;
+    margin: auto;
+}
+
+@supports (animation-timeline: scroll(block root)) {
+    .doxy-logo .typeface {
+        animation-name: fadeOut;
+    }
+    .doxy-logo .doxy-monogram {
+        animation-name: fadeIn;
+    }
 }
 
 .doxy-logo .typeface path {
@@ -48,7 +58,6 @@
 .doxy-logo .doxy-monogram {
     height: 150%;
     animation-timeline: scroll(block root);
-    animation-name: fadeIn;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     opacity: 0;
