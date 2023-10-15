@@ -216,6 +216,9 @@ strong, b {
     .grid-section-5 {
         grid-template-columns: 1fr 1fr;
     }
+    .grid-section-1 {
+        grid-template-columns: 1fr;
+    }
     
 }
 
