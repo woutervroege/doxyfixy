@@ -48,6 +48,17 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
         loading="lazy"
         slot="laurel"
     >   
+
+    {film.header_video?.guid ?
+    <video
+        src={film.header_video.guid}
+        autoplay
+        muted
+        playsinline
+        loop
+    ></video>
+    : ''}
+
     </Card>
 
 	<Page grid={false}>

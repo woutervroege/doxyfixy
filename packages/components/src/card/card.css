@@ -161,7 +161,8 @@
     margin: 0 var(--doxy-padding-lg);
 }
 
-.doxy-card img {
+.doxy-card img,
+.doxy-card video {
     position: absolute;
     inset: 0;
     width: 100%;
