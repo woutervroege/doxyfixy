@@ -59,7 +59,7 @@
         else selectedTags = [e.detail.tag];
 
         const url = new URL(window.location.href);
-        url.search = `filter=${selectedTags[0]}`;
+        url.search = selectedTags[0] ? `filter=${selectedTags[0]}` : '';
         window.history.pushState('','', url.href);
 
     }
