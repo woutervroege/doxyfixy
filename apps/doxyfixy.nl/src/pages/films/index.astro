@@ -43,6 +43,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 				loading="lazy"
 				decoding="async"
 				src={(images[film.featured_image.ID] || {}).source_url}
+				style={`object-position: ${film.featured_image_focus_point_x_axis || 50}% ${film.featured_image_focus_point_y_axis || 50}%`}
 			>
 		</Card>
 		</a>

@@ -156,7 +156,8 @@
                     loading="lazy"
                     decoding="async"
                     alt=""
-                >
+                    style={card.querySelector('img').getAttribute('style')}
+                    >
             </Card>
             </a>
         {/each}
@@ -178,6 +179,7 @@
                         >
                         <img
                             src={card.querySelector('img').src}
+                            style={card.querySelector('img').getAttribute('style')}
                             loading="lazy"
                             decoding="async"
                             alt=""

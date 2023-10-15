@@ -64,6 +64,7 @@ const person = persons[0];
                             loading="lazy"
                             decoding="async"
                             src={film.featured_image}
+                            style={`object-position: ${film.featured_image_focus_point_x_axis || 50}% ${film.featured_image_focus_point_y_axis || 50}%`}
                         >
                     </Card>
                     </a>

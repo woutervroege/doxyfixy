@@ -69,11 +69,34 @@
     }
 }
 
-
 .doxy-footer .contents {
+    display: flex;
+    gap: var(--doxy-padding-xxl);
+    justify-content: space-around;
+    min-width: 100%;
+}
+
+
+.doxy-footer .follow,
+.doxy-footer .mail-us {
     display: flex;
     flex-direction: column;
     gap: var(--doxy-padding-xxl);
+}
+
+.doxy-footer .mail-us {
+    flex: none;
+    align-items: center;
+}
+
+.doxy-footer .mail-us a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1023px) {
+    .doxy-footer .mail-us {
+        display: none;
+    }
 }
 
 

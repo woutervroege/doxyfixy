@@ -1,6 +1,7 @@
 <script>
     import NewsletterSubscriptionForm from '../newsletter-subscription-form/NewsletterSubscriptionForm.svelte';
 	import SocialButtons from '../social-buttons/SocialButtons.svelte';
+	import Button from '../button/Button.svelte';
     import './footer.css';
 </script>
 
@@ -39,8 +40,14 @@
     </div>
 
     <div class="contents">
-        <h6>Follow us here</h6>
-        <SocialButtons/>
+        <div class="follow">
+            <h6>Follow us here</h6>
+            <SocialButtons/>
+        </div>
+        <div class="mail-us">
+            <h6>Screenings? Compliments? Requests?</h6>
+            <a href="mailto:info@doxyfixy.nl"><Button label="Mail Us"/></a>
+        </div>
     </div>
 
     <address>
