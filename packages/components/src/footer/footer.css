@@ -74,6 +74,7 @@
     gap: var(--doxy-padding-xxl);
     justify-content: space-around;
     min-width: 100%;
+    --doxy-button-fill: #DEDCCA;
 }
 
 

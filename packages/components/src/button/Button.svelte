@@ -30,11 +30,17 @@
    export let icon = ''; 
 
     /**
+     * DOM selector
+    */
+    let root;
+
+    /**
     * @private
     */
-   function toggleSelected() {
-    selected = !selected;
-    dispatch('toggle', {selected: selected})
+   async function handleClick() {
+    // // selected = !selected;
+    console.info('button', root.innerText.toLowerCase(), !selected);
+    dispatch('toggle', {selected: !selected, tag: root.innerText.toLowerCase(), target: root})
    }
 
 
@@ -42,10 +48,11 @@
 </script>
 
 <button
+  bind:this={root}
   type="button"
   class="{classNames.join(' ')}"
   disabled='{disabled}'
-  on:click={toggleSelected}
+  on:click={handleClick}
 >
   {label}
   {#if icon } <Icon icon={icon}/> {/if}

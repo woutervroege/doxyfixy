@@ -48,9 +48,11 @@
     /**
      * 
      */
-    async function setSelectedTags() {
-        await tick();
-        selectedTags = [...root.querySelectorAll('button.selected')].map(item => item.innerText.toLowerCase());
+    async function setSelectedTags(e) {
+        // const newTags = [];
+        const selectedTag = selectedTags[0];
+        if(selectedTag === e.detail.tag) selectedTags = [];
+        else selectedTags = [e.detail.tag];
     }
 
     /**
@@ -125,6 +127,7 @@
             <Button
                 label={tag}
                 selectable
+                selected={selectedTags.includes(tag.toLowerCase())}
                 on:toggle={setSelectedTags}
             />
         {/each}
