@@ -135,13 +135,13 @@ p.p-large:first-of-type:not(.p1) {
 }
 
 strong, b {
-    display: block;
-    padding: 0 var(--doxy-padding-lg);
+    /* display: block; */
+    /* padding: 0 var(--doxy-padding-lg); */
 }
 
 .doxy-page .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--doxy-padding-xl);
     width: 100%;
 }

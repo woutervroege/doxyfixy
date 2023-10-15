@@ -54,22 +54,16 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
         <article>
 
-            <p style="text-align:start;margin-top: -24px;">
-                {film.synopsis}
-            </p>
+            <p style="text-align:start;margin-top: -24px;" set:html={film.synopsis.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
 
             <p hidden={!film.vimeo_trailer_url} class="video-container"><iframe src={`https://player.vimeo.com/video/${film.vimeo_trailer_url?.match(/[0-9]+/)?.[0]}?h=a7ad9099dc&title=0&byline=0&portrait=0`} style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></p>
 
             <h4>Cast</h4>
-            <ul>
-                <div set:html={film.cast.replace(/\n/g, '<br>')}></div>
-            </ul>
+            <p set:html={film.cast.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
 
             {film.credits ?
             <h4>Credits</h4>
-            <ul>
-                <div set:html={film.credits}></div>
-            </ul>
+            <p set:html={film.credits.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
             : ''}
 
             <p>
@@ -83,14 +77,12 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
             {film.festivals ?
             <h4>Festivals</h4>
-            <ul>
-                <div set:html={film.festivals}></div>
-            </ul>
+            <p set:html={film.festivals.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
             : ''}
 
             {film.reviews ?
             <h4>Reviews</h4>
-            <div set:html={film.reviews}></div>
+            <p set:html={film.reviews.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
             : ''}
 
     </article>

@@ -53,7 +53,7 @@ const person = persons[0];
             </p>
 
 
-            <div class="grid" style="margin-top: 64px">
+            <div class="grid" style="margin-top: 64px;grid-template-columns: 1fr 1fr">
                 {(person.associated_films || []).map(film => 
                     <a href={`/films/${film.post_name}`}>
                     <Card
