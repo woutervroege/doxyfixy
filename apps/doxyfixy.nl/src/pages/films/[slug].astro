@@ -85,6 +85,17 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
             <p set:html={film.reviews.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
             : ''}
 
+            <h4>Stills</h4>
+
+            {film.still_images.map((still) => 
+                <img
+                    src={still.guid}
+                    loading="lazy"
+                    decoding="async"
+                    style="max-height: 80vh;margin: 24px 0"
+                >
+            )}
+
     </article>
 
 	</Page>
