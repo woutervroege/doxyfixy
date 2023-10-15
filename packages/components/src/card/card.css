@@ -120,7 +120,7 @@
 
 .doxy-card.hero,
 .doxy-card.portrait-hero {
-    animation-timeline: scroll();
+    animation-timeline: scroll(block root);
     animation-name: appear;
     z-index: 2;
     top: 0;

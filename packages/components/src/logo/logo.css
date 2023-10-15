@@ -6,14 +6,14 @@
     margin-top: -116px;
     gap: var(--doxy-padding-xxl);
     align-items: center;
-    animation-timeline: scroll();
+    animation-timeline: scroll(block root);
     animation-name: scrollUp;
     animation-timing-function: ease;
     animation-duration: 1ms;
     pointer-events: all;
 }
 
-@supports (animation-timeline: scroll()) {
+@supports (animation-timeline: scroll(block root)) {
     .doxy-logo {
         margin-top: 0!important;
     }
@@ -34,7 +34,7 @@
 
 .doxy-logo .typeface {
     height: 100%;
-    animation-timeline: scroll();
+    animation-timeline: scroll(block root);
     animation-name: fadeOut;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
@@ -47,7 +47,7 @@
 
 .doxy-logo .doxy-monogram {
     height: 150%;
-    animation-timeline: scroll();
+    animation-timeline: scroll(block root);
     animation-name: fadeIn;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
