@@ -23,6 +23,11 @@
      */    
      export let disabled = false;
 
+    /**
+     * @type {object} inputDebouncer
+     */    
+     let inputDebouncer = {};
+
 
     /**
      * DOM selector
@@ -32,7 +37,10 @@
     const classNames = ['doxy-input']
 
     function handleInput() {
-        dispatch('input', {value: root.value});
+        window.clearTimeout(inputDebouncer);
+        inputDebouncer = window.setTimeout(() => {
+            dispatch('input', {value: root.value});
+        }, 250)
     }
 </script>
 

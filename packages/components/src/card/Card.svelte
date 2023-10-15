@@ -27,6 +27,10 @@
    */    
    export let summary = '';
 
+  /**
+   * @type {string} searchdata
+   */    
+   export let searchdata = '';   
 
   /**
    * @type {string} href
@@ -52,6 +56,7 @@
 
 <section class="{classNames.join(' ')}"
     data-title={title}
+    data-searchdata={searchdata}
     data-subtitle={subtitle}
     data-summary={summary}
     data-size={size}

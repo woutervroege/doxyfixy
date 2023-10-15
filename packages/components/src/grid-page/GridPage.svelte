@@ -117,7 +117,7 @@
     let root;
 
     $: cards = root && [...root.querySelectorAll('.doxy-card')] || [];
-    $: filteredCards = filterCards(cards, selectedTags) || [];
+    $: filteredCards = filterCards(cards, selectedTags, searchValue) || [];
     $: cardsGroups = getCardsGroups(filteredCards);
     $: hasCards = filteredCards.length > 0;
     
@@ -147,22 +147,38 @@
         return res;
     }
 
-    function filterCards(cards, selectedTags) {
+    function filterCards(cards, selectedTags, searchValue) {
 
-        if(selectedTags.length === 0) return cards;
+        if(selectedTags.length === 0 && !searchValue) return cards;
 
-        const filtered = cards.filter((card, i) => {
-            const cardTags = card.dataset.tags.toLowerCase().split(/,/g);
+        //filter by search value
+        if(searchValue) {
+            const pattern = new RegExp(searchValue, 'i');
+            const filtered = cards.filter((card) => {
+                const cardSearchData = card.dataset.searchdata;
+                return cardSearchData.match(pattern);
+            })
+            return filtered;
+        }
 
-            for(var i in selectedTags) {
-                if(cardTags.includes(selectedTags[i])) return true;
-            }
-            
-            return false;
+        //filter by tag
+        else {
 
-        })
+            const filtered = cards.filter((card, i) => {
+                const cardTags = card.dataset.tags.toLowerCase().split(/,/g);
 
-        return filtered;
+                for(var i in selectedTags) {
+                    if(cardTags.includes(selectedTags[i])) return true;
+                }
+                
+                return false;
+
+            })
+
+            return filtered;
+
+        }
+
 
     }
 
@@ -180,6 +196,7 @@
     <!-- <div class="nav-container"> -->
     <nav>
 
+        {#if withSearch}
         <span class="doxy-search">
             <Button icon="close" on:toggle={disableSearch}/>
             <Input
@@ -188,12 +205,16 @@
                 on:input={handleSearchInput}
             />
         </span>
+        {/if}
         
         <span class="filter-buttons">
+            {#if withSearch}
             <Button
                 icon="search"
                 on:toggle={enableSearch}
             />
+            {/if}
+
         {#each tags as tag}
             <Button
                 label={tag}
@@ -219,6 +240,7 @@
             <a href={card.closest('a')?.href}>
                 <Card
                     title={card.dataset.title}
+                    searchdata={card.dataset.searchdata}
                     subtitle={card.dataset.subtitle}
                     size={card.dataset.size}
                     summary={card.dataset.summary}
@@ -245,6 +267,7 @@
                     <a href={card.closest('a').href}>
                         <Card
                             title={card.dataset.title}
+                            searchdata={card.dataset.searchdata}
                             subtitle={card.dataset.subtitle}
                             size={card.dataset.size}
                             summary={card.dataset.summary}

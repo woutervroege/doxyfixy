@@ -39,6 +39,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 			title={film.title.rendered}
 			subtitle={film.logline}
 			tags={(film.genre || []).map(id => genreNames[id])}
+			searchdata={film.credits + ' ' + film.cast + ' ' + film.title.rendered + ' ' + film.festivals + ' ' + film.prices}
 		>
 			<img
 				loading="lazy"
