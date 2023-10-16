@@ -44,6 +44,7 @@
             <h6>Follow us here</h6>
             <SocialButtons/>
         </div>
+        <div></div>
         <div class="mail-us">
             <h6>Screenings? Compliments? Requests?</h6>
             <a href="mailto:info@doxyfixy.nl"><Button label="Mail Us"/></a>

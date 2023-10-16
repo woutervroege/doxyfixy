@@ -31,6 +31,7 @@
 .doxy-menu .menuitems {
     display: flex;
     gap: var(--doxy-padding-lg);
+    align-items: center;
 }
 
 .doxy-menu .menuitems > * {

@@ -107,7 +107,7 @@
     .doxy-card .container {
         --__card-title-font: var(--doxy-text-sans-headline-xs);
         --__card-subtitle-display: none;
-        --__card-padding: var(--doxy-padding-xl);
+        --__card-padding: var(--doxy-padding-lg);
         --__card-content-maxwidth: 100%;
     }
     .doxy-card.portrait .container {
@@ -188,6 +188,12 @@
 
 .doxy-card.doxy-card-editorial .title {
     font-weight: 900!important;
+}
+
+@container (min-width: 1024px) {
+    .doxy-card.doxy-card-editorial  .title {
+        --__card-title-font: var(--doxy-text-sans-headline-xl);
+    }
 }
 
 .doxy-card[data-tags~="Fixy"] {

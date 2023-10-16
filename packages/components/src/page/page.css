@@ -21,6 +21,11 @@ article {
     margin-bottom: var(--doxy-padding-lg);
     hyphens: auto;
     text-align: center;
+    view-timeline: --page-blockquote-fadein block;
+    animation-timeline: --page-blockquote-fadein;
+    xanimation-name: articleFadeIn;
+    xmargin-top: 20vh;
+
 }
 
 @media screen and (max-width: 1023px) {
@@ -58,14 +63,7 @@ blockquote {
     }
 }
 
-
-blockquote {
-    view-timeline: --page-blockquote-fadein block;
-    animation-timeline: --page-blockquote-fadein;
-    animation-name: blockQuoteFadeIn;
-  }
-
-@keyframes blockQuoteFadeIn {
+@keyframes articleFadeIn {
     0% {
         opacity: 0;
         translate: 0 -40vh;
@@ -114,19 +112,26 @@ blockquote:after {
 
 @media screen and (max-width: 1023px) {
 .doxy-page p:first-of-type:not(.p1) {
-        font: var(--doxy-text-serif-headline-l);
+        font: var(--doxy-text-serif-headline-m);
     }        
 }
 
 .doxy-page p.p-large:first-of-type:not(.p1) {
-    font: var(--doxy-text-serif-headline-xxl);
+    font: var(--doxy-text-serif-headline-xxxl);
 }
 
-@media screen and (max-width: 1023px) {
+
+@media screen and (max-width: 1024px) {
 .doxy-page p.p-large:first-of-type:not(.p1) {
-        font: var(--doxy-text-serif-headline-l);
+        font: var(--doxy-text-serif-headline-xxl);
     }        
 }
+
+@media screen and (max-width: 767px) {
+    .doxy-page p.p-large:first-of-type:not(.p1) {
+            font: var(--doxy-text-serif-headline-l);
+        }        
+    }        
 
 @media screen and (max-width: 768px) {
     .doxy-page p:first-of-type {
@@ -177,16 +182,23 @@ strong, b {
 
 @media screen and (max-width: 768px) {
     .doxy-page .funky-grid {
-        gap: 30px!important;
+        gap: 22px!important;
     }
 }
 
 .grid-section {
     display: grid;
-    grid-template-columns: 977fr 2023fr;
+    grid-template-columns: 980fr 2020fr;
     gap: var(--doxy-padding-xl);
     align-items: flex-start;
 }
+
+@media screen and (max-width: 1024px) {
+    .grid-section {
+        grid-template-columns: 1fr 1fr;
+    }   
+}
+
 
 .grid-section > a {
     margin: 0!important;
@@ -200,7 +212,7 @@ strong, b {
 @media screen and (max-width: 768px) {
     .grid-section-2, .grid-section-5 {
         grid-template-columns: 1fr!important;
-        gap: 30px!important;
+        gap: 22px!important;
     }
 
     .grid-section > *:not(:last-child) {
@@ -266,13 +278,18 @@ strong, b {
 
 .doxy-page h4 {
     font: var(--doxy-text-sans-headline-s);
-    margin: 0;
+    margin: 48px 0 0 0;
 }
 
 @media screen and (max-width: 1023px) {
     .doxy-page h4 {
         font: var(--doxy-text-sans-headline-xs);
+        margin: 24px 0 0 0;
     }
+}
+
+.doxy-page h4 + img {
+    margin-top: 36px!important;
 }
 
 .doxy-page astro-slot a {

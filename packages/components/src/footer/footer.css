@@ -27,13 +27,15 @@
     margin: auto;
     align-items: center;
     justify-content: center;
+    min-width: 100%;
 }
+
 
 @media screen and (max-width: 1280px) {
 
     .doxy-footer {
         padding: var(--doxy-padding-xxl);
-        padding-bottom: 25vmin;
+        padding-bottom: 35vmin;
     }
 
     .doxy-footer .head {
@@ -45,6 +47,8 @@
 .doxy-footer .head svg {
     height: 40vmin;
     margin: 0 var(--doxy-padding-xxl);
+    flex: 1;
+    max-width: 40vw;
 }
 
 .doxy-footer .head h5 {
@@ -55,6 +59,7 @@
     width: 320px;
     max-width: 100%;
     text-align: center;
+    flex: 1;
 }
 
 @media screen and (max-width: 1023px) {
@@ -77,6 +82,16 @@
     --doxy-button-fill: #DEDCCA;
 }
 
+@media screen and (max-width: 1023px) {
+    .doxy-footer .contents {
+        flex-direction: column;
+    }
+}
+
+.doxy-footer .contents > * {
+    flex: 1;
+}
+
 
 .doxy-footer .follow,
 .doxy-footer .mail-us {
@@ -86,7 +101,7 @@
 }
 
 .doxy-footer .mail-us {
-    flex: none;
+    /* flex: none; */
     align-items: center;
 }
 

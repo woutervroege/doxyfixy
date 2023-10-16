@@ -238,6 +238,7 @@
     <slot hidden={true}/>
 
 
+    {#if filteredCards.length > 0}
     <div class="grid" hidden={funky} inert={funky}>
         {#each filteredCards as card}
             <a href={card.closest('a')?.href}>
@@ -262,6 +263,7 @@
             </a>
         {/each}
     </div>
+    {/if}
 
     <div class="funky-grid" hidden={!funky} inert={!funky}>
         {#each cardsGroups as cardsGroup}
