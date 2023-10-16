@@ -210,6 +210,7 @@
     font: var(--__card-subtitle-font, var(--doxy-text-serif-headline-m));
     max-width: var(--__card-content-maxwidth);
     z-index: 2;
+    text-wrap: balance;
 }
 
 .doxy-card .container div {

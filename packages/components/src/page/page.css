@@ -20,7 +20,7 @@ article {
     font: var(--doxy-text-body-l);
     margin-bottom: var(--doxy-padding-lg);
     hyphens: auto;
-    text-align: center;
+    text-align: start;
     view-timeline: --page-blockquote-fadein block;
     animation-timeline: --page-blockquote-fadein;
     xanimation-name: articleFadeIn;
@@ -133,11 +133,11 @@ blockquote:after {
         }        
     }        
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .doxy-page p:first-of-type {
         font: var(--doxy-text-serif-headline-m);
     }        
-}
+} */
 
 strong, b {
     /* display: block; */
@@ -244,18 +244,14 @@ strong, b {
     padding: 0;
 }
 
-.doxy-page iframe {
-    border: 0;
+.doxy-page .video-container {
+    aspect-ratio: 16/9;
+    width: 100%;
     height: auto;
-    width: 900px;
-    max-width: 100%;
+    position: relative;
+    margin-top: 36px;
 }
 
-.doxy-page .video-container {
-    padding:41.89% 0 0 0;
-    position:relative;
-    width:100%;
-}
 
 .doxy-page ul, .doxy-page ol {
     text-align: center;
@@ -279,6 +275,10 @@ strong, b {
 .doxy-page h4 {
     font: var(--doxy-text-sans-headline-s);
     margin: 48px 0 0 0;
+}
+
+.doxy-page h4 + p {
+    text-align: center;
 }
 
 @media screen and (max-width: 1023px) {
