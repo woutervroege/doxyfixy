@@ -36,7 +36,7 @@
             </svg>
             
 
-        <h5>Where stories are born</h5>
+        <h5>Where stories<br>are born</h5>
     </div>
 
     <div class="contents">
