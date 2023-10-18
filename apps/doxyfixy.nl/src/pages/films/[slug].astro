@@ -74,6 +74,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
                 frameborder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen
+                style={`--video-trailer-aspect-ratio: ${film.video_trailer_aspect_ratio || '16/9'}`}
             ></iframe>
             : ''}
 
