@@ -18,9 +18,11 @@
 
 </script>
 
+{#if title || intro}
 <section class="doxy-page-header">
     <div>
         {#if title}<h1>{title}</h1>{/if}
         {#if intro}<p class={bigintro ? 'p-large' : ''}>{intro}</p>{/if}
     </div>
 </section>
+{/if}

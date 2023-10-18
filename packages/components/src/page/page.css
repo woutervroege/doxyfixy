@@ -25,6 +25,7 @@ article {
     animation-timeline: --page-blockquote-fadein;
     xanimation-name: articleFadeIn;
     xmargin-top: 20vh;
+    padding: 0 16px;
 
 }
 
@@ -244,6 +245,23 @@ strong, b {
     padding: 0;
 }
 
+
+@media screen and (max-width: 1023px) {
+    .doxy-page p {
+        margin: var(--doxy-padding-lg) 0;
+    }        
+}
+
+.doxy-page h1 + p {
+    margin-top: var(--doxy-padding-xxxl);
+}
+
+@media screen and (max-width: 1023px) {
+    .doxy-page h1 + p {
+        margin-top: var(--doxy-padding-xxl);
+    }    
+}
+
 .doxy-page .video-container {
     aspect-ratio: var(--video-trailer-aspect-ratio, 16/9);
     width: 100%;
@@ -399,4 +417,20 @@ a.cta {
     width: 18px;
     margin: 18px auto 0 auto;
     display: flex;
+}
+
+.doxy-page .grid.associated-films-grid {
+    margin-top: 64px;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 767px) {
+    .doxy-page .grid.associated-films-grid {
+        grid-template-columns: 1fr;
+    }
+        
+}
+
+.doxy-page p:empty {
+    margin: 0;
 }

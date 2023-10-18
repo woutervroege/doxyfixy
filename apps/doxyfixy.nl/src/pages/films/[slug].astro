@@ -65,7 +65,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
         <article>
 
-            <p style="text-align:start;margin-top: -24px;padding:0 16px" set:html={film.synopsis.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
+            <p style="text-align:start;margin-top: -24px" set:html={film.synopsis.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
 
             {film.vimeo_trailer_url ?
                 <iframe
