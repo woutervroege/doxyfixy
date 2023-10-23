@@ -28,7 +28,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
 		<Card
 			title={films[0].editorial_headline}
-			subtitle={films[0].logline}
+			subtitle={films[0].editorial_subtitle}
 			tags={(films[0].genre || []).map(id => genreNames[id])}
 			size="hero"
 			editorial
