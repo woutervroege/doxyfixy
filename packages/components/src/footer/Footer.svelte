@@ -8,7 +8,7 @@
 <footer class="doxy-footer">
     
     <div class="head">
-        <h5>Always at the crossroads</h5>
+        <h5>Always at<br>the crossroads</h5>
 
         <svg viewBox="0 0 302 407" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_743_795)">
