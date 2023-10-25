@@ -91,7 +91,6 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
             {film.artwork ?
             <h4>Artwork</h4>
             <p set:html={film.artwork.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
-            : ''}                
 
             <p style="margin-top: 0">
                 <img
@@ -101,6 +100,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
                     style="max-height: 80vh"
                 >
             </p>
+            : ''}                
 
             {film.festivals ?
             <h4>Festivals</h4>
