@@ -30,7 +30,7 @@
     display: block;
     flex: none;
     align-self: flex-start;
-    pointer-events: all;
+    pointer-events: none;
 }
 
 .doxy-logo .typeface {

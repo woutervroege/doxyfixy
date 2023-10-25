@@ -42,9 +42,7 @@ const person = persons[0];
 
             <blockquote>{person.quote}</blockquote>
 
-            <p>
-                {person.intro_text}
-            </p>
+            <div set:html={person.intro_text.replace(/ class\=".*?"/g, '').replace(/<p><\/p>/g, '')}></div>
 
             <div set:html={person.interview}></div>
 
