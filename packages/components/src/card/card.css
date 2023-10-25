@@ -8,7 +8,7 @@
     color: var(--doxy-colors-white);
     font-family: var(--doxy-font);
     container-type: inline-size;
-    transition: 100ms scale ease-in-out;
+    transition: 100ms scale ease-in-out!important;
 }
 
 .doxy-card:not(.hero),
@@ -48,11 +48,11 @@
 }
 
 .doxy-card:hover {
-    scale: 1.005;
+    scale: 1.005!important;
 }
 
 .doxy-card:active {
-    scale: 1.01;
+    scale: 1.01!important;
 }
 
 .doxy-card .container {
