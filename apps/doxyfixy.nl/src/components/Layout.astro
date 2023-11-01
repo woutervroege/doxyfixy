@@ -81,8 +81,8 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 		const maxHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 		const scrollFraction = document.documentElement.scrollTop / maxHeight;
 
-		if(scrollFraction < 0.1) logoClass = '';
-		else if(scrollFraction >= 0.1 && scrollFraction < 0.95) logoClass = '10';
+		if(scrollFraction < 0.03) logoClass = '';
+		else if(scrollFraction >= 0.03 && scrollFraction < 0.95) logoClass = '10';
 		else if(scrollFraction >= 0.95 && scrollFraction < 1) logoClass = '95';
 		else logoClass = '100';
 
