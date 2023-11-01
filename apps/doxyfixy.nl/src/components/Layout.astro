@@ -5,6 +5,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import NavBar from './NavBar.astro';
 import Footer from '@doxyfixy/components/src/footer/Footer.svelte';
 
+import Splash from './Splash.astro';
+
 import { ViewTransitions } from 'astro:transitions';
 
 const { title = '', logoColor = 'black' } = Astro.props;
@@ -68,9 +70,12 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 			</style>
 
 		</div>
-		
+
+		<Splash/>
+
 	</body>
 </html>
+
 
 <script is:inline>
 
