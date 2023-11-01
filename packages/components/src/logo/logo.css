@@ -57,10 +57,40 @@
 
 .doxy-logo .doxy-monogram {
     height: 150%;
-    animation-timeline: scroll(block root);
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     opacity: 0;
+}
+
+@supports (animation-timeline: scroll(block root)) {
+    .doxy-logo .doxy-monogram {
+        animation-timeline: scroll(block root);
+    }  
+}
+
+/* body .doxy-logo .doxy-monogram {
+    border: 1px solid blue;
+} */
+
+@supports not (animation-timeline: scroll(block root)) {
+
+    .doxy-logo, .doxy-monogram {
+        transition: all ease 200ms;
+    }
+
+    body[data-logo-animation="10"] .doxy-monogram {
+        opacity: 1;
+    }
+    
+    body[data-logo-animation="10"] .doxy-logo {
+        translate: 0 -220%;
+    }
+
+    body[data-logo-animation="95"] .doxy-logo,
+    body[data-logo-animation="100"] .doxy-logo {
+            translate: 0 -500%;
+    }  
+
 }
 
 @media screen and (max-width: 1023px) {
