@@ -126,15 +126,6 @@
     top: 0;
   }
 
-/* @keyframes appear {
-    0% {
-        translate: 0 0;
-    }
-    100% {
-        translate: 0 -90vh;
-    }
-} */
-
 .doxy-card.hero:first-of-type,
 .doxy-card.portrait-hero:first-of-type {
     height: 75vh;

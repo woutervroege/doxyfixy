@@ -78,16 +78,16 @@
         transition: all ease 200ms;
     }
 
-    body[data-logo-animation="10"] .doxy-monogram {
+    body[data-scroll-fraction="10"] .doxy-monogram {
         opacity: 1;
     }
     
-    body[data-logo-animation="10"] .doxy-logo {
+    body[data-scroll-fraction="10"] .doxy-logo {
         translate: 0 -220%;
     }
 
-    body[data-logo-animation="95"] .doxy-logo,
-    body[data-logo-animation="100"] .doxy-logo {
+    body[data-scroll-fraction="95"] .doxy-logo,
+    body[data-scroll-fraction="100"] .doxy-logo {
             translate: 0 -500%;
     }  
 
