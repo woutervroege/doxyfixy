@@ -126,7 +126,7 @@ blockquote:after {
     }
 
     .doxy-page p.p-large.intersecting {
-        filter: blur(0);
+        filter: none;
         scale: 1;        
     }
 }
