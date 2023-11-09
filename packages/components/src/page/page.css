@@ -246,6 +246,7 @@ blockquote:after {
 .doxy-page p {
     margin: var(--doxy-padding-xl) 0;
     padding: 0;
+    hyphens: auto;
 }
 
 
@@ -262,6 +263,7 @@ blockquote:after {
 @media screen and (max-width: 1023px) {
     .doxy-page h1 + p {
         margin-top: var(--doxy-padding-xxl);
+        padding: 0 16px;
     }    
 }
 
