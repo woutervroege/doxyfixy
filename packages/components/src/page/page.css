@@ -119,7 +119,6 @@ blockquote:after {
 
 @supports not (animation-timeline: view(block root)) {
     .doxy-page p.p-large {
-        filter: blur(10px);
         scale: 1.1;
         transition: 400ms ease all;
         transition-delay: 20ms;
