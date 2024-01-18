@@ -1,7 +1,7 @@
 .doxy-card {
     /* height: 310px; */
     width: 100%;
-    max-height: 90vh;
+    max-height: calc(100vh - 32px);
     /* min-height: 40vmin; */
     aspect-ratio: 16/9;
     position: relative;
@@ -128,7 +128,7 @@
 
 .doxy-card.hero:first-of-type,
 .doxy-card.portrait-hero:first-of-type {
-    height: 75vh;
+    height: 100vh;
     margin-top: calc(-148px - calc(max(5vmin,24px)) + var(--doxy-padding-lg));
 }
 
