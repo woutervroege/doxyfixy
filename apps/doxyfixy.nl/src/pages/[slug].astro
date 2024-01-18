@@ -38,9 +38,7 @@ const page = pages[0];
                 style="width:calc(100vw - 32px); "
             >
         
-            <blockquote>{page.quote}</blockquote>
-
-            <p set:html={page.contents.trim().replace(/\n/g, '<br>').replace(/<br>+/g, '').replace(/<p><\/p>/g, '')}></p>
+            <p class="page-intro-text" set:html={page.contents.trim().replace(/\n/g, '<br>').replace(/<br>+/g, '').replace(/<p><\/p>/g, '')}></p>
         </article>
 
 	</Page>

@@ -122,7 +122,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
             {film.cast ?
             <h4>Cast</h4>
-            <p set:html={film.cast.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            <p class="p1" set:html={film.cast.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
             : ''}
 
             {film.credits ?
