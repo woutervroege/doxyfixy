@@ -107,16 +107,6 @@ blockquote:after {
     
 }
 
-.doxy-page p:first-of-type:not(.p1) {
-    font: var(--doxy-text-serif-headline-xl);
-}
-
-@media screen and (max-width: 1023px) {
-.doxy-page p:first-of-type:not(.p1) {
-        font: var(--doxy-text-serif-headline-m);
-    }        
-}
-
 @supports not (animation-timeline: view(block root)) {
     .doxy-page p.p-large {
         scale: 1.1;
