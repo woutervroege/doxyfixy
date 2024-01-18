@@ -32,12 +32,14 @@ const person = persons[0];
             position: sticky;
             bottom: 0;
             margin-inline: auto;
-            padding-block: 16px;
+            padding-block: 72px;
         }
 
         @media screen and (max-width: 1023px) {
             blockquote {
                 font: var(--doxy-text-quote-l);
+                /* padding-block: 32px; */
+                padding-inline: 16px;
             }
         }
     </style>
@@ -55,6 +57,7 @@ const person = persons[0];
         style={`object-position: ${person.interview_header_image_focus_point_x_axis || 50}% ${person.interview_header_image_focus_point_y_axis || 50}%`}
     >   
     </Card>
+    <img src="/arrow_down.svg" class="arrow-icon" slot="header">
     
     <blockquote slot="header">{person.quote}</blockquote>
 

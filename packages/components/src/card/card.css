@@ -128,8 +128,9 @@
 
 .doxy-card.hero:first-of-type,
 .doxy-card.portrait-hero:first-of-type {
-    height: 100vh;
+    height: 90vh!important;
     margin-top: calc(-148px - calc(max(5vmin,24px)) + var(--doxy-padding-lg));
+    padding-bottom: 10vh;
 }
 
 @media screen and (orientation: portrait) {

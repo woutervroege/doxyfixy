@@ -409,7 +409,7 @@ a.cta {
 
 .arrow-icon {
     width: 18px;
-    margin: 18px auto 0 auto;
+    margin: -12px auto 0 auto;
     display: flex;
 }
 
