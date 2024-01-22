@@ -419,7 +419,11 @@ a.cta {
 
 .arrow-icon {
     width: 18px;
-    margin: -12px auto 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -48px);
+    z-index: 3;
     display: flex;
 }
 
