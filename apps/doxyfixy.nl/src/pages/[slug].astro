@@ -14,7 +14,8 @@ return pages.map(person => {
 }
 
 const { slug } = Astro.params;
-const pages = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/pages?per_page=100&slug=' + slug).then(pages => pages.json());
+let pages = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/pages?per_page=100&slug=' + slug).then(pages => pages.json());
+pages = pages.filter(page => page.language?.[0] !== 'en');
 const page = pages[0];
 
 ---

@@ -7,6 +7,7 @@ const settings = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/settings/
 const fields = settings.data.row;
 
 let persons = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/person?per_page=100').then(res => res.json());
+persons = persons.filter(person => person.language?.[0] !== 'en');
 persons = persons.sort((a, b) => a.last_name.toLowerCase() < b.last_name.toLowerCase() ? -1 : 1);
 
 const images = Object.fromEntries(await Promise.all(persons.map(person => fetch(`https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/media/${person.featured_image.ID}`))).then(responses =>
