@@ -5,7 +5,7 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
 
 export async function getStaticPaths() {
 
-    const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?per_page=100&_fields[]=slug');
+    const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?per_page=100&_fields[]=slug&_fields[]=language');
     let films = await filmsRes.json();
     films = films.filter(film => film.language?.[0] !== 'en');
 
