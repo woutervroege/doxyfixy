@@ -79,10 +79,9 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 
 <script is:inline>
 
-	window.addEventListener('DOMContentLoaded', () => {
-
 
 	//scroll
+
 	document.addEventListener('scroll', () => {
 
 		let scrollClass = '';
@@ -96,26 +95,24 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 
 		document.body.dataset.scrollFraction = scrollClass;
 
-	}, {passive: true});
+
+		if(CSS.supports('animation-timeline', 'scroll()')) return;
 
 
-	//
-	// let observer = new IntersectionObserver((entries) => {
-	// 	if(entries[0].intersectionRatio) {
-	// 		console.info(entries[0].target, entries[0].intersectionRatio)
-	// 		window.setTimeout(() => entries[0].target.classList.add('intersecting'), 200)
-	// 	}
-	// 	entries[0].target.classList.toggle('intersecting', entries[0].intersectionRatio > 0.95);
-	// 	entries[0].target.dataset.ratio = entries[0].intersectionRatio;
-	// }, {
-	// 	root: null,
-	// 	rootMargin: "0px",
-	// 	threshold: 0.9
-	// });
-	// document.querySelectorAll('p.p-large').forEach((elem, i) => {
-	// 	observer.observe(elem)
-	// });
+		const scrollTop = document.documentElement.scrollTop;
+		const scrollBottom = scrollTop + window.innerHeight;
 
-})
+		document.querySelectorAll('.doxy-page .doxy-card').forEach(node => {
+			const isVisible = node.offsetTop <= scrollBottom;
+			node.style.setProperty('transform', `translate(0, ${isVisible ? '0' : '100px'})`)
+			node.style.setProperty('filter', `blur(${isVisible ? '0' : '10px'})`)
+		})
+
+		document.querySelectorAll('.p-large').forEach(node => {
+			const isVisible = node.offsetTop <= scrollBottom;
+			node.style.setProperty('filter', `blur(${isVisible ? '0' : '10px'})`)
+		})
+
+	}, {passive: true})
 
 </script>

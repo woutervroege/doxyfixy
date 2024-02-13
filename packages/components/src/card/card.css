@@ -11,11 +11,28 @@
     transition: 100ms scale ease-in-out!important;
 }
 
-.doxy-card:not(.hero),
-.doxy-card:not(.portrait-hero) {
-    view-timeline: --fade-fadein block;
-    animation-timeline: --fade-fadein;
-    animation-name: cardFadeIn;
+@supports (animation-timeline: scroll(block root)) {
+    .doxy-card:not(.hero),
+    .doxy-card:not(.portrait-hero) {
+        view-timeline: --fade-fadein block;
+        animation-timeline: --fade-fadein;
+        animation-name: cardFadeIn;
+    }
+}
+
+@supports not (animation-timeline: scroll(block root)) {
+    .doxy-card:not(.hero),
+    .doxy-card:not(.portrait-hero) {
+        transition: 400ms transform ease, 200ms filter ease!important;
+        /* filter: blur(0); */
+        /* transform: scale(1.1); */
+    }
+
+    .doxy-card.visible:not(.hero),
+    .doxy-card.visible:not(.portrait-hero) {
+        /* filter: blur(0); */
+        /* transform: scale(1); */
+    }
 }
 
 @media screen and (min-width: 1024px) {
