@@ -111,6 +111,7 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 		document.querySelectorAll('.p-large').forEach(node => {
 			const isVisible = node.offsetTop <= scrollBottom;
 			node.style.setProperty('filter', `blur(${isVisible ? '0' : '10px'})`)
+			node.style.setProperty('transform', `scale(${isVisible ? '1' : '1.1'})`)
 		})
 
 	}, {passive: true})
