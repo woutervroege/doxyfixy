@@ -17,9 +17,20 @@
     align-items: center;
     text-align: center;
     gap: 10vmin;
-    view-timeline: --subjectReveal block;
-    animation-timeline: --subjectReveal;
-    animation-name: reveal;
+}
+
+@supports (animation-timeline: scroll(block root)) {
+    .doxy-footer {
+        view-timeline: --subjectReveal block;
+        animation-timeline: --subjectReveal;
+        animation-name: reveal;
+    }
+}
+
+@supports not (animation-timeline: scroll(block root)) {
+    .doxy-footer {
+        transition: 400ms transform ease;
+    } 
 }
 
 .doxy-footer .head {
