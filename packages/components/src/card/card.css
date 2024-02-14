@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 1024px) {
     .doxy-card.doxy-card-editorial {
-        height: 100dvh!important;
+        height: 100vh!important;
     }
 }
 
@@ -145,7 +145,7 @@
 
 .doxy-card.hero:first-of-type,
 .doxy-card.portrait-hero:first-of-type {
-    height: 100dvh!important;
+    height: 100vh!important;
     margin-top: calc(-148px - calc(max(5vmin,24px)) + var(--doxy-padding-lg));
     padding-bottom: 10vh;
 }
@@ -153,7 +153,7 @@
 @media screen and (orientation: portrait) {
     .doxy-card.hero:first-of-type,
     .doxy-card.portrait-hero:first-of-type {
-        height: 60dvh!important;
+        height: 60vh!important;
     }    
 }
 
