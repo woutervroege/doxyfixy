@@ -117,7 +117,7 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 		document.querySelectorAll('.doxy-footer').forEach(node => {
 			const isVisible = node.offsetTop <= scrollBottom-200;
 			console.info('isVisible', node.offsetTop, scrollBottom)
-			node.style.setProperty('transform', `translateY(${isVisible ? '0' : '200px'})`)
+			node.style.setProperty('transform', `translateY(${isVisible ? '0' : '150px'})`)
 		})
 
 	}, {passive: true})

@@ -29,7 +29,7 @@
 
 @supports not (animation-timeline: scroll(block root)) {
     .doxy-footer {
-        transition: 400ms transform ease;
+        transition: 500ms transform ease;
     } 
 }
 
