@@ -64,11 +64,11 @@
     aspect-ratio: 4/5;
 }
 
-.doxy-card:hover {
+.doxy-card:not(.hero):hover {
     scale: 1.005!important;
 }
 
-.doxy-card:active {
+.doxy-card:not(.hero):active {
     scale: 1.01!important;
 }
 
