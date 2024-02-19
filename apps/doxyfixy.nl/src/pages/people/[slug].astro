@@ -5,7 +5,7 @@ import Card from '@doxyfixy/components/src/card/Card.svelte';
 
 export async function getStaticPaths() {
 
-    let persons = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/person?per_page=100&_fields[]=slug&_fields[]=language').then(person => person.json());
+    let persons = await fetch('https://edit.doxyfixy.nl/wp-json/wp/v2/person?per_page=100&_fields[]=slug&_fields[]=language').then(person => person.json());
     persons = persons.filter(person => person.language?.[0] !== 'en');
 
     return persons.map(person => {
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-let persons = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/person?per_page=100&slug=' + slug).then(persons => persons.json());
+let persons = await fetch('https://edit.doxyfixy.nl/wp-json/wp/v2/person?per_page=100&slug=' + slug).then(persons => persons.json());
 const person = persons[0];
 
 ---
