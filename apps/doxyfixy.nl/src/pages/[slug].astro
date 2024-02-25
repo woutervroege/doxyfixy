@@ -40,6 +40,8 @@ const page = pages[0];
                 style="width:calc(100vw - 32px); "
             >
         
+            <blockquote slot="header">{page.quote}</blockquote>
+
             <p class="page-intro-text" set:html={page.contents.trim().replace(/\n/g, '<br>').replace(/<br>+/g, '').replace(/<p><\/p>/g, '')}></p>
         </article>
 

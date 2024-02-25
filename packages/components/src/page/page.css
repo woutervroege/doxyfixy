@@ -427,6 +427,12 @@ a.cta {
     display: flex;
 }
 
+@media screen and (max-width: 1023px) {
+    .arrow-icon {
+        display: none;
+    }
+}
+
 .doxy-page .grid.associated-films-grid {
     margin-top: 64px;
     grid-template-columns: 1fr 1fr;
