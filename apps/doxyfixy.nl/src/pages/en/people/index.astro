@@ -1,0 +1,58 @@
+---
+import Layout from '../../../components/Layout.astro';
+import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
+import Card from '@doxyfixy/components/src/card/Card.svelte';
+
+const settings = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/settings/pages').then(res => res.json());
+const fields = settings.data.row;
+
+let persons = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/person?per_page=100').then(res => res.json());
+persons = persons.filter(person => person.language?.[0] === 'en');
+persons = persons.sort((a, b) => a.last_name.toLowerCase() < b.last_name.toLowerCase() ? -1 : 1);
+
+const images = Object.fromEntries(await Promise.all(persons.map(person => fetch(`https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/media/${person.featured_image.ID}`))).then(responses =>
+    Promise.all(responses.map(async res => {
+		const json = await res.json();
+		return [json.id, json.media_details?.sizes?.medium_large || {}];
+	})))
+);
+
+const personCategories = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/person_category').then(res => res.json());
+const personCategoryNames = Object.fromEntries(personCategories.map(person_category => ([person_category.id, person_category.name])));
+
+---
+
+<Layout title="People" language="en">
+
+	<GridPage
+		title={fields.title_people_en}
+		intro={fields.intro_text_people}_en
+		tags={Object.values(personCategoryNames)}
+		client:visible
+	>
+
+
+	{persons.map((person) =>
+		<a href='javascript:onclick=null'>
+
+		<Card
+			size="portrait"
+			title={person.title.rendered}
+			subtitle={person.role}
+			summary={person.card_text + (person.interview ? `<br><a href="/people/${person.slug}">Lees Meer</a>` : '')}
+			tags={(person.person_category || []).map(id => personCategoryNames[id])}
+		>
+			<img
+				loading="lazy"
+				decoding="async"
+				src={(images[person.featured_image.ID] || {}).source_url}
+				style={`object-position: ${person.featured_image_focus_point_x_axis || 50}% ${person.featured_image_focus_point_y_axis || 50}%`}
+			>
+		</Card>
+		</a>
+
+	)}
+
+	</GridPage>
+
+</Layout>

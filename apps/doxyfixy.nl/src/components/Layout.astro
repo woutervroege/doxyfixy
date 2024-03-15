@@ -9,14 +9,14 @@ import Splash from './Splash.astro';
 
 import { ViewTransitions } from 'astro:transitions';
 
-const { title = '', logoColor = 'black' } = Astro.props;
+const { title = '', logoColor = 'black', language = 'nl' } = Astro.props;
 const logoFillCSS = `--doxy-logo-fill: ${logoColor}`;
 
 const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 ---
 
 <!DOCTYPE html>
-<html lang="nl">
+<html lang={language}>
 	<head>
 		<BaseHead title={pageTitle} description={SITE_DESCRIPTION} />
 		<ViewTransitions />
@@ -25,7 +25,7 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 
 		<div id="container" style={logoFillCSS}>
 
-			<NavBar/>
+			<NavBar language={language}/>
 			
 			<slot name="header"/>
 

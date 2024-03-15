@@ -1,13 +1,17 @@
 ---
 import Logo from "@doxyfixy/components/src/logo/Logo.svelte";
 import Menu from '@doxyfixy/components/src/menu/Menu.svelte';
+
+const { language = 'nl' } = Astro.props;
+const prefix = language === 'en' ? '/en/' : '/';
+console.info('prefix', prefix)
 ---
 
 <header class="doxy-header">
 	<div class="container">
-		<a href="/"><Logo/></a>
+		<a href={prefix}><Logo/></a>
 		<nav>
-			<Menu client:visible/>
+			<Menu client:visible prefix={prefix}/>
 		</nav>
 	</div>
 </header>

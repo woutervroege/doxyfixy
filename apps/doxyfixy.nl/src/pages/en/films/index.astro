@@ -1,0 +1,58 @@
+---
+import Layout from '../../../components/Layout.astro';
+import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
+import Card from '@doxyfixy/components/src/card/Card.svelte';
+
+const settings = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/settings/pages').then(res => res.json());
+const fields = settings.data.row;
+
+let films = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/film?per_page=100').then(res => res.json());
+films = films.filter(film => film.language?.[0] === 'en');
+films = films.sort((a, b) => a.release_date < b.release_date ? 1 : -1);
+
+const images = Object.fromEntries(await Promise.all(films.map(film => fetch(`https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/media/${film.featured_image.ID}`))).then(responses =>
+    Promise.all(responses.map(async res => {
+		const json = await res.json();
+		return [json.id, json.media_details?.sizes?.medium_large || {}];
+	})))
+);
+
+const genres = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/genre').then(res => res.json());
+const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name])));
+
+---
+
+<Layout title="Films" language="en">
+
+	<GridPage
+		title={fields.title_films_en}
+		intro={fields.intro_text_films_en}
+		tags={Object.values(genreNames)}
+		withSearch
+		funky
+		client:visible
+	>
+
+	{films.map((film, i) =>
+		<a href={`/en/films/${film.slug}`}>
+
+		<Card
+			title={film.title.rendered}
+			subtitle={film.logline}
+			tags={(film.genre || []).map(id => genreNames[id])}
+			searchdata={film.credits + ' ' + film.cast + ' ' + film.title.rendered + ' ' + film.festivals + ' ' + film.prices}
+		>
+			<img
+				loading="lazy"
+				decoding="async"
+				src={(images[film.featured_image.ID] || {}).source_url}
+				style={`object-position: ${film.featured_image_focus_point_x_axis || 50}% ${film.featured_image_focus_point_y_axis || 50}%`}
+			>
+		</Card>
+		</a>
+
+	)}
+
+	</GridPage>
+
+</Layout>

@@ -1,0 +1,100 @@
+---
+import Layout from '../../../components/Layout.astro';
+import Page from '@doxyfixy/components/src/page/Page.svelte';
+import Card from '@doxyfixy/components/src/card/Card.svelte';
+
+export async function getStaticPaths() {
+
+    let persons = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/person?per_page=100&_fields[]=slug&_fields[]=language').then(person => person.json());
+    persons = persons.filter(person => person.language?.[0] === 'en');
+
+    return persons.map(person => {
+        return {
+            params: {slug: person.slug}
+        }
+    });
+}
+
+const { slug } = Astro.params;
+let persons = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/person?per_page=100&slug=' + slug).then(persons => persons.json());
+const person = persons[0];
+
+---
+
+<Layout title={person.title.rendered} logoColor="white" language="en">
+
+    <style>
+        blockquote {
+            width: 900px;
+            max-width: 100%;
+            font: var(--doxy-text-quote-xl);
+            text-align: center;
+            /* position: relative; */
+            position: sticky;
+            bottom: 0;
+            margin-inline: auto;
+            padding-block: 72px;
+        }
+
+        @media screen and (max-width: 1023px) {
+            blockquote {
+                font: var(--doxy-text-quote-l);
+                padding-inline: 16px;
+            }
+        }
+    </style>
+
+    <Card
+        slot="header"
+        title={person.title.rendered}
+        subtitle={person.role}
+        size="portrait-hero"
+    >
+    <img
+        src={person.interview_header_image.guid}
+        decoding="async"
+        loading="lazy"
+        style={`object-position: ${person.interview_header_image_focus_point_x_axis || 50}% ${person.interview_header_image_focus_point_y_axis || 50}%`}
+    >   
+    </Card>
+    <img src="/arrow_down.svg" class="arrow-icon" slot="header">
+    
+    <blockquote slot="header">{person.quote}</blockquote>
+
+	<Page grid={false}>
+
+        <article style="text-align:start">
+
+            <div set:html={person.intro_text.replace(/ class\=".*?"/g, '').replace(/<p><\/p>/g, '')}></div>
+
+            <div set:html={person.interview}></div>
+
+            <p inert={!person.website_imdb_link}>
+                <a class="cta" href={person.website_imdb_link} inert={!person.website_imdb_link}>Link naar IMDB</a>
+            </p>
+
+
+            <div class="grid associated-films-grid">
+                {(person.associated_films || []).map(film => 
+                    <a href={`/en/films/${film.post_name}`}>
+                    <Card
+                        title={film.post_title}
+                        subtitle={film.logline}
+                    >
+                        <img
+                            loading="lazy"
+                            decoding="async"
+                            src={film.featured_image}
+                            style={`object-position: ${film.featured_image_focus_point_x_axis || 50}% ${film.featured_image_focus_point_y_axis || 50}%`}
+                        >
+                    </Card>
+                    </a>
+                )}
+                    
+            </div>
+
+    </article>
+
+	</Page>
+
+</Layout>

@@ -1,0 +1,179 @@
+---
+import Layout from '../../../components/Layout.astro';
+import Page from '@doxyfixy/components/src/page/Page.svelte';
+import Card from '@doxyfixy/components/src/card/Card.svelte';
+
+export async function getStaticPaths() {
+
+    const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?per_page=100&_fields[]=slug&_fields[]=language');
+    let films = await filmsRes.json();
+    films = films.filter(film => film.language?.[0] === 'en');
+
+    return films.map(film => {
+        return {
+            params: {slug: film.slug}
+        }
+    });
+}
+
+const { slug } = Astro.params;
+const filmsRes = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/film?per_page=1&slug=' + slug);
+let films = await filmsRes.json();
+const film = films[0];
+
+const genresRes = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/genre');
+const genres = await genresRes.json();
+const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name])));
+
+---
+
+<Layout title={film.title.rendered} logoColor="white" language="en">
+
+    <Card
+        slot="header"
+        title={film.title.rendered}
+        subtitle={film.logline}
+        tags={(film.genre || []).map(id => genreNames[id])}
+        size="hero"
+    >
+    <img
+        src={film.featured_image.guid}
+        decoding="async"
+        loading="lazy"
+        style={`object-position: ${film.featured_image_focus_point_x_axis || 50}% ${film.featured_image_focus_point_y_axis || 50}%`}
+    > 
+    <img
+        src={film.laurel_image?.guid}
+        hidden={!film.laurel_image}
+        decoding="async"
+        loading="lazy"
+        slot="laurel"
+    >   
+
+    {film.header_video?.guid ?
+    <video
+        src={film.header_video.guid}
+        autoplay
+        muted
+        playsinline
+        loop
+    ></video>
+    : ''}
+
+    </Card>
+    <img src="/arrow_down.svg" class="arrow-icon" slot="header">
+
+    <style>
+        .intro {
+            width: 100%;
+            /* height: 20vh; */
+            position: sticky;
+            bottom: 0;
+            padding: 64px 16px;
+        }
+        .intro p {
+            text-align: start;
+            font: var(--doxy-text-serif-headline-xl);
+            width: 700px;
+            margin: auto;
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: 1023px) {
+            .intro {
+                position: relative;
+                padding: 0 32px;
+            }
+            .intro p {
+                width: 80%;
+                font: var(--doxy-text-serif-headline-m);
+            }
+            
+        }
+
+        @media screen and (max-width: 767px) {
+            .intro p {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+        }
+    </style>
+
+    <div slot="header" class="intro">
+        <p set:html={film.synopsis.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
+    </div>
+
+	<Page grid={false}>
+
+        <article>
+
+            <!-- <p style="text-align:start;" set:html={film.synopsis.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p> -->
+
+            {film.vimeo_trailer_url ?
+                <iframe
+                class="video-container"
+                src={`https://player.vimeo.com/video/${film.vimeo_trailer_url?.match(/[0-9]+/)?.[0]}?h=a7ad9099dc&title=0&byline=0&portrait=0`}
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                style={`--video-trailer-aspect-ratio: ${film.video_trailer_aspect_ratio || '16/9'}`}
+            ></iframe>
+            : ''}
+
+            {film.cast ?
+            <h4>Cast</h4>
+            <p class="p1" set:html={film.cast.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            : ''}
+
+            {film.credits ?
+            <h4>Credits</h4>
+            <p set:html={film.credits.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            : ''}
+
+            {film.artwork ?
+            <h4>Artwork</h4>
+            <p set:html={film.artwork.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+
+            <p style="margin-top: 0">
+                <img
+                    src={film.poster.guid}
+                    loading="lazy"
+                    decoding="async"
+                    style="max-height: 80vh;border-radius:0"
+                >
+            </p>
+            : ''}                
+
+            {film.festivals ?
+            <h4>Festivals</h4>
+            <p set:html={film.festivals.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            : ''}
+
+
+            {film.prices ?
+            <h4>Prijzen</h4>
+            <p set:html={film.prices.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            : ''}                
+
+            {film.reviews ?
+            <h4>Reviews</h4>
+            <p set:html={film.reviews.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            : ''}
+
+            {(film.still_images || []).length > 0 ? <h4>Stills</h4> : '' }
+
+            {(film.still_images || []).map((still) => 
+                <img
+                    src={still.guid}
+                    loading="lazy"
+                    decoding="async"
+                    style="width: calc(100% + 32px);margin: 12px -16px"
+                >
+            )}
+
+    </article>
+
+	</Page>
+
+</Layout>

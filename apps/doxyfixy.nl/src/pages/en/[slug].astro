@@ -1,0 +1,50 @@
+---
+import Layout from '../../components/Layout.astro';
+import Page from '@doxyfixy/components/src/page/Page.svelte';
+
+export async function getStaticPaths() {
+
+let pages = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/pages?per_page=100&_fields[]=slug&_fields[]=language').then(person => person.json());
+pages = pages.filter(page => page.language?.[0] === 'en');
+
+return pages.map(person => {
+    return {
+        params: {slug: person.slug}
+    }
+});
+}
+
+const { slug } = Astro.params;
+let pages = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/wp/v2/pages?per_page=100&slug=' + slug).then(pages => pages.json());
+pages = pages.filter(page => page.language?.[0] === 'en');
+const page = pages[0];
+
+---
+
+<Layout title={page.title.rendered} language="en">
+
+	<Page
+		title={page.title.rendered}
+        intro={page.intro_text}
+        grid={false}
+		client:visible
+	>
+
+        <article>
+
+            <img
+                src={page.featured_image.guid}
+                alt={page.featured_image.post_title}
+                decoding="async"
+                loading="lazy"
+                style="width:calc(100vw - 32px); "
+            >
+        
+            <blockquote slot="header">{page.quote}</blockquote>
+
+            <p class="page-intro-text" set:html={page.contents.trim().replace(/\n/g, '<br>').replace(/<br>+/g, '').replace(/<p><\/p>/g, '')}></p>
+        </article>
+
+	</Page>
+
+</Layout>
