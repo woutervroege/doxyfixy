@@ -14,6 +14,9 @@
    */
    export let prefix = '/';
 
+   $: switchLang = prefix === '/' ? '/en' : '/';
+   $: switchOn = prefix === '/';
+
    /**
     * 
    */
@@ -57,7 +60,7 @@
         <a inert={!open} data-index="4" class="doxy-button" href="{prefix}films">Films</a>
         <a inert={!open} data-index="2" class="doxy-button" href="{prefix}people">People</a>
         <a inert={!open} data-index="1" class="doxy-button" href="{prefix}about">About</a>
-        <!-- <Switch client:visible/> -->
+        <a style="text-decoration:none" href={switchLang}><Switch on={switchOn}/></a>
     </div>
 
     <div class="button-container">
