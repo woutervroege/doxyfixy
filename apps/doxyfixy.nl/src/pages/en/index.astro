@@ -3,21 +3,21 @@ import Layout from '../../components/Layout.astro';
 import GridPage from '@doxyfixy/components/src/grid-page/GridPage.svelte';
 import Card from '@doxyfixy/components/src/card/Card.svelte';
 
-const settings = await fetch('https://doxyfixy.lotsofpeople.nl/wp-json/settings/pages').then(res => res.json());
+const settings = await fetch('https://doxyfixyedit.nl/wp-json/settings/pages').then(res => res.json());
 const fields = settings.data.row;
 const introText = fields.intro_text;
 
-const allFilms = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/film?per_page=100').then(res => res.json());
+const allFilms = await fetch('https://doxyfixyedit.nl//wp-json/wp/v2/film?per_page=100').then(res => res.json());
 const films = fields.highlighted_films_en.map(highlightedFilm => allFilms.find(film => film.id == highlightedFilm.ID));
 
-const images = Object.fromEntries(await Promise.all(films.map(film => fetch(`https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/media/${film.featured_image.ID}`))).then(responses =>
+const images = Object.fromEntries(await Promise.all(films.map(film => fetch(`https://doxyfixyedit.nl//wp-json/wp/v2/media/${film.featured_image.ID}`))).then(responses =>
     Promise.all(responses.map(async res => {
 		const json = await res.json();
 		return [json.id, json.media_details?.sizes?.full || {}];
 	})))
 );
 
-const genres = await fetch('https://doxyfixy.lotsofpeople.nl//wp-json/wp/v2/genre').then(res => res.json());
+const genres = await fetch('https://doxyfixyedit.nl//wp-json/wp/v2/genre').then(res => res.json());
 const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name])));
 
 ---
