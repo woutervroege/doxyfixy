@@ -39,7 +39,7 @@ const personCategoryNames = Object.fromEntries(personCategories.map(person_categ
 			size="portrait"
 			title={person.title.rendered}
 			subtitle={person.role}
-			summary={person.card_text + (person.interview ? `<br><a href="/people/${person.slug}">Lees Meer</a>` : '')}
+			summary={person.card_text + (person.interview ? `<br><a href="/en/people/${person.slug}">Lees Meer</a>` : '')}
 			tags={(person.person_category || []).map(id => personCategoryNames[id])}
 		>
 			<img
