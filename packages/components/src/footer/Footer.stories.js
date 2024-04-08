@@ -1,12 +1,11 @@
-import Footer from './Footer.svelte';
+import Footer from "./Footer.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 export default {
-  title: 'Example/Footer',
+  title: "Example/Footer",
   component: Footer,
-  tags: ['autodocs'],
-  argTypes: {
-  },
+  tags: ["autodocs"],
+  argTypes: {},
 };
 
 export const Default = {

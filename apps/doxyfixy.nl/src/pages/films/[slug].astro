@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const filmsRes = await fetch('https://doxyfixyedit.nl/wp-json/wp/v2/film?per_page=1&slug=' + slug);
 let films = await filmsRes.json();
-const film = films[0];
+const film = films[0] || {};
 
 const genresRes = await fetch('https://doxyfixyedit.nl//wp-json/wp/v2/genre');
 const genres = await genresRes.json();
@@ -27,11 +27,11 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
 ---
 
-<Layout title={film.title.rendered} logoColor="white">
+<Layout title={film.title?.rendered} logoColor="white">
 
     <Card
         slot="header"
-        title={film.title.rendered}
+        title={film.title?.rendered}
         subtitle={film.logline}
         tags={(film.genre || []).map(id => genreNames[id])}
         size="hero"
@@ -52,7 +52,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
     {film.header_video?.guid ?
     <video
-        src={film.header_video.guid}
+        src={film.header_video?.guid}
         autoplay
         muted
         playsinline
@@ -101,7 +101,7 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
     </style>
 
     <div slot="header" class="intro">
-        <p set:html={film.synopsis.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
+        <p set:html={film.synopsis?.replace(/\n/g, '<br>').replace(/\s+/g, ' ')}></p>
     </div>
 
 	<Page grid={false}>
@@ -123,21 +123,21 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
             {film.cast ?
             <h4>Cast</h4>
-            <p class="p1" set:html={film.cast.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            <p class="p1" set:html={film.cast?.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
             : ''}
 
             {film.credits ?
             <h4>Credits</h4>
-            <p set:html={film.credits.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            <p set:html={film.credits?.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
             : ''}
 
             {film.artwork ?
             <h4>Artwork</h4>
-            <p set:html={film.artwork.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            <p set:html={film.artwork?.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
 
             <p style="margin-top: 0">
                 <img
-                    src={film.poster.guid}
+                    src={film.poster?.guid}
                     loading="lazy"
                     decoding="async"
                     style="max-height: 80vh;border-radius:0"
@@ -147,25 +147,25 @@ const genreNames = Object.fromEntries(genres.map(genre => ([genre.id, genre.name
 
             {film.festivals ?
             <h4>Festivals</h4>
-            <p set:html={film.festivals.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            <p set:html={film.festivals?.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
             : ''}
 
 
             {film.prices ?
             <h4>Prijzen</h4>
-            <p set:html={film.prices.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            <p set:html={film.prices?.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
             : ''}                
 
             {film.reviews ?
             <h4>Reviews</h4>
-            <p set:html={film.reviews.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
+            <p set:html={film.reviews?.replace(/\n/g, '<br>').replace(/\s+/g, ' ').replace(/<br>(\s+)<br>/g, '<br>')}></p>
             : ''}
 
             {(film.still_images || []).length > 0 ? <h4>Stills</h4> : '' }
 
             {(film.still_images || []).map((still) => 
                 <img
-                    src={still.guid}
+                    src={still?.guid}
                     loading="lazy"
                     decoding="async"
                     style="width: calc(100% + 32px);margin: 12px -16px"
