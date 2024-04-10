@@ -93,7 +93,7 @@ blockquote:after {
     margin: 0 auto;
 }
 
-.doxy-page article > * {
+.doxy-page article > *:not(img,iframe) {
     max-width: 700px;
 }
 
