@@ -4,26 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "storybook dev",
-    "build:manual": "storybook build",
-    "build-storybook": "storybook build",
-    "deploy:manual": "chromatic --project-token=chpt_d2fa33d952f4cf2"
   },
   "files": [
     "src"
   ],
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.0.6",
-    "@storybook/addon-interactions": "^8.0.6",
-    "@storybook/addon-links": "^8.0.6",
-    "@storybook/blocks": "^8.0.6",
-    "@storybook/svelte": "^8.0.6",
-    "@storybook/svelte-vite": "^8.0.6",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "chromatic": "^11.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "^8.0.6",
     "svelte": "^4.2.12",
     "vite": "^5.2.8"
   },
