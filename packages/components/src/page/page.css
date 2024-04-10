@@ -87,10 +87,14 @@ blockquote:after {
     content: '’'
 }
 
-.doxy-page > * {
+.doxy-page p {
     width: 700px;
     max-width: 100%;
     margin: 0 auto;
+}
+
+.doxy-page article > * {
+    max-width: 700px;
 }
 
 @media screen and (max-width: 1023px) {
