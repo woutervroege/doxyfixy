@@ -17,12 +17,15 @@ importers:
       turbo:
         specifier: ^2.1.2
         version: 2.1.2
+      typescript:
+        specifier: ^5.6.2
+        version: 5.6.2
 
   apps/doxyfixy.nl:
     dependencies:
       '@astrojs/mdx':
         specifier: ^2.2.4
-        version: 2.2.4(astro@4.5.16(@types/node@20.12.5)(typescript@5.4.4))
+        version: 2.2.4(astro@4.5.16(@types/node@20.12.5)(typescript@5.6.2))
       '@astrojs/rss':
         specifier: ^4.0.5
         version: 4.0.5
@@ -31,13 +34,13 @@ importers:
         version: 3.1.2
       '@astrojs/svelte':
         specifier: ^5.3.0
-        version: 5.3.0(astro@4.5.16(@types/node@20.12.5)(typescript@5.4.4))(svelte@4.2.12)(typescript@5.4.4)(vite@5.2.8(@types/node@20.12.5))
+        version: 5.3.0(astro@4.5.16(@types/node@20.12.5)(typescript@5.6.2))(svelte@4.2.12)(typescript@5.6.2)(vite@5.2.8(@types/node@20.12.5))
       '@doxyfixy/components':
         specifier: workspace:*
         version: link:../../packages/components
       astro:
         specifier: ^4.5.16
-        version: 4.5.16(@types/node@20.12.5)(typescript@5.4.4)
+        version: 4.5.16(@types/node@20.12.5)(typescript@5.6.2)
       svelte:
         specifier: ^4.2.12
         version: 4.2.12
@@ -4503,8 +4506,8 @@ packages:
   typedarray-to-buffer@3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
 
-  typescript@5.4.4:
-    resolution: {integrity: sha512-dGE2Vv8cpVvw28v8HCPqyb08EzbBURxDpuhJvTrusShUfGnhHBafDsLdS1EhhxyL6BJQE+2cT3dDPAv+MQ6oLw==}
+  typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4901,12 +4904,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@2.2.4(astro@4.5.16(@types/node@20.12.5)(typescript@5.4.4))':
+  '@astrojs/mdx@2.2.4(astro@4.5.16(@types/node@20.12.5)(typescript@5.6.2))':
     dependencies:
       '@astrojs/markdown-remark': 5.0.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.5.16(@types/node@20.12.5)(typescript@5.4.4)
+      astro: 4.5.16(@types/node@20.12.5)(typescript@5.6.2)
       es-module-lexer: 1.5.0
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -4936,13 +4939,13 @@ snapshots:
       sitemap: 7.1.1
       zod: 3.22.4
 
-  '@astrojs/svelte@5.3.0(astro@4.5.16(@types/node@20.12.5)(typescript@5.4.4))(svelte@4.2.12)(typescript@5.4.4)(vite@5.2.8(@types/node@20.12.5))':
+  '@astrojs/svelte@5.3.0(astro@4.5.16(@types/node@20.12.5)(typescript@5.6.2))(svelte@4.2.12)(typescript@5.6.2)(vite@5.2.8(@types/node@20.12.5))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.2.8(@types/node@20.12.5))
-      astro: 4.5.16(@types/node@20.12.5)(typescript@5.4.4)
+      astro: 4.5.16(@types/node@20.12.5)(typescript@5.6.2)
       svelte: 4.2.12
-      svelte2tsx: 0.6.27(svelte@4.2.12)(typescript@5.4.4)
-      typescript: 5.4.4
+      svelte2tsx: 0.6.27(svelte@4.2.12)(typescript@5.6.2)
+      typescript: 5.6.2
     transitivePeerDependencies:
       - supports-color
       - vite
@@ -6333,7 +6336,7 @@ snapshots:
 
   astring@1.8.6: {}
 
-  astro@4.5.16(@types/node@20.12.5)(typescript@5.4.4):
+  astro@4.5.16(@types/node@20.12.5)(typescript@5.6.2):
     dependencies:
       '@astrojs/compiler': 2.7.1
       '@astrojs/internal-helpers': 0.4.0
@@ -6388,7 +6391,7 @@ snapshots:
       shiki: 1.2.4
       string-width: 7.1.0
       strip-ansi: 7.1.0
-      tsconfck: 3.0.3(typescript@5.4.4)
+      tsconfck: 3.0.3(typescript@5.6.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.2.8(@types/node@20.12.5)
@@ -10263,12 +10266,12 @@ snapshots:
     dependencies:
       svelte: 4.2.12
 
-  svelte2tsx@0.6.27(svelte@4.2.12)(typescript@5.4.4):
+  svelte2tsx@0.6.27(svelte@4.2.12)(typescript@5.6.2):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
       svelte: 4.2.12
-      typescript: 5.4.4
+      typescript: 5.6.2
 
   svelte@4.2.12:
     dependencies:
@@ -10377,9 +10380,9 @@ snapshots:
 
   ts-dedent@2.2.0: {}
 
-  tsconfck@3.0.3(typescript@5.4.4):
+  tsconfck@3.0.3(typescript@5.6.2):
     optionalDependencies:
-      typescript: 5.4.4
+      typescript: 5.6.2
 
   tslib@2.6.2: {}
 
@@ -10440,7 +10443,7 @@ snapshots:
     dependencies:
       is-typedarray: 1.0.0
 
-  typescript@5.4.4: {}
+  typescript@5.6.2: {}
 
   uc.micro@1.0.6: {}
 
