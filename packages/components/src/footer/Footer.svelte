@@ -47,7 +47,7 @@
         <div></div>
         <div class="mail-us">
             <h6>Screenings? Compliments? Requests?</h6>
-            <a href="mailto:info@doxyfixy.nl"><Button label="Mail Us"/></a>
+            <a href="mailto:info@doxy.nl"><Button label="Mail Us"/></a>
         </div>
     </div>
 
@@ -57,6 +57,7 @@
         <span>1012 DB Amsterdam</span>
         <span><a href="callto:+31(0)20 422 2607">+31(0)20 422 2607</a></span>
         <span><a href="mailto:info@doxy.nl">info@doxy.nl</a></span>
+        <span><a href="mailto:info@fixy.nl">info@fixy.nl</a></span>
     </address>
 
 </footer>
